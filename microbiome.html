@@ -1,0 +1,581 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Микробиота кишечника — энциклопедия — Андрей Шелест</title>
+<meta name="description" content="История, физиология, спорт и микробиота: от Левенгука и Мечникова до одобренных FDA препаратов. Таблицы клетчатки, штаммы пробиотиков с дозами, тесты, 15 мифов, 15 источников.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/core.css">
+</head>
+<body>
+<header class="hdr" id="hdr">
+  <div class="container hdr__row">
+    <a href="index.html" class="hdr__logo">Андрей Шелест</a>
+    <nav class="hdr__nav">
+      <a href="index.html#about" data-i18n="nav.about">Обо мне</a>
+      <a href="index.html#pricing" data-i18n="nav.pricing">Тарифы</a>
+      <a href="index.html#services" data-i18n="nav.services">Услуги</a>
+      <div class="hdr__drop">
+        <a href="sport-nutrition.html" data-i18n="nav.enc">Энциклопедии</a>
+        <div class="hdr__panel">
+          <a href="sport-nutrition.html"><b data-i18n="nav.enc.sn">Спортивное питание</b><span data-i18n="nav.enc.sn.d">Рейтинг добавок AIS ABCD</span></a>
+          <a href="dietology.html"><b data-i18n="nav.enc.di">Диетология</b><span data-i18n="nav.enc.di.d">5 доказательных диет</span></a>
+          <a href="microbiome.html"><b data-i18n="nav.enc.mb">Микробиота</b><span data-i18n="nav.enc.mb.d">История, спорт, тесты, мифы</span></a>
+        </div>
+      </div>
+      
+      <a href="index.html#reviews" data-i18n="nav.reviews">Отзывы</a>
+      <a href="index.html#contact" data-i18n="nav.contact">Контакты</a>
+    </nav>
+    <a href="index.html#contact" class="hdr__cta" data-i18n="nav.cta">Записаться</a>
+    <button class="hdr__cta" id="langBtn" style="margin-left:10px; border-color:var(--line-2); color:var(--ink-dim);" type="button">EN</button>
+  </div>
+</header>
+
+<section style="padding-top:160px;">
+  <div class="container">
+    <p class="eyebrow" data-i18n="mb.eyebrow">Микробиота — энциклопедия</p>
+    <h1 class="h-sec" style="font-size:clamp(2.1rem,4.4vw,3.4rem); max-width:24ch;" data-i18n="mb.h1">От Левенгука до FDA: наука о микробиоте без мифов</h1>
+    <p class="lead" data-i18n="mb.lead">История, физиология, спорт, питание и тесты — с честными ограничениями каждого исследования и источниками, которые можно проверить.</p>
+  </div>
+</section>
+
+<section id="mb-timeline">
+  <div class="container">
+    <h2 class="h-sec" style="font-size:clamp(1.6rem,2.8vw,2.2rem);" data-i18n="mb.tl.title">История: от первого микроскопа до лекарства</h2>
+    <div class="svc" style="margin-top:28px; grid-template-columns:1fr;">
+      <div class="svc__c" style="border-left:2px solid var(--gold); padding-left:20px;">
+        <div style="font-family:var(--f-display); color:var(--gold); font-size:1.1rem; margin-bottom:4px;">1670-е</div>
+        <h4><span data-i18n="mb.tl1.who">Антони ван Левенгук</span></h4>
+        <p><span data-i18n="mb.tl1.d">С помощью собственноручно сделанных микроскопов первым наблюдает и описывает микроорганизмы — «анималькули» — в зубном налёте и других образцах. Начало микробиологии как науки.</span></p>
+      </div>
+      <div class="svc__c" style="border-left:2px solid var(--gold); padding-left:20px;">
+        <div style="font-family:var(--f-display); color:var(--gold); font-size:1.1rem; margin-bottom:4px;">1901-1907</div>
+        <h4><span data-i18n="mb.tl2.who">Илья Мечников</span></h4>
+        <p><span data-i18n="mb.tl2.d">Нобелевский лауреат (1908, за работы по иммунитету) выдвигает гипотезу, что молочнокислые бактерии (болгарская простокваша) могут продлевать жизнь, вытесняя гнилостную микрофлору кишечника. Книга «Этюды оптимизма» (1907) — фактическое рождение идеи пробиотиков.</span></p>
+      </div>
+      <div class="svc__c" style="border-left:2px solid var(--gold); padding-left:20px;">
+        <div style="font-family:var(--f-display); color:var(--gold); font-size:1.1rem; margin-bottom:4px;">1965</div>
+        <h4><span data-i18n="mb.tl3.who">Термин «пробиотики»</span></h4>
+        <p><span data-i18n="mb.tl3.d">Lilly и Stillwell вводят термин «пробиотики» для описания веществ, вырабатываемых одними микроорганизмами и стимулирующих рост других — на контрасте с антибиотиками.</span></p>
+      </div>
+      <div class="svc__c" style="border-left:2px solid var(--gold); padding-left:20px;">
+        <div style="font-family:var(--f-display); color:var(--gold); font-size:1.1rem; margin-bottom:4px;">2007</div>
+        <h4><span data-i18n="mb.tl4.who">Human Microbiome Project</span></h4>
+        <p><span data-i18n="mb.tl4.d">NIH запускает масштабный проект по секвенированию микробиоты человека — точка, с которой изучение микробиома становится системной наукой, а не набором отдельных наблюдений.</span></p>
+      </div>
+      <div class="svc__c" style="border-left:2px solid var(--gold); padding-left:20px;">
+        <div style="font-family:var(--f-display); color:var(--gold); font-size:1.1rem; margin-bottom:4px;">2013</div>
+        <h4><span data-i18n="mb.tl5.who">Ван Нод и др., NEJM</span></h4>
+        <p><span data-i18n="mb.tl5.d">Рандомизированное исследование показывает: трансплантация фекальной микробиоты эффективнее ванкомицина при рецидивирующей инфекции C. difficile — первое строгое клиническое доказательство терапевтического потенциала микробиоты.</span></p>
+      </div>
+      <div class="svc__c" style="border-left:2px solid var(--gold); padding-left:20px;">
+        <div style="font-family:var(--f-display); color:var(--gold); font-size:1.1rem; margin-bottom:4px;">2019-2020</div>
+        <h4><span data-i18n="mb.tl6.who">Консенсусы ISAPP</span></h4>
+        <p><span data-i18n="mb.tl6.d">Международная научная ассоциация пробиotиков и пребиотиков публикует серию консенсусов, чётко разграничивающих термины «пробиотики», «пребиотики», «синбиотики» — наводит порядок в рынке, где эти слова использовались произвольно.</span></p>
+      </div>
+      <div class="svc__c" style="border-left:2px solid var(--gold); padding-left:20px;">
+        <div style="font-family:var(--f-display); color:var(--gold); font-size:1.1rem; margin-bottom:4px;">ноябрь 2022</div>
+        <h4><span data-i18n="mb.tl7.who">FDA одобряет Rebyota</span></h4>
+        <p><span data-i18n="mb.tl7.d">Rebyota (fecal microbiota, live-jslm) от Ferring Pharmaceuticals — первый в истории одобренный FDA препарат на основе микробиоты, для профилактики рецидива инфекции C. difficile у взрослых.</span></p>
+      </div>
+      <div class="svc__c" style="border-left:2px solid var(--gold); padding-left:20px;">
+        <div style="font-family:var(--f-display); color:var(--gold); font-size:1.1rem; margin-bottom:4px;">апрель 2023</div>
+        <h4><span data-i18n="mb.tl8.who">FDA одобряет Vowst</span></h4>
+        <p><span data-i18n="mb.tl8.d">Vowst (fecal microbiota spores, live-brpk) от Seres Therapeutics — первый пероральный (в капсулах) препарат на основе микробиоты, той же направленности. Микробиота официально становится лекарственной формой.</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="mb-sport">
+  <div class="container">
+    <p class="eyebrow" data-i18n="mb.sp.eyebrow">Спорт и микробиота</p>
+    <h2 class="h-sec" style="font-size:clamp(1.6rem,2.8vw,2.2rem);" data-i18n="mb.sp.title">Что реально показали исследования — и чего не показали</h2>
+    <p class="lead" data-i18n="mb.sp.lead">Каждое исследование — с честным разбором ограничений, а не только с эффектным заголовком.</p>
+    <div class="svc" style="margin-top:28px;">
+      <div class="svc__c" id="sp-scheiman">
+        <h4><span data-i18n="mb.sp1.t">Veillonella и лактат у марафонцев</span></h4>
+        <p style="font-size:.76rem; color:var(--ink-mute); margin:2px 0 10px;">Scheiman J.M. et al., 2019, Nature Medicine</p>
+        <p><span data-i18n="mb.sp1.d">У элитных марафонцев после забега вырос уровень бактерии Veillonella atypica — она метаболизирует лактат (продукт мышечной работы) в пропионат. В эксперименте на мышах введение этой бактерии немного увеличило время бега на тредмиле.</span></p>
+        <p style="margin-top:10px; padding-top:10px; border-top:1px solid var(--line);"><b data-i18n="mb.limlabel">Ограничение:</b> <span data-i18n="mb.sp1.lim">Мышиный эксперимент — не доказательство эффекта у человека. Механизм красивый, но «съешь бактерию и побежишь быстрее» — это не то, что показало исследование.</span></p>
+      </div>
+      <div class="svc__c" id="sp-clarke">
+        <h4><span data-i18n="mb.sp2.t">Микробное разнообразие у регбистов</span></h4>
+        <p style="font-size:.76rem; color:var(--ink-mute); margin:2px 0 10px;">Clarke S.F. et al., 2014, Gut</p>
+        <p><span data-i18n="mb.sp2.d">У профессиональных регбистов обнаружено более высокое разнообразие кишечной микробиоты по сравнению с контрольной группой, коррелирующее с объёмом потребляемого белка и уровнем креатинкиназы.</span></p>
+        <p style="margin-top:10px; padding-top:10px; border-top:1px solid var(--line);"><b data-i18n="mb.limlabel">Ограничение:</b> <span data-i18n="mb.sp2.lim">Исследование поперечное (срез в один момент времени) — невозможно отделить эффект самих тренировок от эффекта специфической диеты и состава тела спортсменов.</span></p>
+      </div>
+      <div class="svc__c" id="sp-costa">
+        <h4><span data-i18n="mb.sp3.t">Желудочно-кишечный синдром физической нагрузки (EIGS)</span></h4>
+        <p style="font-size:.76rem; color:var(--ink-mute); margin:2px 0 10px;">Costa R.J.S. et al., 2017, Alimentary Pharmacology & Therapeutics</p>
+        <p><span data-i18n="mb.sp3.d">Систематический обзор показывает: во время интенсивной нагрузки кровоток перераспределяется от кишечника к мышцам, что может вызывать симптомы со стороны ЖКТ у значительной части спортсменов на выносливость.</span></p>
+        <p style="margin-top:10px; padding-top:10px; border-top:1px solid var(--line);"><b data-i18n="mb.limlabel">Ограничение:</b> <span data-i18n="mb.sp3.lim">Обзор объединяет исследования с разной методологией и видами спорта — конкретные проценты по разным работам заметно расходятся, обобщать в одну цифру некорректно.</span></p>
+      </div>
+      <div class="svc__c" id="sp-issn">
+        <h4><span data-i18n="mb.sp4.t">Позиция ISSN по пробиотикам</span></h4>
+        <p style="font-size:.76rem; color:var(--ink-mute); margin:2px 0 10px;">Jäger R. et al., 2019, Journal of the International Society of Sports Nutrition</p>
+        <p><span data-i18n="mb.sp4.d">Официальная позиция Международного общества спортивного питания: пробиотики определённых штаммов могут снижать частоту и длительность респираторных инфекций у спортсменов, поддерживать иммунную функцию при высоких нагрузках.</span></p>
+        <p style="margin-top:10px; padding-top:10px; border-top:1px solid var(--line);"><b data-i18n="mb.limlabel">Ограничение:</b> <span data-i18n="mb.sp4.lim">Эффект строго штаммоспецифичен — работает не «пробиотики вообще», а конкретный изученный штамм в изученной дозе. Экстраполировать на любой йогурт с полки нельзя.</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="mb-food">
+  <div class="container">
+    <p class="eyebrow" data-i18n="mb.ft.eyebrow">Энциклопедия питания микробиоты</p>
+    <h2 class="h-sec" style="font-size:clamp(1.6rem,2.8vw,2.2rem);" data-i18n="mb.ft.title">Клетчатка по типам, продукты, граммы на 100 г</h2>
+    <p class="lead" style="margin-bottom:28px;" data-i18n="mb.ft.lead">Ориентировочные значения — точное содержание зависит от сорта, сезона и обработки продукта.</p>
+    
+    <div style="margin-bottom:28px;">
+      <h4 style="margin-bottom:10px;"><span data-i18n="mb.ft1.h">Инулин и олигофруктоза (пребиотическая клетчатка)</span></h4>
+      <table style="width:100%; border-collapse:collapse; font-size:.86rem;">
+        <tbody><tr><td data-i18n="mb.ft1.r1">Цикорий (корень, сырой)</td><td>35-40 г/100г</td></tr><tr><td data-i18n="mb.ft1.r2">Топинамбур</td><td>16-20 г/100г</td></tr><tr><td data-i18n="mb.ft1.r3">Чеснок</td><td>9-16 г/100г</td></tr><tr><td data-i18n="mb.ft1.r4">Лук-порей</td><td>3-10 г/100г</td></tr><tr><td data-i18n="mb.ft1.r5">Репчатый лук</td><td>1-8 г/100г</td></tr><tr><td data-i18n="mb.ft1.r6">Спаржа</td><td>2-3 г/100г</td></tr><tr><td data-i18n="mb.ft1.r7">Банан</td><td>0,5-1 г/100г</td></tr></tbody>
+      </table>
+    </div>
+    <div style="margin-bottom:28px;">
+      <h4 style="margin-bottom:10px;"><span data-i18n="mb.ft2.h">Резистентный крахмал</span></h4>
+      <table style="width:100%; border-collapse:collapse; font-size:.86rem;">
+        <tbody><tr><td data-i18n="mb.ft2.r1">Остывший варёный картофель</td><td>3-4 г/100г</td></tr><tr><td data-i18n="mb.ft2.r2">Остывший рис</td><td>1-2 г/100г</td></tr><tr><td data-i18n="mb.ft2.r3">Зелёный банан</td><td>5-6 г/100г</td></tr><tr><td data-i18n="mb.ft2.r4">Бобовые (чечевица, нут)</td><td>2-5 г/100г</td></tr><tr><td data-i18n="mb.ft2.r5">Овсянка</td><td>3-4 г/100г</td></tr></tbody>
+      </table>
+    </div>
+    <div style="margin-bottom:28px;">
+      <h4 style="margin-bottom:10px;"><span data-i18n="mb.ft3.h">Бета-глюканы</span></h4>
+      <table style="width:100%; border-collapse:collapse; font-size:.86rem;">
+        <tbody><tr><td data-i18n="mb.ft3.r1">Овсяные отруби</td><td>6-8 г/100г</td></tr><tr><td data-i18n="mb.ft3.r2">Овсянка</td><td>3-4 г/100г</td></tr><tr><td data-i18n="mb.ft3.r3">Ячмень</td><td>3-8 г/100г</td></tr><tr><td data-i18n="mb.ft3.r4">Грибы шиитаке</td><td>1-2 г/100г</td></tr></tbody>
+      </table>
+    </div>
+    <div style="margin-bottom:28px;">
+      <h4 style="margin-bottom:10px;"><span data-i18n="mb.ft4.h">Пектин</span></h4>
+      <table style="width:100%; border-collapse:collapse; font-size:.86rem;">
+        <tbody><tr><td data-i18n="mb.ft4.r1">Яблоко (с кожурой)</td><td>1-1,5 г/100г</td></tr><tr><td data-i18n="mb.ft4.r2">Цитрусовая цедра</td><td>3-4 г/100г</td></tr><tr><td data-i18n="mb.ft4.r3">Морковь</td><td>1 г/100г</td></tr><tr><td data-i18n="mb.ft4.r4">Ягоды</td><td>0,5-1 г/100г</td></tr></tbody>
+      </table>
+    </div>
+    <div style="margin-bottom:28px;">
+      <h4 style="margin-bottom:10px;"><span data-i18n="mb.ft5.h">Общая клетчатка (для ориентира)</span></h4>
+      <table style="width:100%; border-collapse:collapse; font-size:.86rem;">
+        <tbody><tr><td data-i18n="mb.ft5.r1">Чечевица, варёная</td><td>7-8 г/100г</td></tr><tr><td data-i18n="mb.ft5.r2">Малина</td><td>6-7 г/100г</td></tr><tr><td data-i18n="mb.ft5.r3">Овёс цельнозерновой</td><td>10 г/100г</td></tr><tr><td data-i18n="mb.ft5.r4">Брокколи, варёная</td><td>3 г/100г</td></tr><tr><td data-i18n="mb.ft5.r5">Гречка</td><td>10 г/100г</td></tr></tbody>
+      </table>
+    </div>
+    <h4 style="margin:32px 0 16px;" data-i18n="mb.fm.title">Ферментированные продукты</h4>
+    <div class="svc">
+      <div class="svc__c">
+        <h4><span data-i18n="mb.fm1.t">Квашеная капуста (непастеризованная)</span></h4>
+        <p><span data-i18n="mb.fm1.d">Живые молочнокислые бактерии, витамин C, клетчатка</span></p>
+      </div>
+      <div class="svc__c">
+        <h4><span data-i18n="mb.fm2.t">Кефир</span></h4>
+        <p><span data-i18n="mb.fm2.d">До десятка штаммов бактерий и дрожжей, наиболее изученный ферментированный молочный продукт</span></p>
+      </div>
+      <div class="svc__c">
+        <h4><span data-i18n="mb.fm3.t">Йогурт с живыми культурами</span></h4>
+        <p><span data-i18n="mb.fm3.d">Смотреть на этикетку: «живые культуры», не все йогурты содержат их в значимом количестве</span></p>
+      </div>
+      <div class="svc__c">
+        <h4><span data-i18n="mb.fm4.t">Кимчи</span></h4>
+        <p><span data-i18n="mb.fm4.d">Ферментированная капуста с чесноком/перцем, богата Lactobacillus</span></p>
+      </div>
+      <div class="svc__c">
+        <h4><span data-i18n="mb.fm5.t">Мисо / темпе</span></h4>
+        <p><span data-i18n="mb.fm5.d">Ферментированная соя, источник растительного белка и пробиотиков</span></p>
+      </div>
+      <div class="svc__c">
+        <h4><span data-i18n="mb.fm6.t">Комбуча</span></h4>
+        <p><span data-i18n="mb.fm6.d">Ферментированный чай — уровень живых культур сильно зависит от производства и пастеризации</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="mb-strains">
+  <div class="container">
+    <p class="eyebrow" data-i18n="mb.st.eyebrow">Пробиотики по штаммам</p>
+    <h2 class="h-sec" style="font-size:clamp(1.6rem,2.8vw,2.2rem);" data-i18n="mb.st.title">Не «пробиотик вообще», а конкретный штамм</h2>
+    <div class="svc" style="margin-top:28px;">
+      <div class="svc__c" id="st-lgg">
+        <h4>Lactobacillus rhamnosus GG</h4>
+        <p><span data-i18n="mb.st1.d">Один из самых изученных штаммов в принципе. Доказана поддержка при антибиотик-ассоциированной диарее и профилактике респираторных инфекций у детей и взрослых.</span></p>
+      </div>
+      <div class="svc__c" id="st-sb">
+        <h4>Saccharomyces boulardii</h4>
+        <p><span data-i18n="mb.st2.d">Пробиотические дрожжи, не бактерия. Хорошая доказательная база при антибиотик-ассоциированной и диарее путешественников — обзоры Cochrane подтверждают эффект.</span></p>
+      </div>
+      <div class="svc__c" id="st-bb12">
+        <h4>Bifidobacterium animalis subsp. lactis BB-12</h4>
+        <p><span data-i18n="mb.st3.d">Один из самых широко изученных штаммов бифидобактерий — поддержка регулярности стула и отдельные иммунные маркеры.</span></p>
+      </div>
+      <div class="svc__c" id="st-shirota">
+        <h4>Lactobacillus casei Shirota</h4>
+        <p><span data-i18n="mb.st4.d">Штамм из ферментированных молочных напитков (Якульт), изучен на предмет влияния на транзит по ЖКТ и отдельные иммунные показатели.</span></p>
+      </div>
+      <div class="svc__c" id="Multi-strain formulas (sport)">
+        <h4>Мультиштаммовые формулы (спорт)</h4>
+        <p><span data-i18n="mb.st5.d">Комбинации из позиции ISSN — изучались именно на спортсменах при высоких нагрузках, с акцентом на снижение частоты/длительности ОРВИ.</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="mb-tests">
+  <div class="container">
+    <p class="eyebrow" data-i18n="mb.ts.eyebrow">Тесты микробиома</p>
+    <h2 class="h-sec" style="font-size:clamp(1.6rem,2.8vw,2.2rem);" data-i18n="mb.ts.title">Какой тест что показывает</h2>
+    <div class="svc" style="margin-top:28px;">
+      <div class="svc__c">
+        <h4><span data-i18n="mb.ts1.t">16S рРНК-секвенирование</span></h4>
+        <p><span data-i18n="mb.ts1.d">Более доступный и дешёвый метод, определяет состав микробиоты на уровне рода/семейства бактерий. Основа большинства коммерческих тестов «для потребителя».</span></p>
+      </div>
+      <div class="svc__c">
+        <h4><span data-i18n="mb.ts2.t">Шотган-метагеномное секвенирование</span></h4>
+        <p><span data-i18n="mb.ts2.d">Секвенирует всю ДНК образца — точнее до вида и штамма, показывает не только «кто там», но и функциональный потенциал микробиоты. Дороже и медленнее.</span></p>
+      </div>
+      <div class="svc__c">
+        <h4><span data-i18n="mb.ts3.t">Копрограмма и анализ на дисбактериоз</span></h4>
+        <p><span data-i18n="mb.ts3.d">Стандартные клинические анализы — не заменяют секвенирование, но дают быструю практическую картину при конкретных жалобах (воспаление, паразиты, ферментная недостаточность).</span></p>
+      </div>
+      <div class="svc__c">
+        <h4><span data-i18n="mb.ts4.t">Потребительские тесты микробиома</span></h4>
+        <p><span data-i18n="mb.ts4.d">Дают общую картину и динамику при повторных тестах, но клиническая интерпретация отдельных «полезных/вредных» бактерий пока ограничена — наука здесь развивается быстрее, чем стандартизация выводов.</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="mb-myths">
+  <div class="container">
+    <p class="eyebrow" data-i18n="mb.my.eyebrow">15 мифов</p>
+    <h2 class="h-sec" style="font-size:clamp(1.6rem,2.8vw,2.2rem);" data-i18n="mb.my.title">Что миф, а что — упрощение с долей правды</h2>
+    <div class="svc" style="margin-top:28px;">
+      <div class="svc__c">
+        <h4><span data-i18n="mb.my1.m">«Микробиоту можно полностью восстановить за несколько дней»</span></h4>
+        <p><span data-i18n="mb.my1.a">Миф. Устойчивые изменения состава микробиоты обычно занимают недели-месяцы последовательных изменений в питании, а не разовый курс добавок.</span></p>
+      </div>
+      <div class="svc__c">
+        <h4><span data-i18n="mb.my2.m">«Любой пробиотик подойдёт для любой проблемы»</span></h4>
+        <p><span data-i18n="mb.my2.a">Миф. Эффекты штаммоспецифичны: то, что доказано для одного штамма при одной проблеме, не переносится автоматически на другой штамм или другую жалобу.</span></p>
+      </div>
+      <div class="svc__c">
+        <h4><span data-i18n="mb.my3.m">«Пробиотики в йогурте всегда доживают до кишечника»</span></h4>
+        <p><span data-i18n="mb.my3.a">Миф отчасти. Часть культур гибнет под действием желудочного сока — устойчивость сильно варьирует по штаммам и форме выпуска (капсула с кишечнорастворимой оболочкой переносит лучше).</span></p>
+      </div>
+      <div class="svc__c">
+        <h4><span data-i18n="mb.my4.m">«Больше клетчатки — всегда лучше»</span></h4>
+        <p><span data-i18n="mb.my4.a">Не совсем. Резкое увеличение клетчатки без адаптации вызывает вздутие и дискомфорт — наращивать нужно постепенно, с достаточным количеством воды.</span></p>
+      </div>
+      <div class="svc__c">
+        <h4><span data-i18n="mb.my5.m">«Микробиота у всех одинаковая, просто нужно её «почистить»»</span></h4>
+        <p><span data-i18n="mb.my5.a">Миф. Состав микробиоты уникален как отпечаток пальца, формируется питанием, средой, генетикой — концепции «чистки» в клинической науке не существует.</span></p>
+      </div>
+      <div class="svc__c">
+        <h4><span data-i18n="mb.my6.m">«Антибиотики убивают всю микробиоту навсегда»</span></h4>
+        <p><span data-i18n="mb.my6.a">Не совсем. Антибиотики действительно временно снижают разнообразие, но у большинства людей состав в основном восстанавливается за недели-месяцы; отдельные виды могут не вернуться.</span></p>
+      </div>
+      <div class="svc__c">
+        <h4><span data-i18n="mb.my7.m">«Пробиотики нужны всем постоянно»</span></h4>
+        <p><span data-i18n="mb.my7.a">Миф. При разнообразном питании с достаточной клетчаткой у здорового человека нет доказанной необходимости в постоянном приёме — целевой приём оправдан при конкретных показаниях.</span></p>
+      </div>
+      <div class="svc__c">
+        <h4><span data-i18n="mb.my8.m">«Тест микробиома точно скажет, что есть»</span></h4>
+        <p><span data-i18n="mb.my8.a">Преувеличение. Тесты дают полезную общую картину, но персональные рекомендации по конкретным продуктам на основе состава микробиоты пока не имеют такого уровня доказательности, как реклама обещает.</span></p>
+      </div>
+      <div class="svc__c">
+        <h4><span data-i18n="mb.my9.m">«Ферментированные продукты = пробиотики в клинической дозе»</span></h4>
+        <p><span data-i18n="mb.my9.a">Не совсем. Количество и штаммовый состав живых культур в еде сильно варьирует и обычно не соответствует дозам, изученным в клинических испытаниях.</span></p>
+      </div>
+      <div class="svc__c">
+        <h4><span data-i18n="mb.my10.m">«Дисбактериоз — это официальный диагноз»</span></h4>
+        <p><span data-i18n="mb.my10.a">Отчасти миф. «Дисбактериоз» в биохимическом смысле — рабочий термин для смещения баланса микробиоты, но как формальный диагноз с чёткими критериями он не унифицирован в международной практике.</span></p>
+      </div>
+      <div class="svc__c">
+        <h4><span data-i18n="mb.my11.m">«Клетчатка и пробиотик — это одно и то же»</span></h4>
+        <p><span data-i18n="mb.my11.a">Миф. Пробиотик — это живые микроорганизмы. Пребиотик (например, клетчатка определённого типа) — это их «еда». Это разные, дополняющие друг друга категории.</span></p>
+      </div>
+      <div class="svc__c">
+        <h4><span data-i18n="mb.my12.m">«Если помогло знакомому — поможет и мне»</span></h4>
+        <p><span data-i18n="mb.my12.a">Миф. Индивидуальный состав микробиоты сильно варьирует, поэтому ответ на один и тот же пробиотик или продукт может отличаться от человека к человеку.</span></p>
+      </div>
+      <div class="svc__c">
+        <h4><span data-i18n="mb.my13.m">«Спортсменам микробиота не важна»</span></h4>
+        <p><span data-i18n="mb.my13.a">Миф. Состояние ЖКТ напрямую влияет на усвоение нутриентов, риск симптомов во время нагрузки (EIGS) и, по ряду данных, на восстановление.</span></p>
+      </div>
+      <div class="svc__c">
+        <h4><span data-i18n="mb.my14.m">«Микробиом можно «настроить» за одну диету навсегда»</span></h4>
+        <p><span data-i18n="mb.my14.a">Миф. Состав достаточно пластичен и во многом возвращается к исходному состоянию при возврате к прежнему питанию — устойчивость требует устойчивых привычек.</span></p>
+      </div>
+      <div class="svc__c">
+        <h4><span data-i18n="mb.my15.m">«Все «полезные бактерии» полезны в любом количестве»</span></h4>
+        <p><span data-i18n="mb.my15.a">Миф. Баланс важнее абсолютного числа — избыточный рост даже полезных в норме видов (например, при синдроме избыточного бактериального роста) вызывает симптомы.</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="mb-sources">
+  <div class="container">
+    <h2 class="h-sec" style="font-size:clamp(1.4rem,2.4vw,1.9rem);" data-i18n="mb.src.title">15 источников</h2>
+    <ol style="margin-top:20px; padding-left:20px; columns:1;"><li style="margin-bottom:8px; font-size:.82rem;"><a href="https://www.nature.com/articles/s41591-019-0485-4" target="_blank" rel="noopener" style="color:var(--ink-mute);">1. Scheiman J.M. et al. Meta-omics analysis of elite athletes identifies a performance-enhancing microbe that functions via lactate metabolism. Nature Medicine, 2019.</a></li><li style="margin-bottom:8px; font-size:.82rem;"><a href="https://www.sciencedaily.com/releases/2014/06/140610101525.htm" target="_blank" rel="noopener" style="color:var(--ink-mute);">2. Clarke S.F. et al. Exercise and associated dietary extremes impact on gut microbial diversity. Gut, 2014.</a></li><li style="margin-bottom:8px; font-size:.82rem;"><a href="https://onlinelibrary.wiley.com/doi/10.1111/apt.14157" target="_blank" rel="noopener" style="color:var(--ink-mute);">3. Costa R.J.S. et al. Systematic review: exercise-induced gastrointestinal syndrome — implications for health and intestinal disease. Alimentary Pharmacology & Therapeutics, 2017.</a></li><li style="margin-bottom:8px; font-size:.82rem;"><a href="https://jissn.biomedcentral.com/articles/10.1186/s12970-019-0329-0" target="_blank" rel="noopener" style="color:var(--ink-mute);">4. Jäger R. et al. International Society of Sports Nutrition Position Stand: Probiotics. Journal of the ISSN, 2019.</a></li><li style="margin-bottom:8px; font-size:.82rem;"><a href="https://jissn.biomedcentral.com/articles/10.1186/s12970-020-00353-w" target="_blank" rel="noopener" style="color:var(--ink-mute);">5. Marttinen M. et al. Gut Microbiota, Probiotics and Physical Performance in Athletes and Physically Active Individuals. Nutrients / narrative reviews on athletic gut microbiota.</a></li><li style="margin-bottom:8px; font-size:.82rem;"><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10876012/" target="_blank" rel="noopener" style="color:var(--ink-mute);">6. van Nood E. et al. Duodenal Infusion of Donor Feces for Recurrent Clostridium difficile. New England Journal of Medicine, 2013.</a></li><li style="margin-bottom:8px; font-size:.82rem;"><a href="https://www.fda.gov/media/168002/download" target="_blank" rel="noopener" style="color:var(--ink-mute);">7. FDA. Summary Basis for Regulatory Action — VOWST (fecal microbiota spores, live-brpk). April 26, 2023.</a></li><li style="margin-bottom:8px; font-size:.82rem;"><a href="https://www.ferring.com/ferring-receives-u-s-fda-approval-for-rebyota-fecal-microbiota-live-jslm-a-novel-first-in-class-microbiota-based-live-biotherapeutic/" target="_blank" rel="noopener" style="color:var(--ink-mute);">8. Ferring Pharmaceuticals. FDA approval of REBYOTA (fecal microbiota, live-jslm). November 2022.</a></li><li style="margin-bottom:8px; font-size:.82rem;"><a href="https://www.nature.com/articles/s41575-020-0344-2" target="_blank" rel="noopener" style="color:var(--ink-mute);">9. The International Scientific Association for Probiotics and Prebiotics (ISAPP) consensus statement on the definition and scope of synbiotics. Nature Reviews Gastroenterology & Hepatology, 2020.</a></li><li style="margin-bottom:8px; font-size:.82rem;"><a href="https://www.cochranelibrary.com/cdsr/doi/10.1002/14651858.CD006895.pub4/full" target="_blank" rel="noopener" style="color:var(--ink-mute);">10. Hao Q. et al. / Zhao Y. et al. Probiotics for preventing acute upper respiratory tract infections. Cochrane Database of Systematic Reviews.</a></li><li style="margin-bottom:8px; font-size:.82rem;"><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10016009/" target="_blank" rel="noopener" style="color:var(--ink-mute);">11. Gorreja F. et al. What do Cochrane systematic reviews say about probiotics as preventive interventions? PMC, overview.</a></li><li style="margin-bottom:8px; font-size:.82rem;"><a href="https://www.mdpi.com/2072-6643/17/19/3121" target="_blank" rel="noopener" style="color:var(--ink-mute);">12. Whelan K. et al. All That Glitters Ain't Gold: The Myths and Scientific Realities About the Gut Microbiota. Nutrients, 2025.</a></li><li style="margin-bottom:8px; font-size:.82rem;"><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7218537/" target="_blank" rel="noopener" style="color:var(--ink-mute);">13. Petersen L.M. et al. Community characteristics of the gut microbiomes of competitive cyclists. Microbiome journal.</a></li><li style="margin-bottom:8px; font-size:.82rem;"><a href="https://www.gutmicrobiotaforhealth.com/professional-athletes-have-more-diversity-in-gut-microbiota/" target="_blank" rel="noopener" style="color:var(--ink-mute);">14. Barton W. et al. The microbiome of professional athletes. Gut Microbiota for Health / narrative summary of athlete-microbiome studies.</a></li><li style="margin-bottom:8px; font-size:.82rem;"><a href="https://isappscience.org/for-scientists/resources/" target="_blank" rel="noopener" style="color:var(--ink-mute);">15. ISAPP. Resource hub — consensus statements on probiotics, prebiotics, synbiotics, postbiotics, fermented foods.</a></li>
+    </ol>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="kase__body" style="background:var(--bg-2); border:1px solid var(--line); border-radius:var(--radius); padding:40px;">
+      <h2 class="h-sec" style="font-size:clamp(1.5rem,2.6vw,2rem);" data-i18n="mb.cta_title">Похожая ситуация?</h2>
+      <p class="lead" style="margin-bottom:24px;" data-i18n="mb.cta_text">Разберём анализы и подберём питание с учётом состояния микробиоты.</p>
+      <div style="display:flex; align-items:center; gap:20px; flex-wrap:wrap;">
+        <a href="index.html#contact" class="btn btn--gold"><span data-i18n="mb.cta_label">Консультация по анализам</span> — 10 000 ₽</a>
+        <a href="index.html#pricing" class="btn btn--ghost" data-i18n="nav.pricing">Смотреть тарифы</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="ftr">
+  <div class="container">
+    <div class="ftr__row">
+      <div>
+        <div class="hdr__logo">Андрей Шелест</div>
+        <p style="color:var(--ink-mute); font-size:.86rem; max-width:40ch; margin-top:10px;" data-i18n="ftr.bio">
+          Чемпион мира по пауэрлифтингу, тренер с медицинским образованием. Онлайн-ведение по тренировкам, питанию и анализам.
+        </p>
+        <div style="display:flex; gap:18px; margin-top:16px; flex-wrap:wrap;">
+          <a href="sport-nutrition.html" style="font-size:.82rem; color:var(--ink-dim);" data-i18n="ftr.link1">Спортивное питание</a>
+          <a href="dietology.html" style="font-size:.82rem; color:var(--ink-dim);" data-i18n="ftr.link2">Диетология</a>
+          <a href="microbiome.html" style="font-size:.82rem; color:var(--ink-dim);" data-i18n="ftr.link3">Микробиота</a>
+        </div>
+      </div>
+      <div class="ftr__social">
+        <a href="https://t.me/papa_kult_shelest" target="_blank" rel="noopener" aria-label="Telegram-канал">TG</a>
+        <a href="https://www.instagram.com/papa_kult" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
+        <a href="https://t.me/PapaKultBot" target="_blank" rel="noopener" aria-label="Папа Культ бот">Бот</a>
+      </div>
+    </div>
+    <div class="ftr__bottom">
+      <span>&copy; <span id="yr"></span> Андрей Шелест</span>
+      <span data-i18n="ftr.pay">Оплата — по договорённости в WhatsApp или Telegram</span>
+    </div>
+  </div>
+</footer>
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+window.addEventListener('scroll', ()=>{
+  document.getElementById('hdr').classList.toggle('is-scrolled', window.scrollY>10);
+});
+
+/* ---- рендер карточек отзывов из reviews.json (на билд-этапе см. build_reviews.py) ---- */
+
+/* ---- переключатель валюты ---- */
+let CUR = 'rub';
+function setCurrency(cur){
+  CUR = cur;
+  document.querySelectorAll('[data-price]').forEach(el=>{
+    const [rub, usd] = el.getAttribute('data-price').split('|');
+    const span = el.querySelector('.pv') || el;
+    span.textContent = cur === 'rub' ? (Number(rub).toLocaleString('ru-RU')+' ₽') : ('$'+usd);
+  });
+}
+</script>
+
+<script>
+/* ================= i18n (RU/EN) ================= */
+const I18N = { ru:{}, en:{} };
+document.querySelectorAll('[data-i18n]').forEach(el=>{
+  I18N.ru[el.getAttribute('data-i18n')] = el.innerHTML;
+});
+Object.assign(I18N.en, {
+  'nav.about':'About', 'nav.pricing':'Pricing', 'nav.services':'Services', 'nav.reviews':'Reviews', 'nav.contact':'Contact', 'nav.cta':'Book a call',
+  'ftr.bio':'World Champion in powerlifting, coach with a medical background. Online coaching for training, nutrition and bloodwork.',
+  'ftr.pay':'Payment arranged via WhatsApp or Telegram',
+  'ftr.link1':'Sport nutrition', 'ftr.link2':'Dietology', 'ftr.link3':'Gut microbiome',
+  "mb.tl1.y": "1670s",
+  "mb.tl1.who": "Antonie van Leeuwenhoek",
+  "mb.tl1.d": "Using his own hand-built microscopes, he is the first to observe and describe microorganisms — \"animalcules\" — in dental plaque and other samples. The start of microbiology as a science.",
+  "mb.tl2.y": "1901-1907",
+  "mb.tl2.who": "Élie Metchnikoff",
+  "mb.tl2.d": "Nobel laureate (1908, for work on immunity) proposes that lactic-acid bacteria (Bulgarian yogurt) can prolong life by displacing putrefactive gut flora. His book \"The Prolongation of Life: Optimistic Studies\" (1907) effectively originates the probiotic concept.",
+  "mb.tl3.y": "1965",
+  "mb.tl3.who": "The term \"probiotics\"",
+  "mb.tl3.d": "Lilly and Stillwell coin the term \"probiotics\" for substances produced by one microorganism that stimulate the growth of another — in contrast to antibiotics.",
+  "mb.tl4.y": "2007",
+  "mb.tl4.who": "Human Microbiome Project",
+  "mb.tl4.d": "The NIH launches a large-scale project to sequence the human microbiome — the point at which microbiome research becomes a systematic field rather than a set of isolated observations.",
+  "mb.tl5.y": "2013",
+  "mb.tl5.who": "van Nood et al., NEJM",
+  "mb.tl5.d": "A randomized trial shows fecal microbiota transplantation outperforms vancomycin for recurrent C. difficile infection — the first rigorous clinical proof of the microbiome's therapeutic potential.",
+  "mb.tl6.y": "2019-2020",
+  "mb.tl6.who": "ISAPP consensus statements",
+  "mb.tl6.d": "The International Scientific Association for Probiotics and Prebiotics publishes a series of consensus statements sharply defining \"probiotics\", \"prebiotics\" and \"synbiotics\" — bringing order to a market that had used the terms loosely.",
+  "mb.tl7.y": "November 2022",
+  "mb.tl7.who": "FDA approves Rebyota",
+  "mb.tl7.d": "Rebyota (fecal microbiota, live-jslm) by Ferring Pharmaceuticals — the first FDA-approved microbiota-based product in history, for preventing recurrence of C. difficile infection in adults.",
+  "mb.tl8.y": "April 2023",
+  "mb.tl8.who": "FDA approves Vowst",
+  "mb.tl8.d": "Vowst (fecal microbiota spores, live-brpk) by Seres Therapeutics — the first oral (capsule) microbiota-based product for the same indication. The microbiome officially becomes a drug modality.",
+  "mb.sp1.t": "Veillonella and lactate in marathon runners",
+  "mb.sp1.d": "In elite marathoners, Veillonella atypica rose after the race — this bacterium metabolizes lactate (a byproduct of muscle work) into propionate. In a mouse experiment, introducing the bacterium modestly increased treadmill run time.",
+  "mb.sp1.lim": "The mouse experiment is not proof of a human effect. The mechanism is elegant, but \"eat this bacterium and run faster\" is not what the study actually showed.",
+  "mb.sp2.t": "Microbial diversity in rugby players",
+  "mb.sp2.d": "Professional rugby players showed greater gut microbial diversity than controls, correlating with protein intake and creatine kinase levels.",
+  "mb.sp2.lim": "The study is cross-sectional (a single snapshot) — it can't separate the effect of training itself from the effect of the athletes' specific diet and body composition.",
+  "mb.sp3.t": "Exercise-induced gastrointestinal syndrome (EIGS)",
+  "mb.sp3.d": "A systematic review shows that during intense exercise, blood flow shifts from the gut to working muscles, which can trigger GI symptoms in a substantial share of endurance athletes.",
+  "mb.sp3.lim": "The review pools studies with differing methodology and sports — the exact percentages vary noticeably between individual papers, so collapsing them into one number would be misleading.",
+  "mb.sp4.t": "ISSN position stand on probiotics",
+  "mb.sp4.d": "The International Society of Sports Nutrition's official position: probiotics of specific strains can reduce the frequency and duration of respiratory infections in athletes and support immune function under heavy training loads.",
+  "mb.sp4.lim": "The effect is strictly strain-specific — it's not \"probiotics in general\" that work, but a specific studied strain at a specific studied dose. It doesn't extrapolate to any yogurt off the shelf.",
+  "mb.limlabel": "Limitation:",
+  "mb.ft1.r1": "Chicory root, raw",
+  "mb.ft1.r2": "Jerusalem artichoke",
+  "mb.ft1.r3": "Garlic",
+  "mb.ft1.r4": "Leek",
+  "mb.ft1.r5": "Onion",
+  "mb.ft1.r6": "Asparagus",
+  "mb.ft1.r7": "Banana",
+  "mb.ft1.h": "Inulin & oligofructose (prebiotic fibre)",
+  "mb.ft2.r1": "Cooked & cooled potato",
+  "mb.ft2.r2": "Cooked & cooled rice",
+  "mb.ft2.r3": "Green banana",
+  "mb.ft2.r4": "Legumes (lentils, chickpeas)",
+  "mb.ft2.r5": "Oats",
+  "mb.ft2.h": "Resistant starch",
+  "mb.ft3.r1": "Oat bran",
+  "mb.ft3.r2": "Oats",
+  "mb.ft3.r3": "Barley",
+  "mb.ft3.r4": "Shiitake mushrooms",
+  "mb.ft3.h": "Beta-glucans",
+  "mb.ft4.r1": "Apple, with skin",
+  "mb.ft4.r2": "Citrus peel",
+  "mb.ft4.r3": "Carrot",
+  "mb.ft4.r4": "Berries",
+  "mb.ft4.h": "Pectin",
+  "mb.ft5.r1": "Lentils, cooked",
+  "mb.ft5.r2": "Raspberries",
+  "mb.ft5.r3": "Whole oats",
+  "mb.ft5.r4": "Broccoli, cooked",
+  "mb.ft5.r5": "Buckwheat",
+  "mb.ft5.h": "Total fibre (for reference)",
+  "mb.fm1.t": "Sauerkraut, unpasteurized",
+  "mb.fm1.d": "Live lactic-acid bacteria, vitamin C, fibre",
+  "mb.fm2.t": "Kefir",
+  "mb.fm2.d": "Up to a dozen strains of bacteria and yeast, the most studied fermented dairy product",
+  "mb.fm3.t": "Yogurt with live cultures",
+  "mb.fm3.d": "Check the label for \"live cultures\" — not all yogurts contain meaningful amounts",
+  "mb.fm4.t": "Kimchi",
+  "mb.fm4.d": "Fermented cabbage with garlic/chili, rich in Lactobacillus",
+  "mb.fm5.t": "Miso / tempeh",
+  "mb.fm5.d": "Fermented soy, a source of plant protein and probiotics",
+  "mb.fm6.t": "Kombucha",
+  "mb.fm6.d": "Fermented tea — live culture levels vary a lot by production and pasteurization",
+  "mb.st1.d": "One of the most studied strains in existence. Evidence supports use in antibiotic-associated diarrhea and prevention of respiratory infections in children and adults.",
+  "mb.st2.d": "A probiotic yeast, not a bacterium. Solid evidence base for antibiotic-associated and travelers' diarrhea — Cochrane reviews support the effect.",
+  "mb.st3.d": "One of the most widely studied Bifidobacterium strains — supports stool regularity and certain immune markers.",
+  "mb.st4.d": "The strain used in fermented milk drinks (Yakult), studied for effects on GI transit and certain immune markers.",
+  "mb.st5.d": "Combinations from the ISSN position stand — studied specifically in athletes under heavy loads, with a focus on reducing URTI frequency/duration.",
+  "mb.ts1.t": "16S rRNA sequencing",
+  "mb.ts1.d": "The more accessible, cheaper method — identifies microbiota composition at the genus/family level. The basis of most consumer-facing commercial tests.",
+  "mb.ts2.t": "Shotgun metagenomic sequencing",
+  "mb.ts2.d": "Sequences all DNA in the sample — more precise down to species/strain, and shows not just \"who's there\" but the microbiota's functional potential. More expensive and slower.",
+  "mb.ts3.t": "Stool analysis & dysbiosis panel",
+  "mb.ts3.d": "Standard clinical tests — don't replace sequencing, but give a fast, practical picture for specific complaints (inflammation, parasites, enzyme deficiency).",
+  "mb.ts4.t": "Direct-to-consumer microbiome tests",
+  "mb.ts4.d": "Give a general picture and track changes over repeat tests, but clinical interpretation of individual \"good/bad\" bacteria is still limited — the science is moving faster than standardized conclusions here.",
+  "mb.my1.m": "\"You can fully restore the microbiome in a few days\"",
+  "mb.my1.a": "Myth. Durable changes in microbiome composition typically take weeks to months of consistent dietary change, not a one-off course of supplements.",
+  "mb.my2.m": "\"Any probiotic works for any problem\"",
+  "mb.my2.a": "Myth. Effects are strain-specific: what's proven for one strain for one issue doesn't automatically transfer to a different strain or a different complaint.",
+  "mb.my3.m": "\"Yogurt probiotics always survive to reach the gut\"",
+  "mb.my3.a": "Partly a myth. Some cultures die from stomach acid — survival varies a lot by strain and delivery form (enteric-coated capsules fare better).",
+  "mb.my4.m": "\"More fibre is always better\"",
+  "mb.my4.a": "Not quite. A sharp increase in fibre without adaptation causes bloating and discomfort — it should be increased gradually, with enough water.",
+  "mb.my5.m": "\"Everyone's microbiome is the same, it just needs to be 'cleansed'\"",
+  "mb.my5.a": "Myth. Microbiome composition is as unique as a fingerprint, shaped by diet, environment and genetics — the concept of a \"cleanse\" doesn't exist in clinical science.",
+  "mb.my6.m": "\"Antibiotics kill the microbiome forever\"",
+  "mb.my6.a": "Not quite. Antibiotics do temporarily reduce diversity, but in most people composition largely recovers within weeks to months; certain species may not return.",
+  "mb.my7.m": "\"Everyone needs probiotics all the time\"",
+  "mb.my7.a": "Myth. With a varied, fibre-rich diet, a healthy person has no proven need for continuous supplementation — targeted use is justified for specific indications.",
+  "mb.my8.m": "\"A microbiome test will tell you exactly what to eat\"",
+  "mb.my8.a": "An overstatement. Tests give a useful general picture, but personalized food recommendations derived from microbiome composition don't yet have the evidence base the marketing implies.",
+  "mb.my9.m": "\"Fermented foods = clinical-dose probiotics\"",
+  "mb.my9.a": "Not quite. The amount and strain composition of live cultures in food varies widely and usually doesn't match the doses studied in clinical trials.",
+  "mb.my10.m": "\"Dysbiosis is an official diagnosis\"",
+  "mb.my10.a": "Partly a myth. \"Dysbiosis\" as a biochemical term describes an imbalance in the microbiota, but as a formal diagnosis with strict criteria, it isn't standardized in international practice.",
+  "mb.my11.m": "\"Fibre and probiotics are the same thing\"",
+  "mb.my11.a": "Myth. A probiotic is live microorganisms. A prebiotic (e.g. a specific type of fibre) is their \"food\". These are different, complementary categories.",
+  "mb.my12.m": "\"If it helped a friend, it'll help me\"",
+  "mb.my12.a": "Myth. Individual microbiome composition varies so much that the response to the same probiotic or food can differ from person to person.",
+  "mb.my13.m": "\"Microbiome doesn't matter for athletes\"",
+  "mb.my13.a": "Myth. Gut health directly affects nutrient absorption, the risk of symptoms during exertion (EIGS), and, per some evidence, recovery.",
+  "mb.my14.m": "\"You can 'tune' the microbiome permanently with one diet\"",
+  "mb.my14.a": "Myth. Composition is quite plastic and tends to revert toward baseline once the old diet resumes — durability requires durable habits.",
+  "mb.my15.m": "\"'Good bacteria' are good in any amount\"",
+  "mb.my15.a": "Myth. Balance matters more than absolute numbers — overgrowth of even normally beneficial species (e.g. in small intestinal bacterial overgrowth) causes symptoms.",
+  "mb.eyebrow": "Gut microbiome — an encyclopedia",
+  "mb.h1": "From Leeuwenhoek to the FDA: the science of the microbiome, without the myths",
+  "mb.lead": "History, physiology, sport, nutrition and testing — with honest limitations for every study and sources you can verify.",
+  "mb.tl.title": "History: from the first microscope to a drug",
+  "mb.sp.eyebrow": "Sport and the microbiome",
+  "mb.sp.title": "What the studies actually showed — and did not",
+  "mb.sp.lead": "Every study — with an honest breakdown of its limitations, not just a punchy headline.",
+  "mb.ft.eyebrow": "Microbiome nutrition encyclopedia",
+  "mb.ft.title": "Fibre by type, foods, grams per 100 g",
+  "mb.ft.lead": "Approximate values — exact content depends on variety, season and food processing.",
+  "mb.fm.title": "Fermented foods",
+  "mb.st.eyebrow": "Probiotics by strain",
+  "mb.st.title": "Not 'a probiotic' — a specific strain",
+  "mb.ts.eyebrow": "Microbiome testing",
+  "mb.ts.title": "What each test actually shows",
+  "mb.my.eyebrow": "15 myths",
+  "mb.my.title": "What's a myth, and what's an oversimplification with a grain of truth",
+  "mb.src.title": "15 sources",
+  "mb.cta_title": "Sounds familiar?",
+  "mb.cta_text": "We'll review your bloodwork and build a diet around your gut health.",
+  "mb.cta_label": "Bloodwork consultation"
+,
+  'nav.enc': "Encyclopedias",
+  'nav.enc.sn': "Sport nutrition",
+  'nav.enc.sn.d': "AIS ABCD supplement ratings",
+  'nav.enc.di': "Dietology",
+  'nav.enc.di.d': "5 evidence-based diets compared",
+  'nav.enc.mb': "Gut microbiome",
+  'nav.enc.mb.d': "History, sport, testing, myths"});
+
+/* ═══ team filter начало ═══ */
+document.querySelectorAll('.rail__chip').forEach(chip=>{
+  chip.addEventListener('click', ()=>{
+    document.querySelectorAll('.rail__chip').forEach(c=>c.classList.remove('is-active'));
+    chip.classList.add('is-active');
+    const cat = chip.getAttribute('data-cat');
+    document.querySelectorAll('.rail__c').forEach(card=>{
+      card.style.display = (cat === 'all' || card.getAttribute('data-cat') === cat) ? '' : 'none';
+    });
+  });
+});
+/* ═══ team filter конец ═══ */
+
+/* ═══ ba show-more начало ═══ */
+const baMoreBtn = document.getElementById('baMore');
+if (baMoreBtn) {
+  baMoreBtn.addEventListener('click', () => {
+    document.querySelector('.bag').classList.add('is-open');
+    baMoreBtn.style.display = 'none';
+  });
+}
+/* ═══ ba show-more конец ═══ */
+let LANG = 'ru';
+document.getElementById('langBtn').addEventListener('click', ()=>{
+  LANG = LANG === 'ru' ? 'en' : 'ru';
+  document.documentElement.lang = LANG;
+  document.getElementById('langBtn').textContent = LANG === 'ru' ? 'EN' : 'RU';
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const key = el.getAttribute('data-i18n');
+    const dict = I18N[LANG];
+    if (dict[key] !== undefined) el.innerHTML = dict[key];
+  });
+});
+</script>
+</body>
+</html>
