@@ -26,6 +26,11 @@
       <a href="index.html#about" data-i18n="nav.about">Обо мне</a>
       <a href="index.html#pricing" data-i18n="nav.pricing">Тарифы</a>
       <a href="index.html#services" data-i18n="nav.services">Услуги</a>
+      <div class="hdr__drop hdr__drop--prog">
+        <a href="onlayn-vedenie.html">Программы</a>
+        <div class="hdr__panel hdr__panel--prog"><a href="onlayn-vedenie.html"><b>Онлайн-ведение</b></a><a href="programma-trenirovok.html"><b>Программа тренировок</b></a><a href="pitanie.html"><b>Питание</b></a><a href="posle-travmy.html"><b>После травмы</b></a><a href="podgotovka-k-sorevnovaniyam.html"><b>Подготовка к соревнованиям</b></a><a href="trenirovki-doma.html"><b>Тренировки дома</b></a><a href="muzhchiny-40plus.html"><b>Мужчинам 40+</b></a><a href="zhenskiy-trening.html"><b>Женский тренинг</b></a></div>
+      </div>
+      
       <div class="hdr__drop">
         <a href="sport-nutrition.html" data-i18n="nav.enc">Энциклопедии</a>
         <div class="hdr__panel">
@@ -35,6 +40,7 @@
         </div>
       </div>
       
+      <a href="articles.html" data-i18n="nav.articles">Статьи</a>
       <a href="index.html#reviews" data-i18n="nav.reviews">Отзывы</a>
       <a href="index.html#contact" data-i18n="nav.contact">Контакты</a>
     </nav>
@@ -632,8 +638,7 @@ document.getElementById('langBtn').addEventListener('click', ()=>{
       btn.classList.remove('is-open');
     });
   });
-  var drop = nav.querySelector('.hdr__drop');
-  if(drop){
+  nav.querySelectorAll('.hdr__drop').forEach(function(drop){
     var dropLink = drop.querySelector(':scope > a');
     dropLink.addEventListener('click', function(e){
       if(window.innerWidth <= 860){
@@ -641,7 +646,7 @@ document.getElementById('langBtn').addEventListener('click', ()=>{
         drop.classList.toggle('is-open');
       }
     });
-  }
+  });
 })();
 </script>
 

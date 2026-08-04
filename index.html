@@ -41,6 +41,11 @@
       <a href="#about" data-i18n="nav.about">Обо мне</a>
       <a href="#pricing" data-i18n="nav.pricing">Тарифы</a>
       <a href="#services" data-i18n="nav.services">Услуги</a>
+      <div class="hdr__drop hdr__drop--prog">
+        <a href="onlayn-vedenie.html">Программы</a>
+        <div class="hdr__panel hdr__panel--prog"><a href="onlayn-vedenie.html"><b>Онлайн-ведение</b></a><a href="programma-trenirovok.html"><b>Программа тренировок</b></a><a href="pitanie.html"><b>Питание</b></a><a href="posle-travmy.html"><b>После травмы</b></a><a href="podgotovka-k-sorevnovaniyam.html"><b>Подготовка к соревнованиям</b></a><a href="trenirovki-doma.html"><b>Тренировки дома</b></a><a href="muzhchiny-40plus.html"><b>Мужчинам 40+</b></a><a href="zhenskiy-trening.html"><b>Женский тренинг</b></a></div>
+      </div>
+      
       <div class="hdr__drop">
         <a href="sport-nutrition.html" data-i18n="nav.enc">Энциклопедии</a>
         <div class="hdr__panel">
@@ -50,6 +55,7 @@
         </div>
       </div>
       
+      <a href="articles.html" data-i18n="nav.articles">Статьи</a>
       <a href="#reviews" data-i18n="nav.reviews">Отзывы</a>
       <a href="#contact" data-i18n="nav.contact">Контакты</a>
     </nav>
@@ -113,6 +119,57 @@
     <p class="eyebrow" data-i18n="fm.eyebrow">Как строится работа</p>
     <h2 class="h-sec" data-i18n="fm.title">Только онлайн — и это осознанный выбор</h2>
     <p class="lead" data-i18n="fm.lead">Личных тренировок в зале нет: весь процесс идёт дистанционно — так я могу вести больше клиентов подробно, а не поверхностно.</p>
+  </div>
+</section>
+
+<!-- ================= НАПРАВЛЕНИЯ ================= -->
+<section id="directions">
+  <div class="container">
+    <p class="eyebrow">Направления</p>
+    <h2 class="h-sec">С чем я работаю</h2>
+    <p class="lead">Выберите то, что ближе вашей задаче. На каждой странице честно расписано, как всё устроено и кому это подходит.</p>
+    <div class="dir-grid">
+      <a class="dir-card" href="onlayn-vedenie.html">
+        <h3 class="dir-card__t">Онлайн-ведение</h3>
+        <p class="dir-card__s">Полное сопровождение: программа, питание, разбор техники</p>
+        <span class="dir-card__m">Подробнее →</span>
+      </a>
+      <a class="dir-card" href="programma-trenirovok.html">
+        <h3 class="dir-card__t">Программа тренировок</h3>
+        <p class="dir-card__s">Индивидуальный план под вашу цель и оборудование</p>
+        <span class="dir-card__m">Подробнее →</span>
+      </a>
+      <a class="dir-card" href="pitanie.html">
+        <h3 class="dir-card__t">Питание</h3>
+        <p class="dir-card__s">Рацион под ваш организм и график, без диет-догм</p>
+        <span class="dir-card__m">Подробнее →</span>
+      </a>
+      <a class="dir-card" href="posle-travmy.html">
+        <h3 class="dir-card__t">После травмы</h3>
+        <p class="dir-card__s">Нагрузка с учётом ограничений и медобразования</p>
+        <span class="dir-card__m">Подробнее →</span>
+      </a>
+      <a class="dir-card" href="podgotovka-k-sorevnovaniyam.html">
+        <h3 class="dir-card__t">Подготовка к соревнованиям</h3>
+        <p class="dir-card__s">Пауэрлифтинг, классик-физик, бикини</p>
+        <span class="dir-card__m">Подробнее →</span>
+      </a>
+      <a class="dir-card" href="trenirovki-doma.html">
+        <h3 class="dir-card__t">Тренировки дома</h3>
+        <p class="dir-card__s">Без зала, под ваш инвентарь или собственный вес</p>
+        <span class="dir-card__m">Подробнее →</span>
+      </a>
+      <a class="dir-card" href="muzhchiny-40plus.html">
+        <h3 class="dir-card__t">Мужчинам 40+</h3>
+        <p class="dir-card__s">Форма и энергия без вреда суставам и спине</p>
+        <span class="dir-card__m">Подробнее →</span>
+      </a>
+      <a class="dir-card" href="zhenskiy-trening.html">
+        <h3 class="dir-card__t">Женский тренинг</h3>
+        <p class="dir-card__s">Форма, тонус и здоровье без крайностей</p>
+        <span class="dir-card__m">Подробнее →</span>
+      </a>
+    </div>
   </div>
 </section>
 
@@ -1311,7 +1368,7 @@ if (baMoreBtn) {
     stack.push('Креатин моногидрат — 5 г/день, постоянно');
     if (d.goal !== 'loss') stack.push('Протеин — 1-2 порции, если не закрываете белок едой');
     if (d.budget >= 7000) stack.push('Омега-3 — 1-2 г/день, если рыба в рационе редко');
-    if (d.budget >= 7000 && d.goal === 'loss') stack.push('Витамин D — по анализам, часто актуален зимой в Новосибирске');
+    if (d.budget >= 7000 && d.goal === 'loss') stack.push('Витамин D, по анализам, часто актуален в осенне-зимний период');
     if (d.budget < 3000) stack.push('При таком бюджете креатина и, при нехватке белка в еде, протеина обычно достаточно');
 
     const goalRu = {loss:'снижение веса', gain:'набор массы', maintain:'поддержание формы'}[d.goal];
@@ -1430,8 +1487,7 @@ document.getElementById('langBtn').addEventListener('click', ()=>{
       btn.classList.remove('is-open');
     });
   });
-  var drop = nav.querySelector('.hdr__drop');
-  if(drop){
+  nav.querySelectorAll('.hdr__drop').forEach(function(drop){
     var dropLink = drop.querySelector(':scope > a');
     dropLink.addEventListener('click', function(e){
       if(window.innerWidth <= 860){
@@ -1439,7 +1495,7 @@ document.getElementById('langBtn').addEventListener('click', ()=>{
         drop.classList.toggle('is-open');
       }
     });
-  }
+  });
 })();
 </script>
 <script>

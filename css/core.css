@@ -353,3 +353,71 @@ html[data-font="sans"] h1, html[data-font="sans"] h2, html[data-font="sans"] h3,
 .theme__type.is-active{ border-color:var(--gold); color:var(--gold-2); }
 @media (max-width:640px){ .theme{ left:14px; bottom:14px; } }
 /* ═══ темы конец ═══ */
+
+/* ═══ статьи начало ═══ */
+.art-filter{ display:flex; gap:10px; margin:28px 0 8px; flex-wrap:wrap; }
+.art-chip{ padding:8px 18px; border:1px solid var(--line-2); border-radius:100px; background:none; color:var(--ink-dim); font-size:.84rem; cursor:pointer; transition:.2s; }
+.art-chip:hover{ border-color:var(--gold); color:var(--gold-2); }
+.art-chip.is-active{ background:var(--gold); color:#100c02; border-color:var(--gold); }
+.art-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:var(--gap); margin-top:28px; }
+.art-card{ background:var(--bg-2); border:1px solid var(--line); border-radius:var(--radius); padding:28px; display:flex; flex-direction:column; gap:12px; transition:.25s; }
+.art-card:hover{ border-color:var(--gold); transform:translateY(-3px); }
+.art-card__date{ font-size:.76rem; color:var(--ink-mute); letter-spacing:.03em; }
+.art-card__title{ font-family:var(--ff-display); font-size:1.24rem; line-height:1.25; }
+.art-card__desc{ font-size:.9rem; color:var(--ink-dim); flex:1; }
+.art-card__more{ font-size:.84rem; color:var(--gold-2); }
+.art-body p{ color:var(--ink-dim); font-size:1.02rem; line-height:1.75; margin:0 0 18px; }
+.art-body h2{ font-family:var(--ff-display); font-size:1.5rem; margin:34px 0 14px; }
+.art-body h3{ font-family:var(--ff-display); font-size:1.2rem; margin:26px 0 10px; }
+.art-body ul, .art-body ol{ margin:0 0 18px 22px; color:var(--ink-dim); font-size:1.02rem; line-height:1.75; }
+.art-body li{ margin-bottom:8px; list-style:disc; }
+.art-body ol li{ list-style:decimal; }
+.art-body strong{ color:var(--ink); }
+.art-body a{ color:var(--gold-2); text-decoration:underline; }
+.art-body hr{ border:none; border-top:1px solid var(--line); margin:28px 0; }
+.art-body em{ color:var(--ink-mute); }
+@media (max-width:860px){ .art-grid{ grid-template-columns:1fr; } }
+/* ═══ статьи конец ═══ */
+
+/* ═══ сегментные страницы начало ═══ */
+.steps{ display:grid; grid-template-columns:repeat(2,1fr); gap:20px; }
+.step{ display:flex; gap:16px; align-items:flex-start; background:var(--bg-2); border:1px solid var(--line); border-radius:var(--radius-sm); padding:22px; }
+.step__n{ flex:none; width:38px; height:38px; border-radius:50%; border:1px solid var(--gold); color:var(--gold-2); font-family:var(--ff-display); font-size:1.1rem; display:flex; align-items:center; justify-content:center; }
+.step p{ color:var(--ink-dim); font-size:.96rem; line-height:1.6; }
+.fit-grid{ display:grid; grid-template-columns:1fr 1fr; gap:var(--gap); margin-top:8px; }
+.fit-col{ background:var(--bg-2); border:1px solid var(--line); border-radius:var(--radius); padding:28px; }
+.fit-col h3{ font-family:var(--ff-display); font-size:1.2rem; margin-bottom:16px; }
+.fit-col ul{ display:flex; flex-direction:column; gap:12px; }
+.fit-col li{ font-size:.94rem; color:var(--ink-dim); line-height:1.55; padding-left:26px; position:relative; }
+.fit-col--yes li::before{ content:"✓"; position:absolute; left:0; color:var(--gold-2); font-weight:700; }
+.fit-col--no li::before{ content:"✕"; position:absolute; left:0; color:var(--ink-mute); }
+.fit-col--yes h3{ color:var(--gold-2); }
+.seg-cta{ background:var(--bg-2); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+@media (max-width:860px){ .steps{ grid-template-columns:1fr; } .fit-grid{ grid-template-columns:1fr; } }
+/* ═══ сегментные страницы конец ═══ */
+
+/* ═══ направления начало ═══ */
+.dir-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-top:36px; }
+.dir-card{ background:var(--bg-2); border:1px solid var(--line); border-radius:var(--radius-sm); padding:24px; display:flex; flex-direction:column; gap:8px; transition:.25s; }
+.dir-card:hover{ border-color:var(--gold); transform:translateY(-3px); }
+.dir-card__t{ font-family:var(--ff-display); font-size:1.12rem; }
+.dir-card__s{ font-size:.84rem; color:var(--ink-dim); flex:1; line-height:1.5; }
+.dir-card__m{ font-size:.8rem; color:var(--gold-2); margin-top:4px; }
+.hdr__panel--prog{ width:280px; }
+.hdr__panel--prog a{ display:block; padding:9px 12px; border-radius:8px; font-size:.9rem; color:var(--ink-dim); transition:.15s; }
+.hdr__panel--prog a:hover{ background:var(--bg-3); color:var(--gold-2); }
+@media (max-width:1000px){ .dir-grid{ grid-template-columns:repeat(2,1fr); } }
+@media (max-width:560px){ .dir-grid{ grid-template-columns:1fr; } }
+/* ═══ направления конец ═══ */
+
+/* ═══ мобильные выпадающие меню: финальный фикс (должен идти последним) ═══ */
+@media (max-width:860px){
+  .hdr__panel, .hdr__panel--prog{
+    position:static; transform:none; width:100%; margin-top:0; padding:0 0 10px;
+    background:none; border:none; box-shadow:none;
+    opacity:1; visibility:visible; pointer-events:auto; display:none;
+  }
+  .hdr__drop.is-open .hdr__panel{ display:block; }
+  .hdr__panel--prog a b{ font-weight:600; }
+}
+/* ═══ конец мобильного фикса ═══ */

@@ -26,6 +26,11 @@
       <a href="index.html#about" data-i18n="nav.about">Обо мне</a>
       <a href="index.html#pricing" data-i18n="nav.pricing">Тарифы</a>
       <a href="index.html#services" data-i18n="nav.services">Услуги</a>
+      <div class="hdr__drop hdr__drop--prog">
+        <a href="onlayn-vedenie.html">Программы</a>
+        <div class="hdr__panel hdr__panel--prog"><a href="onlayn-vedenie.html"><b>Онлайн-ведение</b></a><a href="programma-trenirovok.html"><b>Программа тренировок</b></a><a href="pitanie.html"><b>Питание</b></a><a href="posle-travmy.html"><b>После травмы</b></a><a href="podgotovka-k-sorevnovaniyam.html"><b>Подготовка к соревнованиям</b></a><a href="trenirovki-doma.html"><b>Тренировки дома</b></a><a href="muzhchiny-40plus.html"><b>Мужчинам 40+</b></a><a href="zhenskiy-trening.html"><b>Женский тренинг</b></a></div>
+      </div>
+      
       <div class="hdr__drop">
         <a href="sport-nutrition.html" data-i18n="nav.enc">Энциклопедии</a>
         <div class="hdr__panel">
@@ -35,6 +40,7 @@
         </div>
       </div>
       
+      <a href="articles.html" data-i18n="nav.articles">Статьи</a>
       <a href="index.html#reviews" data-i18n="nav.reviews">Отзывы</a>
       <a href="index.html#contact" data-i18n="nav.contact">Контакты</a>
     </nav>
@@ -227,7 +233,7 @@
           <span style="flex:0 0 auto; font-size:.7rem; padding:3px 9px; border-radius:100px; background:var(--gold); color:#100c02; font-weight:700;">A</span>
         </div>
         <p style="font-size:.76rem; color:var(--ink-mute); margin:4px 0;"><span data-i18n="sn.gA.i7.dose">по результатам анализов</span></p>
-        <p><span data-i18n="sn.gA.i7.d">Работает как добавка, только если есть реальный дефицит — актуально для Сибири в осенне-зимний период. Без дефицита эффекта на результат нет.</span></p>
+        <p><span data-i18n="sn.gA.i7.d">Работает как добавка, только если есть реальный дефицит, что часто актуально в осенне-зимний период. Без дефицита эффекта на результат нет.</span></p>
       </div>
     </div>
   </div>
@@ -511,7 +517,7 @@ Object.assign(I18N.en, {
   'sn.gA.i6.d': "Improves muscular efficiency in endurance work via the nitric oxide pathway — the effect is more noticeable in less-trained athletes.",
   'sn.gA.i7.n': "Vitamin D",
   'sn.gA.i7.dose': "based on bloodwork",
-  'sn.gA.i7.d': "Only works as a supplement if there's an actual deficiency — relevant for Siberia in autumn-winter. With no deficiency, there's no effect on performance.",
+  'sn.gA.i7.d': "Only works as a supplement if there's an actual deficiency — relevant in autumn and winter. With no deficiency, there's no effect on performance.",
   'sn.gA.eyebrow': "Group A — evidence supports use",
   'sn.gA.lead': "Solid research showing a real effect at the correct dosage.",
   'sn.gB.i1.n': "HMB",
@@ -621,8 +627,7 @@ document.getElementById('langBtn').addEventListener('click', ()=>{
       btn.classList.remove('is-open');
     });
   });
-  var drop = nav.querySelector('.hdr__drop');
-  if(drop){
+  nav.querySelectorAll('.hdr__drop').forEach(function(drop){
     var dropLink = drop.querySelector(':scope > a');
     dropLink.addEventListener('click', function(e){
       if(window.innerWidth <= 860){
@@ -630,7 +635,7 @@ document.getElementById('langBtn').addEventListener('click', ()=>{
         drop.classList.toggle('is-open');
       }
     });
-  }
+  });
 })();
 </script>
 
