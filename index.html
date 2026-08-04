@@ -77,6 +77,9 @@
 <!-- ================= HERO ================= -->
 <section class="hero" style="padding-top:160px;">
   <div class="hero__bg" aria-hidden="true">
+    <video class="hero__slide hero__slide--video" autoplay muted loop playsinline preload="auto" poster="img/hero-video-poster.jpg">
+      <source src="video/andrey-hero-bg.mp4" type="video/mp4">
+    </video>
     <div class="hero__slide" style="background-image:url(img/case-oleg-1100.jpg)"></div>
     <div class="hero__slide" style="background-image:url(img/team-6.jpg)"></div>
     <div class="hero__slide" style="background-image:url(img/team-7.jpg)"></div>
@@ -112,15 +115,27 @@
 <!-- ================= О МНЕ ================= -->
 <section id="about">
   <div class="container">
-    <p class="eyebrow" data-i18n="about.eyebrow">Обо мне</p>
-    <h2 class="h-sec" data-i18n="about.title">Медицина плюс большой спорт</h2>
-    <p class="lead" data-i18n="about.lead">
-      Меня зовут Андрей Шелест. Я совмещаю то, что на рынке онлайн-фитнеса встречается единицами:
-      высшее медицинское образование, титул чемпиона мира и Европы и статус действующего спортсмена.
-      Поэтому я строю программу на стыке физиологии, биохимии и практики зала, учитывая ваши анализы,
-      гормональный фон и реальный образ жизни, а не только цифры на весах. Живу в Сочи, веду клиентов
-      онлайн по всей России.
-    </p>
+    <div class="about-grid">
+      <div class="about-col-text">
+        <p class="eyebrow" data-i18n="about.eyebrow">Обо мне</p>
+        <h2 class="h-sec" data-i18n="about.title">Медицина плюс большой спорт</h2>
+        <p class="lead" data-i18n="about.lead">
+          Меня зовут Андрей Шелест. Я совмещаю то, что на рынке онлайн-фитнеса встречается единицами:
+          высшее медицинское образование, титул чемпиона мира и Европы и статус действующего спортсмена.
+          Поэтому я строю программу на стыке физиологии, биохимии и практики зала, учитывая ваши анализы,
+          гормональный фон и реальный образ жизни, а не только цифры на весах. Живу в Сочи, веду клиентов
+          онлайн по всей России.
+        </p>
+      </div>
+      <div class="about-col-photo">
+        <div class="about-photo about-photo--main">
+          <img src="img/andrey-portrait-lobby-800.jpg" srcset="img/andrey-portrait-lobby-500.jpg 500w, img/andrey-portrait-lobby-800.jpg 800w, img/andrey-portrait-lobby-1100.jpg 1100w" sizes="(max-width:860px) 70vw, 380px" alt="Андрей Шелест" loading="lazy">
+        </div>
+        <div class="about-photo about-photo--accent">
+          <img src="img/andrey-suit-600.jpg" srcset="img/andrey-suit-400.jpg 400w, img/andrey-suit-600.jpg 600w, img/andrey-suit-800.jpg 800w" sizes="(max-width:860px) 40vw, 220px" alt="Андрей Шелест" loading="lazy">
+        </div>
+      </div>
+    </div>
     <div class="regalia">
       <div class="regalia__item"><b data-i18n="rg.1.t">Чемпион мира и Европы, рекордсмен мира</b><span data-i18n="rg.1.s">Пауэрлифтинг, федерация NAP, МСМК в двух дисциплинах, 2010–2023</span></div>
       <div class="regalia__item"><b data-i18n="rg.2.t">Бодибилдинг</b><span data-i18n="rg.2.s">Абсолютный чемпион Сибири, топ-3 Чемпионата России, Arnold Classic (Испания), Siberian Power Show</span></div>
@@ -132,8 +147,30 @@
   </div>
 </section>
 
+<!-- ================= СЧЁТЧИКИ ================= -->
+<section class="counters">
+  <div class="container counters__row">
+    <div class="counter" data-count="100" data-suffix="+">
+      <span class="counter__n">0</span>
+      <span class="counter__l" data-i18n="cn.1.l">спортсменов провёл как тренер</span>
+    </div>
+    <div class="counter" data-count="20" data-suffix="">
+      <span class="counter__n">0</span>
+      <span class="counter__l" data-i18n="cn.2.l">лет в спорте и спортивной медицине</span>
+    </div>
+    <div class="counter" data-count="70" data-suffix="+">
+      <span class="counter__n">0</span>
+      <span class="counter__l" data-i18n="cn.3.l">семинаров и лекций провёл как методист</span>
+    </div>
+    <div class="counter" data-count="26" data-suffix="">
+      <span class="counter__n">0</span>
+      <span class="counter__l" data-i18n="cn.4.l">реальных историй до/после в портфолио</span>
+    </div>
+  </div>
+</section>
+
 <!-- ================= ФОРМАТЫ ================= -->
-<section id="formats">
+<section id="formats" class="sec-bg sec-bg--formats">
   <div class="container">
     <p class="eyebrow" data-i18n="fm.eyebrow">Как строится работа</p>
     <h2 class="h-sec" data-i18n="fm.title">Только онлайн, и это осознанный выбор</h2>
@@ -142,7 +179,7 @@
 </section>
 
 <!-- ================= КАК УСТРОЕНО ================= -->
-<section id="how">
+<section id="how" class="sec-bg sec-bg--how">
   <div class="container">
     <p class="eyebrow" data-i18n="how.eyebrow">Как устроено онлайн-ведение</p>
     <h2 class="h-sec" data-i18n="how.title">Онлайн, но под полным контролем</h2>
@@ -236,13 +273,26 @@
   <div class="container">
     <p class="eyebrow" data-i18n="pr.eyebrow">Онлайн-ведение</p>
     <h2 class="h-sec" data-i18n="pr.title">Тарифы</h2>
-    <p class="lead" data-i18n="pr.lead">Три формата сопровождения, от базовой программы до полного комплекса с анализами.</p>
+    <p class="lead" data-i18n="pr.lead">От группового формата до полного VIP-комплекса с анализами, выберите то, что подходит именно сейчас.</p>
 
     <div class="pricing__grid">
+      <div class="ptier">
+        <div class="ptier__name" data-i18n="pr.t0.name">Групповой формат</div>
+        <div class="ptier__sub" data-i18n="pr.t0.sub">Программа на группу, ежедневный контроль без личного ведения</div>
+        <div class="ptier__price" data-price="9000|95"><span class="pv">от 9 000 ₽</span><small data-i18n="pr.permonth"> / мес</small></div>
+        <ul class="ptier__list">
+          <li data-i18n="pr.t0.l1">Общая программа тренировок под цель группы</li>
+          <li data-i18n="pr.t0.l2">Базовые рекомендации по питанию</li>
+          <li data-i18n="pr.t0.l3">Групповой чат для вопросов</li>
+        </ul>
+        <a href="#contact" class="btn btn--ghost" data-i18n="pr.cta">Выбрать</a>
+      </div>
+
       <div class="ptier">
         <div class="ptier__name" data-i18n="pr.t1.name">Программа</div>
         <div class="ptier__sub" data-i18n="pr.t1.sub">Индивидуальный план под ваш уровень и оборудование</div>
         <div class="ptier__price" data-price="20000|210"><span class="pv">20 000 ₽</span><small data-i18n="pr.permonth"> / мес</small></div>
+        <div class="ptier__promo" data-i18n="pr.t1.promo">Первый месяц — 10 000 ₽</div>
         <ul class="ptier__list">
           <li data-i18n="pr.t1.l1">Индивидуальная программа тренировок под уровень, оборудование и график</li>
           <li data-i18n="pr.t1.l2">Рекомендации по питанию</li>
@@ -328,197 +378,187 @@
         </div>
       </div>
       <div class="svc__c bac" style="padding:0; overflow:hidden;">
-        <img src="img/ba-g116-500.jpg" srcset="img/ba-g116-360.jpg 360w, img/ba-g116-500.jpg 500w, img/ba-g116-700.jpg 700w" sizes="(max-width:860px) 50vw, 30vw" alt="114 → 88 кг" loading="lazy" style="width:100%; aspect-ratio:3/4; object-fit:cover;">
+        <img src="img/team-55-440.jpg" srcset="img/team-55-300.jpg 300w, img/team-55-440.jpg 440w, img/team-55-640.jpg 640w" sizes="(max-width:860px) 50vw, 30vw" alt="Трансформация тела" loading="lazy" style="width:100%; aspect-ratio:3/4; object-fit:cover;">
         <div style="padding:18px;">
-          <h4 data-i18n="bp.3.t" style="font-size:.98rem;">114 → 88 кг</h4>
-          <p data-i18n="bp.3.d" style="font-size:.82rem; color:var(--ink-mute); margin-top:4px;">Трансформация тела</p>
-        </div>
-      </div>
-      <div class="svc__c bac" style="padding:0; overflow:hidden;">
-        <img src="img/ba-g117-500.jpg" srcset="img/ba-g117-360.jpg 360w, img/ba-g117-500.jpg 500w, img/ba-g117-700.jpg 700w" sizes="(max-width:860px) 50vw, 30vw" alt="120 → 100 кг" loading="lazy" style="width:100%; aspect-ratio:3/4; object-fit:cover;">
-        <div style="padding:18px;">
-          <h4 data-i18n="bp.4.t" style="font-size:.98rem;">120 → 100 кг</h4>
-          <p data-i18n="bp.4.d" style="font-size:.82rem; color:var(--ink-mute); margin-top:4px;">Трансформация тела</p>
+          <h4 data-i18n="bp.3.t" style="font-size:.98rem;">Трансформация тела</h4>
+          <p data-i18n="bp.3.d" style="font-size:.82rem; color:var(--ink-mute); margin-top:4px;">Онлайн-ведение</p>
         </div>
       </div>
       <div class="svc__c bac" style="padding:0; overflow:hidden;">
         <img src="img/ba-g21-500.jpg" srcset="img/ba-g21-360.jpg 360w, img/ba-g21-500.jpg 500w, img/ba-g21-700.jpg 700w" sizes="(max-width:860px) 50vw, 30vw" alt="Трансформация тела" loading="lazy" style="width:100%; aspect-ratio:3/4; object-fit:cover;">
+        <div style="padding:18px;">
+          <h4 data-i18n="bp.4.t" style="font-size:.98rem;">Трансформация тела</h4>
+          <p data-i18n="bp.4.d" style="font-size:.82rem; color:var(--ink-mute); margin-top:4px;">Онлайн-ведение</p>
+        </div>
+      </div>
+      <div class="svc__c bac" style="padding:0; overflow:hidden;">
+        <img src="img/ba-g23-500.jpg" srcset="img/ba-g23-360.jpg 360w, img/ba-g23-500.jpg 500w, img/ba-g23-700.jpg 700w" sizes="(max-width:860px) 50vw, 30vw" alt="Трансформация тела" loading="lazy" style="width:100%; aspect-ratio:3/4; object-fit:cover;">
         <div style="padding:18px;">
           <h4 data-i18n="bp.5.t" style="font-size:.98rem;">Трансформация тела</h4>
           <p data-i18n="bp.5.d" style="font-size:.82rem; color:var(--ink-mute); margin-top:4px;">Онлайн-ведение</p>
         </div>
       </div>
       <div class="svc__c bac" style="padding:0; overflow:hidden;">
-        <img src="img/ba-g23-500.jpg" srcset="img/ba-g23-360.jpg 360w, img/ba-g23-500.jpg 500w, img/ba-g23-700.jpg 700w" sizes="(max-width:860px) 50vw, 30vw" alt="Трансформация тела" loading="lazy" style="width:100%; aspect-ratio:3/4; object-fit:cover;">
+        <img src="img/ba-g24-500.jpg" srcset="img/ba-g24-360.jpg 360w, img/ba-g24-500.jpg 500w, img/ba-g24-700.jpg 700w" sizes="(max-width:860px) 50vw, 30vw" alt="Трансформация тела" loading="lazy" style="width:100%; aspect-ratio:3/4; object-fit:cover;">
         <div style="padding:18px;">
           <h4 data-i18n="bp.6.t" style="font-size:.98rem;">Трансформация тела</h4>
           <p data-i18n="bp.6.d" style="font-size:.82rem; color:var(--ink-mute); margin-top:4px;">Онлайн-ведение</p>
         </div>
       </div>
       <div class="svc__c bac" style="padding:0; overflow:hidden;">
-        <img src="img/ba-g24-500.jpg" srcset="img/ba-g24-360.jpg 360w, img/ba-g24-500.jpg 500w, img/ba-g24-700.jpg 700w" sizes="(max-width:860px) 50vw, 30vw" alt="Трансформация тела" loading="lazy" style="width:100%; aspect-ratio:3/4; object-fit:cover;">
+        <img src="img/ba-g25-500.jpg" srcset="img/ba-g25-360.jpg 360w, img/ba-g25-500.jpg 500w, img/ba-g25-700.jpg 700w" sizes="(max-width:860px) 50vw, 30vw" alt="Трансформация тела" loading="lazy" style="width:100%; aspect-ratio:3/4; object-fit:cover;">
         <div style="padding:18px;">
           <h4 data-i18n="bp.7.t" style="font-size:.98rem;">Трансформация тела</h4>
           <p data-i18n="bp.7.d" style="font-size:.82rem; color:var(--ink-mute); margin-top:4px;">Онлайн-ведение</p>
         </div>
       </div>
       <div class="svc__c bac" style="padding:0; overflow:hidden;">
-        <img src="img/ba-g25-500.jpg" srcset="img/ba-g25-360.jpg 360w, img/ba-g25-500.jpg 500w, img/ba-g25-700.jpg 700w" sizes="(max-width:860px) 50vw, 30vw" alt="Трансформация тела" loading="lazy" style="width:100%; aspect-ratio:3/4; object-fit:cover;">
+        <img src="img/ba-g27-500.jpg" srcset="img/ba-g27-360.jpg 360w, img/ba-g27-500.jpg 500w, img/ba-g27-700.jpg 700w" sizes="(max-width:860px) 50vw, 30vw" alt="Трансформация тела" loading="lazy" style="width:100%; aspect-ratio:3/4; object-fit:cover;">
         <div style="padding:18px;">
           <h4 data-i18n="bp.8.t" style="font-size:.98rem;">Трансформация тела</h4>
           <p data-i18n="bp.8.d" style="font-size:.82rem; color:var(--ink-mute); margin-top:4px;">Онлайн-ведение</p>
         </div>
       </div>
       <div class="svc__c bac" style="padding:0; overflow:hidden;">
-        <img src="img/ba-g27-500.jpg" srcset="img/ba-g27-360.jpg 360w, img/ba-g27-500.jpg 500w, img/ba-g27-700.jpg 700w" sizes="(max-width:860px) 50vw, 30vw" alt="Трансформация тела" loading="lazy" style="width:100%; aspect-ratio:3/4; object-fit:cover;">
+        <img src="img/ba-g10-500.jpg" srcset="img/ba-g10-360.jpg 360w, img/ba-g10-500.jpg 500w, img/ba-g10-700.jpg 700w" sizes="(max-width:860px) 50vw, 30vw" alt="Трансформация тела" loading="lazy" style="width:100%; aspect-ratio:3/4; object-fit:cover;">
         <div style="padding:18px;">
           <h4 data-i18n="bp.9.t" style="font-size:.98rem;">Трансформация тела</h4>
           <p data-i18n="bp.9.d" style="font-size:.82rem; color:var(--ink-mute); margin-top:4px;">Онлайн-ведение</p>
         </div>
       </div>
-      <div class="svc__c bac" style="padding:0; overflow:hidden;" data-extra>
-        <img src="img/ba-g10-500.jpg" srcset="img/ba-g10-360.jpg 360w, img/ba-g10-500.jpg 500w, img/ba-g10-700.jpg 700w" sizes="(max-width:860px) 50vw, 30vw" alt="Трансформация тела" loading="lazy" style="width:100%; aspect-ratio:3/4; object-fit:cover;">
+      <div class="svc__c bac" data-extra style="padding:0; overflow:hidden;">
+        <img src="img/ba-g22-500.jpg" srcset="img/ba-g22-360.jpg 360w, img/ba-g22-500.jpg 500w, img/ba-g22-700.jpg 700w" sizes="(max-width:860px) 50vw, 30vw" alt="Трансформация тела" loading="lazy" style="width:100%; aspect-ratio:3/4; object-fit:cover;">
         <div style="padding:18px;">
           <h4 data-i18n="bp.10.t" style="font-size:.98rem;">Трансформация тела</h4>
           <p data-i18n="bp.10.d" style="font-size:.82rem; color:var(--ink-mute); margin-top:4px;">Онлайн-ведение</p>
         </div>
       </div>
-      <div class="svc__c bac" style="padding:0; overflow:hidden;" data-extra>
-        <img src="img/ba-g22-500.jpg" srcset="img/ba-g22-360.jpg 360w, img/ba-g22-500.jpg 500w, img/ba-g22-700.jpg 700w" sizes="(max-width:860px) 50vw, 30vw" alt="Трансформация тела" loading="lazy" style="width:100%; aspect-ratio:3/4; object-fit:cover;">
+      <div class="svc__c bac" data-extra style="padding:0; overflow:hidden;">
+        <img src="img/ba-g26-500.jpg" srcset="img/ba-g26-360.jpg 360w, img/ba-g26-500.jpg 500w, img/ba-g26-700.jpg 700w" sizes="(max-width:860px) 50vw, 30vw" alt="Трансформация тела" loading="lazy" style="width:100%; aspect-ratio:3/4; object-fit:cover;">
         <div style="padding:18px;">
           <h4 data-i18n="bp.11.t" style="font-size:.98rem;">Трансформация тела</h4>
           <p data-i18n="bp.11.d" style="font-size:.82rem; color:var(--ink-mute); margin-top:4px;">Онлайн-ведение</p>
         </div>
       </div>
-      <div class="svc__c bac" style="padding:0; overflow:hidden;" data-extra>
-        <img src="img/ba-g26-500.jpg" srcset="img/ba-g26-360.jpg 360w, img/ba-g26-500.jpg 500w, img/ba-g26-700.jpg 700w" sizes="(max-width:860px) 50vw, 30vw" alt="Трансформация тела" loading="lazy" style="width:100%; aspect-ratio:3/4; object-fit:cover;">
-        <div style="padding:18px;">
-          <h4 data-i18n="bp.12.t" style="font-size:.98rem;">Трансформация тела</h4>
-          <p data-i18n="bp.12.d" style="font-size:.82rem; color:var(--ink-mute); margin-top:4px;">Онлайн-ведение</p>
-        </div>
-      </div>
-      <div class="svc__c bac" style="padding:0; overflow:hidden;" data-extra>
+      <div class="svc__c bac" data-extra style="padding:0; overflow:hidden;">
         <img src="img/ba-g28-500.jpg" srcset="img/ba-g28-360.jpg 360w, img/ba-g28-500.jpg 500w, img/ba-g28-700.jpg 700w" sizes="(max-width:860px) 50vw, 30vw" alt="Трансформация тела" loading="lazy" style="width:100%; aspect-ratio:3/4; object-fit:cover;">
         <div style="padding:18px;">
-          <h4 data-i18n="bp.13.t" style="font-size:.98rem;">Трансформация тела</h4>
-          <p data-i18n="bp.13.d" style="font-size:.82rem; color:var(--ink-mute); margin-top:4px;">Подготовка к соревнованиям</p>
+          <h4 data-i18n="bp.12.t" style="font-size:.98rem;">Трансформация тела</h4>
+          <p data-i18n="bp.12.d" style="font-size:.82rem; color:var(--ink-mute); margin-top:4px;">Подготовка к соревнованиям</p>
         </div>
       </div>
-      <div class="svc__c bac" style="padding:0; overflow:hidden;" data-extra>
+      <div class="svc__c bac" data-extra style="padding:0; overflow:hidden;">
         <img src="img/ba-g30-500.jpg" srcset="img/ba-g30-360.jpg 360w, img/ba-g30-500.jpg 500w, img/ba-g30-700.jpg 700w" sizes="(max-width:860px) 50vw, 30vw" alt="Трансформация тела" loading="lazy" style="width:100%; aspect-ratio:3/4; object-fit:cover;">
+        <div style="padding:18px;">
+          <h4 data-i18n="bp.13.t" style="font-size:.98rem;">Трансформация тела</h4>
+          <p data-i18n="bp.13.d" style="font-size:.82rem; color:var(--ink-mute); margin-top:4px;">Онлайн-ведение</p>
+        </div>
+      </div>
+      <div class="svc__c bac" data-extra style="padding:0; overflow:hidden;">
+        <img src="img/ba-g31-500.jpg" srcset="img/ba-g31-360.jpg 360w, img/ba-g31-500.jpg 500w, img/ba-g31-700.jpg 700w" sizes="(max-width:860px) 50vw, 30vw" alt="Трансформация тела" loading="lazy" style="width:100%; aspect-ratio:3/4; object-fit:cover;">
         <div style="padding:18px;">
           <h4 data-i18n="bp.14.t" style="font-size:.98rem;">Трансформация тела</h4>
           <p data-i18n="bp.14.d" style="font-size:.82rem; color:var(--ink-mute); margin-top:4px;">Онлайн-ведение</p>
         </div>
       </div>
-      <div class="svc__c bac" style="padding:0; overflow:hidden;" data-extra>
-        <img src="img/ba-g31-500.jpg" srcset="img/ba-g31-360.jpg 360w, img/ba-g31-500.jpg 500w, img/ba-g31-700.jpg 700w" sizes="(max-width:860px) 50vw, 30vw" alt="Трансформация тела" loading="lazy" style="width:100%; aspect-ratio:3/4; object-fit:cover;">
+      <div class="svc__c bac" data-extra style="padding:0; overflow:hidden;">
+        <img src="img/ba-g32-500.jpg" srcset="img/ba-g32-360.jpg 360w, img/ba-g32-500.jpg 500w, img/ba-g32-700.jpg 700w" sizes="(max-width:860px) 50vw, 30vw" alt="Трансформация тела" loading="lazy" style="width:100%; aspect-ratio:3/4; object-fit:cover;">
         <div style="padding:18px;">
           <h4 data-i18n="bp.15.t" style="font-size:.98rem;">Трансформация тела</h4>
           <p data-i18n="bp.15.d" style="font-size:.82rem; color:var(--ink-mute); margin-top:4px;">Онлайн-ведение</p>
         </div>
       </div>
-      <div class="svc__c bac" style="padding:0; overflow:hidden;" data-extra>
-        <img src="img/ba-g32-500.jpg" srcset="img/ba-g32-360.jpg 360w, img/ba-g32-500.jpg 500w, img/ba-g32-700.jpg 700w" sizes="(max-width:860px) 50vw, 30vw" alt="Трансформация тела" loading="lazy" style="width:100%; aspect-ratio:3/4; object-fit:cover;">
+      <div class="svc__c bac" data-extra style="padding:0; overflow:hidden;">
+        <img src="img/ba-g33-500.jpg" srcset="img/ba-g33-360.jpg 360w, img/ba-g33-500.jpg 500w, img/ba-g33-700.jpg 700w" sizes="(max-width:860px) 50vw, 30vw" alt="Трансформация тела" loading="lazy" style="width:100%; aspect-ratio:3/4; object-fit:cover;">
         <div style="padding:18px;">
           <h4 data-i18n="bp.16.t" style="font-size:.98rem;">Трансформация тела</h4>
           <p data-i18n="bp.16.d" style="font-size:.82rem; color:var(--ink-mute); margin-top:4px;">Онлайн-ведение</p>
         </div>
       </div>
-      <div class="svc__c bac" style="padding:0; overflow:hidden;" data-extra>
-        <img src="img/ba-g33-500.jpg" srcset="img/ba-g33-360.jpg 360w, img/ba-g33-500.jpg 500w, img/ba-g33-700.jpg 700w" sizes="(max-width:860px) 50vw, 30vw" alt="Трансформация тела" loading="lazy" style="width:100%; aspect-ratio:3/4; object-fit:cover;">
+      <div class="svc__c bac" data-extra style="padding:0; overflow:hidden;">
+        <img src="img/ba-g34-500.jpg" srcset="img/ba-g34-360.jpg 360w, img/ba-g34-500.jpg 500w, img/ba-g34-700.jpg 700w" sizes="(max-width:860px) 50vw, 30vw" alt="Трансформация тела" loading="lazy" style="width:100%; aspect-ratio:3/4; object-fit:cover;">
         <div style="padding:18px;">
           <h4 data-i18n="bp.17.t" style="font-size:.98rem;">Трансформация тела</h4>
           <p data-i18n="bp.17.d" style="font-size:.82rem; color:var(--ink-mute); margin-top:4px;">Онлайн-ведение</p>
         </div>
       </div>
-      <div class="svc__c bac" style="padding:0; overflow:hidden;" data-extra>
-        <img src="img/ba-g34-500.jpg" srcset="img/ba-g34-360.jpg 360w, img/ba-g34-500.jpg 500w, img/ba-g34-700.jpg 700w" sizes="(max-width:860px) 50vw, 30vw" alt="Трансформация тела" loading="lazy" style="width:100%; aspect-ratio:3/4; object-fit:cover;">
+      <div class="svc__c bac" data-extra style="padding:0; overflow:hidden;">
+        <img src="img/ba-g35-500.jpg" srcset="img/ba-g35-360.jpg 360w, img/ba-g35-500.jpg 500w, img/ba-g35-700.jpg 700w" sizes="(max-width:860px) 50vw, 30vw" alt="Трансформация тела" loading="lazy" style="width:100%; aspect-ratio:3/4; object-fit:cover;">
         <div style="padding:18px;">
           <h4 data-i18n="bp.18.t" style="font-size:.98rem;">Трансформация тела</h4>
           <p data-i18n="bp.18.d" style="font-size:.82rem; color:var(--ink-mute); margin-top:4px;">Онлайн-ведение</p>
         </div>
       </div>
-      <div class="svc__c bac" style="padding:0; overflow:hidden;" data-extra>
-        <img src="img/ba-g35-500.jpg" srcset="img/ba-g35-360.jpg 360w, img/ba-g35-500.jpg 500w, img/ba-g35-700.jpg 700w" sizes="(max-width:860px) 50vw, 30vw" alt="Трансформация тела" loading="lazy" style="width:100%; aspect-ratio:3/4; object-fit:cover;">
+      <div class="svc__c bac" data-extra style="padding:0; overflow:hidden;">
+        <img src="img/ba-g36-500.jpg" srcset="img/ba-g36-360.jpg 360w, img/ba-g36-500.jpg 500w, img/ba-g36-700.jpg 700w" sizes="(max-width:860px) 50vw, 30vw" alt="Трансформация тела" loading="lazy" style="width:100%; aspect-ratio:3/4; object-fit:cover;">
         <div style="padding:18px;">
           <h4 data-i18n="bp.19.t" style="font-size:.98rem;">Трансформация тела</h4>
           <p data-i18n="bp.19.d" style="font-size:.82rem; color:var(--ink-mute); margin-top:4px;">Онлайн-ведение</p>
         </div>
       </div>
-      <div class="svc__c bac" style="padding:0; overflow:hidden;" data-extra>
-        <img src="img/ba-g36-500.jpg" srcset="img/ba-g36-360.jpg 360w, img/ba-g36-500.jpg 500w, img/ba-g36-700.jpg 700w" sizes="(max-width:860px) 50vw, 30vw" alt="Трансформация тела" loading="lazy" style="width:100%; aspect-ratio:3/4; object-fit:cover;">
+      <div class="svc__c bac" data-extra style="padding:0; overflow:hidden;">
+        <img src="img/ba-g37-500.jpg" srcset="img/ba-g37-360.jpg 360w, img/ba-g37-500.jpg 500w, img/ba-g37-700.jpg 700w" sizes="(max-width:860px) 50vw, 30vw" alt="Трансформация тела" loading="lazy" style="width:100%; aspect-ratio:3/4; object-fit:cover;">
         <div style="padding:18px;">
           <h4 data-i18n="bp.20.t" style="font-size:.98rem;">Трансформация тела</h4>
           <p data-i18n="bp.20.d" style="font-size:.82rem; color:var(--ink-mute); margin-top:4px;">Онлайн-ведение</p>
         </div>
       </div>
-      <div class="svc__c bac" style="padding:0; overflow:hidden;" data-extra>
-        <img src="img/ba-g37-500.jpg" srcset="img/ba-g37-360.jpg 360w, img/ba-g37-500.jpg 500w, img/ba-g37-700.jpg 700w" sizes="(max-width:860px) 50vw, 30vw" alt="Трансформация тела" loading="lazy" style="width:100%; aspect-ratio:3/4; object-fit:cover;">
+      <div class="svc__c bac" data-extra style="padding:0; overflow:hidden;">
+        <img src="img/ba-g39-500.jpg" srcset="img/ba-g39-360.jpg 360w, img/ba-g39-500.jpg 500w, img/ba-g39-700.jpg 700w" sizes="(max-width:860px) 50vw, 30vw" alt="Трансформация тела" loading="lazy" style="width:100%; aspect-ratio:3/4; object-fit:cover;">
         <div style="padding:18px;">
           <h4 data-i18n="bp.21.t" style="font-size:.98rem;">Трансформация тела</h4>
           <p data-i18n="bp.21.d" style="font-size:.82rem; color:var(--ink-mute); margin-top:4px;">Онлайн-ведение</p>
         </div>
       </div>
-      <div class="svc__c bac" style="padding:0; overflow:hidden;" data-extra>
-        <img src="img/ba-g39-500.jpg" srcset="img/ba-g39-360.jpg 360w, img/ba-g39-500.jpg 500w, img/ba-g39-700.jpg 700w" sizes="(max-width:860px) 50vw, 30vw" alt="Трансформация тела" loading="lazy" style="width:100%; aspect-ratio:3/4; object-fit:cover;">
+      <div class="svc__c bac" data-extra style="padding:0; overflow:hidden;">
+        <img src="img/ba-g40-500.jpg" srcset="img/ba-g40-360.jpg 360w, img/ba-g40-500.jpg 500w, img/ba-g40-700.jpg 700w" sizes="(max-width:860px) 50vw, 30vw" alt="Трансформация тела" loading="lazy" style="width:100%; aspect-ratio:3/4; object-fit:cover;">
         <div style="padding:18px;">
           <h4 data-i18n="bp.22.t" style="font-size:.98rem;">Трансформация тела</h4>
           <p data-i18n="bp.22.d" style="font-size:.82rem; color:var(--ink-mute); margin-top:4px;">Онлайн-ведение</p>
         </div>
       </div>
-      <div class="svc__c bac" style="padding:0; overflow:hidden;" data-extra>
-        <img src="img/ba-g40-500.jpg" srcset="img/ba-g40-360.jpg 360w, img/ba-g40-500.jpg 500w, img/ba-g40-700.jpg 700w" sizes="(max-width:860px) 50vw, 30vw" alt="Трансформация тела" loading="lazy" style="width:100%; aspect-ratio:3/4; object-fit:cover;">
+      <div class="svc__c bac" data-extra style="padding:0; overflow:hidden;">
+        <img src="img/ba-g41-500.jpg" srcset="img/ba-g41-360.jpg 360w, img/ba-g41-500.jpg 500w, img/ba-g41-700.jpg 700w" sizes="(max-width:860px) 50vw, 30vw" alt="Трансформация тела" loading="lazy" style="width:100%; aspect-ratio:3/4; object-fit:cover;">
         <div style="padding:18px;">
           <h4 data-i18n="bp.23.t" style="font-size:.98rem;">Трансформация тела</h4>
           <p data-i18n="bp.23.d" style="font-size:.82rem; color:var(--ink-mute); margin-top:4px;">Онлайн-ведение</p>
         </div>
       </div>
-      <div class="svc__c bac" style="padding:0; overflow:hidden;" data-extra>
-        <img src="img/ba-g41-500.jpg" srcset="img/ba-g41-360.jpg 360w, img/ba-g41-500.jpg 500w, img/ba-g41-700.jpg 700w" sizes="(max-width:860px) 50vw, 30vw" alt="Трансформация тела" loading="lazy" style="width:100%; aspect-ratio:3/4; object-fit:cover;">
+      <div class="svc__c bac" data-extra style="padding:0; overflow:hidden;">
+        <img src="img/ba-g42-500.jpg" srcset="img/ba-g42-360.jpg 360w, img/ba-g42-500.jpg 500w, img/ba-g42-700.jpg 700w" sizes="(max-width:860px) 50vw, 30vw" alt="Трансформация тела" loading="lazy" style="width:100%; aspect-ratio:3/4; object-fit:cover;">
         <div style="padding:18px;">
           <h4 data-i18n="bp.24.t" style="font-size:.98rem;">Трансформация тела</h4>
           <p data-i18n="bp.24.d" style="font-size:.82rem; color:var(--ink-mute); margin-top:4px;">Онлайн-ведение</p>
         </div>
       </div>
-      <div class="svc__c bac" style="padding:0; overflow:hidden;" data-extra>
-        <img src="img/ba-g42-500.jpg" srcset="img/ba-g42-360.jpg 360w, img/ba-g42-500.jpg 500w, img/ba-g42-700.jpg 700w" sizes="(max-width:860px) 50vw, 30vw" alt="Трансформация тела" loading="lazy" style="width:100%; aspect-ratio:3/4; object-fit:cover;">
-        <div style="padding:18px;">
-          <h4 data-i18n="bp.25.t" style="font-size:.98rem;">Трансформация тела</h4>
-          <p data-i18n="bp.25.d" style="font-size:.82rem; color:var(--ink-mute); margin-top:4px;">Онлайн-ведение</p>
-        </div>
-      </div>
-      <div class="svc__c bac" style="padding:0; overflow:hidden;" data-extra>
+      <div class="svc__c bac" data-extra style="padding:0; overflow:hidden;">
         <img src="img/ba-g70-500.jpg" srcset="img/ba-g70-360.jpg 360w, img/ba-g70-500.jpg 500w, img/ba-g70-700.jpg 700w" sizes="(max-width:860px) 50vw, 30vw" alt="Трансформация тела" loading="lazy" style="width:100%; aspect-ratio:3/4; object-fit:cover;">
         <div style="padding:18px;">
-          <h4 data-i18n="bp.26.t" style="font-size:.98rem;">Трансформация тела</h4>
-          <p data-i18n="bp.26.d" style="font-size:.82rem; color:var(--ink-mute); margin-top:4px;">Реалити-проект «Пляжники»</p>
+          <h4 data-i18n="bp.25.t" style="font-size:.98rem;">Трансформация тела</h4>
+          <p data-i18n="bp.25.d" style="font-size:.82rem; color:var(--ink-mute); margin-top:4px;">Реалити-проект «Пляжники»</p>
         </div>
       </div>
-      <div class="svc__c bac" style="padding:0; overflow:hidden;" data-extra>
+      <div class="svc__c bac" data-extra style="padding:0; overflow:hidden;">
         <img src="img/ba-g77-500.jpg" srcset="img/ba-g77-360.jpg 360w, img/ba-g77-500.jpg 500w, img/ba-g77-700.jpg 700w" sizes="(max-width:860px) 50vw, 30vw" alt="Подготовка к соревнованиям" loading="lazy" style="width:100%; aspect-ratio:3/4; object-fit:cover;">
         <div style="padding:18px;">
-          <h4 data-i18n="bp.27.t" style="font-size:.98rem;">Подготовка к соревнованиям</h4>
-          <p data-i18n="bp.27.d" style="font-size:.82rem; color:var(--ink-mute); margin-top:4px;">Онлайн-ведение</p>
+          <h4 data-i18n="bp.26.t" style="font-size:.98rem;">Подготовка к соревнованиям</h4>
+          <p data-i18n="bp.26.d" style="font-size:.82rem; color:var(--ink-mute); margin-top:4px;">Онлайн-ведение</p>
         </div>
       </div>
+    
     </div>
     <div style="text-align:center; margin-top:28px;">
-      <button class="btn btn--ghost" id="baMore" type="button" data-i18n="bp.more">Показать ещё (18)</button>
+      <button class="btn btn--ghost" id="baMore" type="button" data-i18n="bp.more">Показать ещё (17)</button>
     </div>
   </div>
 </section>
 
 <!-- ================= МОИ СПОРТСМЕНЫ ================= -->
-<section id="team">
+<section id="about-photos">
   <div class="container">
-    <p class="eyebrow" data-i18n="tm.eyebrow">Спортивная жизнь</p>
-    <h2 class="h-sec" data-i18n="tm.title">Мои спортсмены</h2>
-    <p class="lead" data-i18n="tm.lead">Соревнования, залы, подготовка, часть той же школы, по которой веду онлайн-клиентов.</p>
-    <div class="rail__f" style="display:flex; gap:10px; margin:24px 0 4px; flex-wrap:wrap;">
-      <button class="rail__chip is-active" data-cat="all" data-i18n="tm.all">Все</button>
-      <button class="rail__chip" data-cat="bb">Бодибилдинг</button><button class="rail__chip" data-cat="gym">Зал</button><button class="rail__chip" data-cat="life">Спортивная жизнь</button>
-    </div>
+    <p class="eyebrow" data-i18n="ap.eyebrow">Соревновательная сцена</p>
+    <h2 class="h-sec" data-i18n="ap.title">Про меня</h2>
+    <p class="lead" data-i18n="ap.lead">Бодибилдинг и пауэрлифтинг, тот же соревновательный опыт, на который опирается онлайн-ведение.</p>
   </div>
   <div class="rail" style="display:flex; gap:16px; overflow-x:auto; padding:20px 24px 8px; scroll-snap-type:x proximity;">
       <div class="rail__c" data-cat="bb">
@@ -578,6 +618,82 @@
         <div class="rail__cap"><b>Бодибилдинг</b><span>Студийная съёмка</span></div>
       </div>
       <div class="rail__c" data-cat="life">
+        <img src="img/team-28-440.jpg" srcset="img/team-28-300.jpg 300w, img/team-28-440.jpg 440w, img/team-28-640.jpg 640w" sizes="260px" alt="Спортивная жизнь" loading="lazy">
+        <div class="rail__cap"><b>Спортивная жизнь</b><span>Соревнования и тренировки</span></div>
+      </div>
+      <div class="rail__c" data-cat="life">
+        <img src="img/team-73-440.jpg" srcset="img/team-73-300.jpg 300w, img/team-73-440.jpg 440w, img/team-73-640.jpg 640w" sizes="260px" alt="Спортивная жизнь" loading="lazy">
+        <div class="rail__cap"><b>Спортивная жизнь</b><span>Соревнования и тренировки</span></div>
+      </div>
+      <div class="rail__c" data-cat="life">
+        <img src="img/team-74-440.jpg" srcset="img/team-74-300.jpg 300w, img/team-74-440.jpg 440w, img/team-74-640.jpg 640w" sizes="260px" alt="Спортивная жизнь" loading="lazy">
+        <div class="rail__cap"><b>Спортивная жизнь</b><span>Соревнования и тренировки</span></div>
+      </div>
+      <div class="rail__c" data-cat="life">
+        <img src="img/team-85-440.jpg" srcset="img/team-85-300.jpg 300w, img/team-85-440.jpg 440w, img/team-85-640.jpg 640w" sizes="260px" alt="Спортивная жизнь" loading="lazy">
+        <div class="rail__cap"><b>Спортивная жизнь</b><span>Соревнования и тренировки</span></div>
+      </div>
+      <div class="rail__c" data-cat="life">
+        <img src="img/andrey-hoodie-merc-440.jpg" srcset="img/andrey-hoodie-merc-300.jpg 300w, img/andrey-hoodie-merc-440.jpg 440w, img/andrey-hoodie-merc-640.jpg 640w" sizes="260px" alt="Вне зала" loading="lazy">
+        <div class="rail__cap"><b>Вне зала</b><span>Образ жизни</span></div>
+      </div>
+      <div class="rail__c" data-cat="life">
+        <img src="img/andrey-psg-440.jpg" srcset="img/andrey-psg-300.jpg 300w, img/andrey-psg-440.jpg 440w, img/andrey-psg-640.jpg 640w" sizes="260px" alt="Вне зала" loading="lazy">
+        <div class="rail__cap"><b>Вне зала</b><span>Образ жизни</span></div>
+      </div>
+  </div>
+</section>
+
+<section id="my-transformation">
+  <div class="container">
+    <p class="eyebrow" data-i18n="mt.eyebrow">Личный путь</p>
+    <h2 class="h-sec" data-i18n="mt.title">Моя трансформация</h2>
+    <p class="lead" data-i18n="mt.lead">Собственный опыт изменения тела, тот же подход, что я использую в работе с клиентами.</p>
+    <div class="svc bag" style="margin-top:28px;">
+      <div class="svc__c bac" style="padding:0; overflow:hidden;">
+        <img src="img/ba-g116-500.jpg" srcset="img/ba-g116-360.jpg 360w, img/ba-g116-500.jpg 500w, img/ba-g116-700.jpg 700w" sizes="(max-width:860px) 50vw, 30vw" alt="114 → 88 кг" loading="lazy" style="width:100%; aspect-ratio:3/4; object-fit:cover;">
+        <div style="padding:18px;">
+          <h4 data-i18n="mt.1.t" style="font-size:.98rem;">114 → 88 кг</h4>
+          <p data-i18n="mt.1.d" style="font-size:.82rem; color:var(--ink-mute); margin-top:4px;">Моя трансформация</p>
+        </div>
+      </div>
+      <div class="svc__c bac" style="padding:0; overflow:hidden;">
+        <img src="img/ba-g117-500.jpg" srcset="img/ba-g117-360.jpg 360w, img/ba-g117-500.jpg 500w, img/ba-g117-700.jpg 700w" sizes="(max-width:860px) 50vw, 30vw" alt="120 → 100 кг" loading="lazy" style="width:100%; aspect-ratio:3/4; object-fit:cover;">
+        <div style="padding:18px;">
+          <h4 data-i18n="mt.2.t" style="font-size:.98rem;">120 → 100 кг</h4>
+          <p data-i18n="mt.2.d" style="font-size:.82rem; color:var(--ink-mute); margin-top:4px;">Моя трансформация</p>
+        </div>
+      </div>
+      <div class="svc__c bac" style="padding:0; overflow:hidden;">
+        <img src="img/team-77-440.jpg" srcset="img/team-77-300.jpg 300w, img/team-77-440.jpg 440w, img/team-77-640.jpg 640w" sizes="(max-width:860px) 50vw, 30vw" alt="Спортивная жизнь" loading="lazy" style="width:100%; aspect-ratio:3/4; object-fit:cover;">
+        <div style="padding:18px;">
+          <h4 data-i18n="mt.3.t" style="font-size:.98rem;">Спортивная жизнь</h4>
+          <p data-i18n="mt.3.d" style="font-size:.82rem; color:var(--ink-mute); margin-top:4px;">Моя трансформация</p>
+        </div>
+      </div>
+      <div class="svc__c bac" style="padding:0; overflow:hidden;">
+        <img src="img/team-84-440.jpg" srcset="img/team-84-300.jpg 300w, img/team-84-440.jpg 440w, img/team-84-640.jpg 640w" sizes="(max-width:860px) 50vw, 30vw" alt="Спортивная жизнь" loading="lazy" style="width:100%; aspect-ratio:3/4; object-fit:cover;">
+        <div style="padding:18px;">
+          <h4 data-i18n="mt.4.t" style="font-size:.98rem;">Спортивная жизнь</h4>
+          <p data-i18n="mt.4.d" style="font-size:.82rem; color:var(--ink-mute); margin-top:4px;">Моя трансформация</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="team">
+  <div class="container">
+    <p class="eyebrow" data-i18n="tm.eyebrow">Спортивная жизнь</p>
+    <h2 class="h-sec" data-i18n="tm.title">Мои спортсмены</h2>
+    <p class="lead" data-i18n="tm.lead">Соревнования, залы, подготовка, часть той же школы, по которой веду онлайн-клиентов.</p>
+    <div class="rail__f" style="display:flex; gap:10px; margin:24px 0 4px; flex-wrap:wrap;">
+      <button class="rail__chip is-active" data-cat="all" data-i18n="tm.all">Все</button>
+      <button class="rail__chip" data-cat="bb">Бодибилдинг</button><button class="rail__chip" data-cat="gym">Зал</button><button class="rail__chip" data-cat="life">Спортивная жизнь</button>
+    </div>
+  </div>
+  <div class="rail" style="display:flex; gap:16px; overflow-x:auto; padding:20px 24px 8px; scroll-snap-type:x proximity;">
+      <div class="rail__c" data-cat="life">
         <img src="img/team-15-440.jpg" srcset="img/team-15-300.jpg 300w, img/team-15-440.jpg 440w, img/team-15-640.jpg 640w" sizes="260px" alt="Спортивная жизнь" loading="lazy">
         <div class="rail__cap"><b>Спортивная жизнь</b><span>Соревнования и тренировки</span></div>
       </div>
@@ -630,10 +746,6 @@
         <div class="rail__cap"><b>Спортивная жизнь</b><span>Соревнования и тренировки</span></div>
       </div>
       <div class="rail__c" data-cat="life">
-        <img src="img/team-28-440.jpg" srcset="img/team-28-300.jpg 300w, img/team-28-440.jpg 440w, img/team-28-640.jpg 640w" sizes="260px" alt="Спортивная жизнь" loading="lazy">
-        <div class="rail__cap"><b>Спортивная жизнь</b><span>Соревнования и тренировки</span></div>
-      </div>
-      <div class="rail__c" data-cat="life">
         <img src="img/team-29-440.jpg" srcset="img/team-29-300.jpg 300w, img/team-29-440.jpg 440w, img/team-29-640.jpg 640w" sizes="260px" alt="Спортивная жизнь" loading="lazy">
         <div class="rail__cap"><b>Спортивная жизнь</b><span>Соревнования и тренировки</span></div>
       </div>
@@ -655,10 +767,6 @@
       </div>
       <div class="rail__c" data-cat="life">
         <img src="img/team-34-440.jpg" srcset="img/team-34-300.jpg 300w, img/team-34-440.jpg 440w, img/team-34-640.jpg 640w" sizes="260px" alt="Спортивная жизнь" loading="lazy">
-        <div class="rail__cap"><b>Спортивная жизнь</b><span>Соревнования и тренировки</span></div>
-      </div>
-      <div class="rail__c" data-cat="life">
-        <img src="img/team-35-440.jpg" srcset="img/team-35-300.jpg 300w, img/team-35-440.jpg 440w, img/team-35-640.jpg 640w" sizes="260px" alt="Спортивная жизнь" loading="lazy">
         <div class="rail__cap"><b>Спортивная жизнь</b><span>Соревнования и тренировки</span></div>
       </div>
       <div class="rail__c" data-cat="life">
@@ -706,10 +814,6 @@
         <div class="rail__cap"><b>Спортивная жизнь</b><span>Соревнования и тренировки</span></div>
       </div>
       <div class="rail__c" data-cat="life">
-        <img src="img/team-47-440.jpg" srcset="img/team-47-300.jpg 300w, img/team-47-440.jpg 440w, img/team-47-640.jpg 640w" sizes="260px" alt="Спортивная жизнь" loading="lazy">
-        <div class="rail__cap"><b>Спортивная жизнь</b><span>Соревнования и тренировки</span></div>
-      </div>
-      <div class="rail__c" data-cat="life">
         <img src="img/team-48-440.jpg" srcset="img/team-48-300.jpg 300w, img/team-48-440.jpg 440w, img/team-48-640.jpg 640w" sizes="260px" alt="Спортивная жизнь" loading="lazy">
         <div class="rail__cap"><b>Спортивная жизнь</b><span>Соревнования и тренировки</span></div>
       </div>
@@ -735,10 +839,6 @@
       </div>
       <div class="rail__c" data-cat="life">
         <img src="img/team-54-440.jpg" srcset="img/team-54-300.jpg 300w, img/team-54-440.jpg 440w, img/team-54-640.jpg 640w" sizes="260px" alt="Спортивная жизнь" loading="lazy">
-        <div class="rail__cap"><b>Спортивная жизнь</b><span>Соревнования и тренировки</span></div>
-      </div>
-      <div class="rail__c" data-cat="life">
-        <img src="img/team-55-440.jpg" srcset="img/team-55-300.jpg 300w, img/team-55-440.jpg 440w, img/team-55-640.jpg 640w" sizes="260px" alt="Спортивная жизнь" loading="lazy">
         <div class="rail__cap"><b>Спортивная жизнь</b><span>Соревнования и тренировки</span></div>
       </div>
       <div class="rail__c" data-cat="life">
@@ -810,57 +910,14 @@
         <div class="rail__cap"><b>Спортивная жизнь</b><span>Соревнования и тренировки</span></div>
       </div>
       <div class="rail__c" data-cat="life">
-        <img src="img/team-73-440.jpg" srcset="img/team-73-300.jpg 300w, img/team-73-440.jpg 440w, img/team-73-640.jpg 640w" sizes="260px" alt="Спортивная жизнь" loading="lazy">
-        <div class="rail__cap"><b>Спортивная жизнь</b><span>Соревнования и тренировки</span></div>
-      </div>
-      <div class="rail__c" data-cat="life">
-        <img src="img/team-74-440.jpg" srcset="img/team-74-300.jpg 300w, img/team-74-440.jpg 440w, img/team-74-640.jpg 640w" sizes="260px" alt="Спортивная жизнь" loading="lazy">
-        <div class="rail__cap"><b>Спортивная жизнь</b><span>Соревнования и тренировки</span></div>
-      </div>
-      <div class="rail__c" data-cat="life">
-        <img src="img/team-75-440.jpg" srcset="img/team-75-300.jpg 300w, img/team-75-440.jpg 440w, img/team-75-640.jpg 640w" sizes="260px" alt="Спортивная жизнь" loading="lazy">
-        <div class="rail__cap"><b>Спортивная жизнь</b><span>Соревнования и тренировки</span></div>
-      </div>
-      <div class="rail__c" data-cat="life">
-        <img src="img/team-76-440.jpg" srcset="img/team-76-300.jpg 300w, img/team-76-440.jpg 440w, img/team-76-640.jpg 640w" sizes="260px" alt="Спортивная жизнь" loading="lazy">
-        <div class="rail__cap"><b>Спортивная жизнь</b><span>Соревнования и тренировки</span></div>
-      </div>
-      <div class="rail__c" data-cat="life">
-        <img src="img/team-77-440.jpg" srcset="img/team-77-300.jpg 300w, img/team-77-440.jpg 440w, img/team-77-640.jpg 640w" sizes="260px" alt="Спортивная жизнь" loading="lazy">
-        <div class="rail__cap"><b>Спортивная жизнь</b><span>Соревнования и тренировки</span></div>
-      </div>
-      <div class="rail__c" data-cat="life">
-        <img src="img/team-78-440.jpg" srcset="img/team-78-300.jpg 300w, img/team-78-440.jpg 440w, img/team-78-640.jpg 640w" sizes="260px" alt="Спортивная жизнь" loading="lazy">
-        <div class="rail__cap"><b>Спортивная жизнь</b><span>Соревнования и тренировки</span></div>
-      </div>
-      <div class="rail__c" data-cat="life">
         <img src="img/team-79-440.jpg" srcset="img/team-79-300.jpg 300w, img/team-79-440.jpg 440w, img/team-79-640.jpg 640w" sizes="260px" alt="Спортивная жизнь" loading="lazy">
-        <div class="rail__cap"><b>Спортивная жизнь</b><span>Соревнования и тренировки</span></div>
-      </div>
-      <div class="rail__c" data-cat="life">
-        <img src="img/team-80-440.jpg" srcset="img/team-80-300.jpg 300w, img/team-80-440.jpg 440w, img/team-80-640.jpg 640w" sizes="260px" alt="Спортивная жизнь" loading="lazy">
         <div class="rail__cap"><b>Спортивная жизнь</b><span>Соревнования и тренировки</span></div>
       </div>
       <div class="rail__c" data-cat="life">
         <img src="img/team-81-440.jpg" srcset="img/team-81-300.jpg 300w, img/team-81-440.jpg 440w, img/team-81-640.jpg 640w" sizes="260px" alt="Спортивная жизнь" loading="lazy">
         <div class="rail__cap"><b>Спортивная жизнь</b><span>Соревнования и тренировки</span></div>
       </div>
-      <div class="rail__c" data-cat="life">
-        <img src="img/team-82-440.jpg" srcset="img/team-82-300.jpg 300w, img/team-82-440.jpg 440w, img/team-82-640.jpg 640w" sizes="260px" alt="Спортивная жизнь" loading="lazy">
-        <div class="rail__cap"><b>Спортивная жизнь</b><span>Соревнования и тренировки</span></div>
-      </div>
-      <div class="rail__c" data-cat="life">
-        <img src="img/team-83-440.jpg" srcset="img/team-83-300.jpg 300w, img/team-83-440.jpg 440w, img/team-83-640.jpg 640w" sizes="260px" alt="Спортивная жизнь" loading="lazy">
-        <div class="rail__cap"><b>Спортивная жизнь</b><span>Соревнования и тренировки</span></div>
-      </div>
-      <div class="rail__c" data-cat="life">
-        <img src="img/team-84-440.jpg" srcset="img/team-84-300.jpg 300w, img/team-84-440.jpg 440w, img/team-84-640.jpg 640w" sizes="260px" alt="Спортивная жизнь" loading="lazy">
-        <div class="rail__cap"><b>Спортивная жизнь</b><span>Соревнования и тренировки</span></div>
-      </div>
-      <div class="rail__c" data-cat="life">
-        <img src="img/team-85-440.jpg" srcset="img/team-85-300.jpg 300w, img/team-85-440.jpg 440w, img/team-85-640.jpg 640w" sizes="260px" alt="Спортивная жизнь" loading="lazy">
-        <div class="rail__cap"><b>Спортивная жизнь</b><span>Соревнования и тренировки</span></div>
-      </div>
+  
   </div>
 </section>
 
@@ -883,9 +940,21 @@
   <div class="container">
     <p class="eyebrow" data-i18n="sv.eyebrow">Без абонемента</p>
     <h2 class="h-sec" data-i18n="sv.title">Разовые работы</h2>
-    <p class="lead" data-i18n="sv.lead">Если пока не готовы к полному ведению, можно начать с одной конкретной задачи.</p>
+    <p class="lead" data-i18n="sv.lead">Если пока не готовы к полному ведению, можно начать с одной конкретной задачи, или с самого простого шага.</p>
 
     <div class="svc">
+      <div class="svc__c svc__c--entry">
+        <span class="svc__badge" data-i18n="sv.s0.badge">Первый шаг</span>
+        <h4 data-i18n="sv.s0.t">Стартовый план</h4>
+        <p data-i18n="sv.s0.d">Готовая программа тренировок и шаблон питания под вашу цель. Оплата и выдача прямо в боте, без ожидания.</p>
+        <div class="svc__price" data-price="2990|31">2 990 ₽</div>
+        <p class="svc__note" data-i18n="sv.s0.note">Автовыдача через @ShelestFitBot</p>
+      </div>
+      <div class="svc__c">
+        <h4 data-i18n="sv.s7.t">Разовая консультация</h4>
+        <p data-i18n="sv.s7.d">Короткий созвон или переписка: разберём вашу ситуацию и дам конкретные следующие шаги.</p>
+        <div class="svc__price" data-price="3000|32">3 000 ₽</div>
+      </div>
       <div class="svc__c">
         <h4 data-i18n="sv.s1.t">Индивидуальная программа тренировок</h4>
         <p data-i18n="sv.s1.d">Программа под ваш уровень, оборудование и цель, на разбор техники и вопросы.</p>
@@ -1084,11 +1153,27 @@
     <p class="eyebrow" data-i18n="ct.eyebrow">Связаться</p>
     <h2 class="h-sec" data-i18n="ct.title">Начать</h2>
     <p class="lead" data-i18n="ct.lead">Напишите в бот: задайте цель и срок, и я отвечу лично. Бот это самый быстрый путь до меня.</p>
-    <div style="display:flex; gap:16px; margin-top:28px; flex-wrap:wrap;">
+    <div style="display:flex; gap:16px; margin-top:28px; flex-wrap:wrap; align-items:center;">
       <a class="btn btn--gold" target="_blank" rel="noopener" href="https://t.me/ShelestFitBot" data-i18n="ct.bot">Написать в @ShelestFitBot</a>
       <a class="btn btn--ghost" target="_blank" rel="noopener" href="https://t.me/+79952723614">
         Telegram
       </a>
+      <a class="ct__email" href="mailto:trenershelest@icloud.com">trenershelest@icloud.com</a>
+    </div>
+
+    <div class="cform-wrap">
+      <p class="eyebrow" data-i18n="ct.form.eyebrow" style="margin-top:0;">Или оставьте заявку</p>
+      <form id="contactForm" class="cform" novalidate>
+        <div class="cform__row">
+          <input type="text" name="name" id="cf-name" data-i18n-ph="ct.form.name" placeholder="Как к вам обращаться" required>
+          <input type="text" name="tg" id="cf-tg" data-i18n-ph="ct.form.tg" placeholder="Ник в Telegram (@username)" required>
+        </div>
+        <textarea name="goal" id="cf-goal" data-i18n-ph="ct.form.goal" placeholder="Ваша цель — коротко" rows="3" required></textarea>
+        <div class="cform__row cform__row--submit">
+          <button type="submit" class="btn btn--gold" data-i18n="ct.form.submit">Отправить в Telegram</button>
+          <p class="cform__note" data-i18n="ct.form.note">Откроется чат с ботом с готовым текстом — останется нажать «Отправить».</p>
+        </div>
+      </form>
     </div>
   </div>
 </section>
@@ -1169,6 +1254,41 @@ function setCurrency(cur){
     span.textContent = cur === 'rub' ? (Number(rub).toLocaleString('ru-RU')+' ₽') : ('$'+usd);
   });
 }
+
+/* ---- анимированные счётчики ---- */
+(function(){
+  var counters = document.querySelectorAll('.counter');
+  if (!counters.length) return;
+  function animateCounter(el){
+    var target = parseInt(el.getAttribute('data-count'), 10) || 0;
+    var suffix = el.getAttribute('data-suffix') || '';
+    var numEl = el.querySelector('.counter__n');
+    var duration = 1400;
+    var start = null;
+    function easeOutExpo(t){ return t === 1 ? 1 : 1 - Math.pow(2, -10 * t); }
+    function step(ts){
+      if (!start) start = ts;
+      var progress = Math.min((ts - start) / duration, 1);
+      var eased = easeOutExpo(progress);
+      numEl.textContent = Math.round(eased * target) + (progress >= 1 ? suffix : '');
+      if (progress < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  if ('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting){
+          animateCounter(entry.target);
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: .4 });
+    counters.forEach(function(c){ io.observe(c); });
+  } else {
+    counters.forEach(animateCounter);
+  }
+})();
 </script>
 
 <script>
@@ -1176,6 +1296,15 @@ function setCurrency(cur){
 const I18N = { ru:{}, en:{} };
 document.querySelectorAll('[data-i18n]').forEach(el=>{
   I18N.ru[el.getAttribute('data-i18n')] = el.innerHTML;
+});
+const I18N_PH = { ru:{}, en:{} };
+document.querySelectorAll('[data-i18n-ph]').forEach(el=>{
+  I18N_PH.ru[el.getAttribute('data-i18n-ph')] = el.getAttribute('placeholder');
+});
+Object.assign(I18N_PH.en, {
+  'ct.form.name': 'Your name',
+  'ct.form.tg': 'Telegram handle (@username)',
+  'ct.form.goal': 'Your goal — briefly',
 });
 Object.assign(I18N.en, {
   'press.eyebrow':'Publications', 'press.title':'Press and mentions',
@@ -1191,11 +1320,15 @@ Object.assign(I18N.en, {
   'about.lead':"My name is Andrey Shelest. I combine what few in online fitness can: a medical degree, a World and European champion title, and status as a competing athlete. That lets me build programs at the intersection of physiology, biochemistry and real gym practice, accounting for your bloodwork, hormones and actual lifestyle, not just the number on the scale. Based in Sochi, coaching clients online across Russia.",
   'fm.eyebrow':'How we work', 'fm.title':'Online only — and that’s a deliberate choice',
   'fm.lead':'There are no in-person sessions: everything runs remotely, which lets me go deep with more clients instead of spreading thin.',
-  'pr.eyebrow':'Online coaching', 'pr.title':'Pricing', 'pr.lead':'Three coaching formats — from a base program to full support with bloodwork.',
+  'pr.eyebrow':'Online coaching', 'pr.title':'Pricing', 'pr.lead':'From a group format to a full VIP package with bloodwork — pick what fits right now.',
   'pr.permonth':' / mo', 'pr.cta':'Choose',
+  'pr.t0.name':'Group format', 'pr.t0.sub':'A shared program for the group, daily oversight without 1:1 coaching',
+  'pr.t0.l1':'Shared training program built for the group\'s goal',
+  'pr.t0.l2':'Basic nutrition guidance', 'pr.t0.l3':'Group chat for questions',
   'pr.t1.name':'Program', 'pr.t1.sub':'An individual plan for your level and equipment',
   'pr.t1.l1':'Individual training program for your level, equipment and schedule',
   'pr.t1.l2':'Nutrition recommendations', 'pr.t1.l3':'On call via Telegram',
+  'pr.t1.promo':'First month — 10,000 ₽',
   'pr.t2.badge':'Most popular', 'pr.t2.name':'Full coaching', 'pr.t2.sub':'Every session planned out, nutrition broken down in detail',
   'pr.t2.l1':'Every training session planned and adjusted along the way',
   'pr.t2.l2':'Detailed breakdown of nutrition and food choices',
@@ -1206,7 +1339,11 @@ Object.assign(I18N.en, {
   'kase.eyebrow':'Featured case', 'kase.who':'Online coaching',
   'kase.q':'"Over four months I lost almost 40 kg, and along with the weight my bloodwork came back in order too — I had low testosterone, now it’s normal."',
   'kase.n1':'kg', 'kase.n2':'days', 'kase.n3':'kg',
-  'sv.eyebrow':'No subscription needed', 'sv.title':'One-off services', 'sv.lead':'Not ready for full coaching yet? Start with one specific task.',
+  'sv.eyebrow':'No subscription needed', 'sv.title':'One-off services', 'sv.lead':'Not ready for full coaching yet? Start with one specific task, or the simplest first step.',
+  'sv.s0.badge':'First step', 'sv.s0.t':'Starter plan',
+  'sv.s0.d':'A ready-made training program and nutrition template for your goal. Paid and delivered right in the bot, no waiting.',
+  'sv.s0.note':'Auto-delivered via @ShelestFitBot',
+  'sv.s7.t':'One-off consultation', 'sv.s7.d':'A short call or chat: we go over your situation and I give you concrete next steps.',
   'sv.s1.t':'Individual training program', 'sv.s1.d':'A program for your level, equipment and goal, with a technique review included.',
   'sv.s2.t':'Nutrition review', 'sv.s2.d':'A review of your current diet and recommendations for your goal.',
   'sv.s3.t':'Bloodwork consultation', 'sv.s3.d':'A review of your bloodwork results with correction recommendations.',
@@ -1229,34 +1366,41 @@ Object.assign(I18N.en, {
   'rv.4.r': "Body recomposition",
   'rv.5.t': "Good topic, I took a block of training sessions with Andrey Shelest myself. What I got out of it: 1. A concrete list of exercises for each muscle group, ones that actually work for me. I don't waste time figuring out what to do today — I have a clear plan for every session, and I only log my working weights to track progress. The gym has a lot of equipment you don't find everywhere, and it was great discovering new options that replaced awkward old exercise variants. 2. Understanding how to do the exercises correctly without injury. 3. Individual nutrition advice — also useful discoveries that improved my appetite and how I feel overall. Worth every ruble spent, especially on yourself.",
   'rv.5.n': "Radislav", 'rv.5.r': "Training block",
-  'bp.eyebrow': 'Real transformations', 'bp.title': 'Before & after', 'bp.lead': 'Real clients, their photos and results — with written consent on file.', 'bp.more': 'Show more (18)',
-  'bp.1.t': "−15 kg in 3 months", 'bp.1.d': "Online coaching · training, sleep, supplements",
-  'bp.2.t': "Nutrition & gut microbiome", 'bp.2.d': "Online coaching · bloodwork and nutrition review",
-  'bp.3.t': "114 → 88 kg", 'bp.3.d': "Body transformation",
-  'bp.4.t': "120 → 100 kg", 'bp.4.d': "Body transformation",
-  'bp.5.t': "Body transformation", 'bp.5.d': "Online coaching",
-  'bp.6.t': "Body transformation", 'bp.6.d': "Online coaching",
-  'bp.7.t': "Body transformation", 'bp.7.d': "Online coaching",
-  'bp.8.t': "Body transformation", 'bp.8.d': "Online coaching",
-  'bp.9.t': "Body transformation", 'bp.9.d': "Online coaching",
-  'bp.10.t': "Body transformation", 'bp.10.d': "Online coaching",
-  'bp.11.t': "Body transformation", 'bp.11.d': "Online coaching",
-  'bp.12.t': "Body transformation", 'bp.12.d': "Online coaching",
-  'bp.13.t': "Body transformation", 'bp.13.d': "Contest prep",
-  'bp.14.t': "Body transformation", 'bp.14.d': "Online coaching",
-  'bp.15.t': "Body transformation", 'bp.15.d': "Online coaching",
-  'bp.16.t': "Body transformation", 'bp.16.d': "Online coaching",
-  'bp.17.t': "Body transformation", 'bp.17.d': "Online coaching",
-  'bp.18.t': "Body transformation", 'bp.18.d': "Online coaching",
-  'bp.19.t': "Body transformation", 'bp.19.d': "Online coaching",
-  'bp.20.t': "Body transformation", 'bp.20.d': "Online coaching",
-  'bp.21.t': "Body transformation", 'bp.21.d': "Online coaching",
-  'bp.22.t': "Body transformation", 'bp.22.d': "Online coaching",
-  'bp.23.t': "Body transformation", 'bp.23.d': "Online coaching",
-  'bp.24.t': "Body transformation", 'bp.24.d': "Online coaching",
-  'bp.25.t': "Body transformation", 'bp.25.d': "Online coaching",
-  'bp.26.t': "Body transformation", 'bp.26.d': "Reality project \"Beach Body\"",
-  'bp.27.t': "Contest prep", 'bp.27.d': "Online coaching",
+  'bp.eyebrow': 'Real transformations', 'bp.title': 'Before & after', 'bp.lead': 'Real clients, their photos and results — with written consent on file.', 'bp.more': 'Show more (17)',
+  'bp.1.t': '−15 kg in 3 months', 'bp.1.d': 'Online coaching · training, sleep, supplements',
+  'bp.2.t': 'Nutrition & gut microbiome', 'bp.2.d': 'Online coaching · bloodwork and nutrition review',
+  'bp.3.t': 'Body transformation', 'bp.3.d': 'Online coaching',
+  'bp.4.t': 'Body transformation', 'bp.4.d': 'Online coaching',
+  'bp.5.t': 'Body transformation', 'bp.5.d': 'Online coaching',
+  'bp.6.t': 'Body transformation', 'bp.6.d': 'Online coaching',
+  'bp.7.t': 'Body transformation', 'bp.7.d': 'Online coaching',
+  'bp.8.t': 'Body transformation', 'bp.8.d': 'Online coaching',
+  'bp.9.t': 'Body transformation', 'bp.9.d': 'Online coaching',
+  'bp.10.t': 'Body transformation', 'bp.10.d': 'Online coaching',
+  'bp.11.t': 'Body transformation', 'bp.11.d': 'Online coaching',
+  'bp.12.t': 'Body transformation', 'bp.12.d': 'Contest prep',
+  'bp.13.t': 'Body transformation', 'bp.13.d': 'Online coaching',
+  'bp.14.t': 'Body transformation', 'bp.14.d': 'Online coaching',
+  'bp.15.t': 'Body transformation', 'bp.15.d': 'Online coaching',
+  'bp.16.t': 'Body transformation', 'bp.16.d': 'Online coaching',
+  'bp.17.t': 'Body transformation', 'bp.17.d': 'Online coaching',
+  'bp.18.t': 'Body transformation', 'bp.18.d': 'Online coaching',
+  'bp.19.t': 'Body transformation', 'bp.19.d': 'Online coaching',
+  'bp.20.t': 'Body transformation', 'bp.20.d': 'Online coaching',
+  'bp.21.t': 'Body transformation', 'bp.21.d': 'Online coaching',
+  'bp.22.t': 'Body transformation', 'bp.22.d': 'Online coaching',
+  'bp.23.t': 'Body transformation', 'bp.23.d': 'Online coaching',
+  'bp.24.t': 'Body transformation', 'bp.24.d': 'Online coaching',
+  'bp.25.t': 'Reality project "Beach Body"', 'bp.25.d': 'Online coaching',
+  'bp.26.t': 'Contest prep', 'bp.26.d': 'Online coaching',
+  'ap.eyebrow': 'Competitive stage', 'ap.title': 'About me',
+  'ap.lead': 'Bodybuilding and powerlifting — the same competitive experience my online coaching is built on.',
+  'mt.eyebrow': 'Personal journey', 'mt.title': 'My transformation',
+  'mt.lead': 'My own body-change experience — the same approach I use with clients.',
+  'mt.1.t': '114 → 88 kg', 'mt.1.d': 'My transformation',
+  'mt.2.t': '120 → 100 kg', 'mt.2.d': 'My transformation',
+  'mt.3.t': 'Sporting life', 'mt.3.d': 'My transformation',
+  'mt.4.t': 'Sporting life', 'mt.4.d': 'My transformation',
   'tm.eyebrow': 'Sporting life', 'tm.title': 'My athletes', 'tm.all': 'All',
   'tm.lead': 'Competitions, gyms, prep — part of the same school I use for online coaching.',
   'nav.enc': "Encyclopedias",
@@ -1297,6 +1441,8 @@ Object.assign(I18N.en, {
   'faq.10.q': "What’s included in the 20,000 / 30,000 / 50,000 ₽ plans?",
   'faq.10.a': "The full breakdown of each plan is in the “Pricing” section above.",
   'ct.bot': "Message @ShelestFitBot",
+  'ct.form.eyebrow': 'Or leave a request', 'ct.form.submit': 'Send via Telegram',
+  'ct.form.note': "This opens Telegram with your message ready — just hit Send.",
   'rg.1.t': "World & European champion, world record holder",
   'rg.1.s': "Powerlifting, NAP federation, MSMK in two disciplines, 2010–2023",
   'rg.2.t': "Bodybuilding",
@@ -1309,6 +1455,10 @@ Object.assign(I18N.en, {
   'rg.5.s': "From beginners to the competitive stage",
   'rg.6.t': "Organizer & methodologist",
   'rg.6.s': "70+ seminars, author of nutrition methods",
+  'cn.1.l': "athletes coached personally",
+  'cn.2.l': "years in sport and sports medicine",
+  'cn.3.l': "seminars and lectures given as a methodologist",
+  'cn.4.l': "real before/after stories in the portfolio",
   'how.eyebrow': "How online coaching works",
   'how.title': "Online, but fully controlled",
   'how.lead': "The main fear is: “online isn’t serious, no one is watching me.” Here is what the work actually looks like.",
@@ -1555,7 +1705,39 @@ document.getElementById('langBtn').addEventListener('click', ()=>{
     const dict = I18N[LANG];
     if (dict[key] !== undefined) el.innerHTML = dict[key];
   });
+  document.querySelectorAll('[data-i18n-ph]').forEach(el=>{
+    const key = el.getAttribute('data-i18n-ph');
+    const dict = I18N_PH[LANG];
+    if (dict[key] !== undefined) el.setAttribute('placeholder', dict[key]);
+  });
 });
+</script>
+<script>
+/* ================= мини-форма контактов → Telegram ================= */
+(function(){
+  var form = document.getElementById('contactForm');
+  if (!form) return;
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var name = document.getElementById('cf-name').value.trim();
+    var tg = document.getElementById('cf-tg').value.trim();
+    var goal = document.getElementById('cf-goal').value.trim();
+    if (!name || !tg || !goal) return;
+    var lines = [
+      'Заявка с сайта shelestfit.com',
+      'Имя: ' + name,
+      'Telegram: ' + tg,
+      'Цель: ' + goal
+    ];
+    var text = encodeURIComponent(lines.join('\n'));
+    window.open('https://t.me/ShelestFitBot?text=' + text, '_blank', 'noopener');
+    form.classList.add('is-sent');
+    var note = form.querySelector('.cform__note');
+    if (note) note.textContent = LANG === 'ru'
+      ? 'Открыл Telegram с готовым текстом — нажмите «Отправить» в чате с ботом.'
+      : 'Telegram opened with your message ready — just hit Send in the chat.';
+  });
+})();
 </script>
 <script>
 (function(){

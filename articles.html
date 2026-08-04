@@ -62,6 +62,9 @@
     <p class="eyebrow">Блог</p>
     <h1 class="h-sec" style="font-size:clamp(2.1rem,4.4vw,3.4rem);">Статьи</h1>
     <p class="lead">Разборы по тренировкам, питанию, добавкам и восстановлению, коротко и по доказательной базе.</p>
+    <div class="art-search">
+      <input type="search" id="artSearch" placeholder="Поиск по статьям — тема или ключевое слово" aria-label="Поиск по статьям">
+    </div>
     <div class="art-filter"><button class="art-chip is-active" data-tag="all">Все</button><button class="art-chip" data-tag="добавки">добавки</button><button class="art-chip" data-tag="спортпит">спортпит</button></div>
     <div class="art-grid" id="artGrid">
       <a class="art-card" href="articles/kreatin-fakty.html" data-tags="спортпит добавки">
@@ -71,6 +74,34 @@
         <span class="art-card__more">Читать →</span>
       </a>
     </div>
+    <p class="art-empty" id="artEmpty" style="display:none;">Ничего не нашлось по этому запросу — попробуйте другое слово или сбросьте фильтр.</p>
+  </div>
+</section>
+
+<!-- ================= СХЕМА ДИСТРИБУЦИИ ================= -->
+<section class="art-dist">
+  <div class="container">
+    <p class="eyebrow">Как выходят статьи</p>
+    <h2 class="h-sec" style="font-size:clamp(1.6rem,3.2vw,2.2rem);">Сначала Telegram, потом полная версия на сайте</h2>
+    <p class="lead">Каждая статья сначала выходит короткой заметкой в Telegram-канале, а затем публикуется здесь полностью — с источниками и разбором по доказательной базе. Каналы перелинкованы: из канала можно перейти на сайт за деталями, а со статьи — подписаться на канал за новыми разборами.</p>
+    <div class="art-dist__row">
+      <div class="art-dist__step">
+        <span class="art-dist__n">1</span>
+        <b>Telegram-канал</b>
+        <p>Короткий анонс темы и главный вывод — быстро и по делу.</p>
+      </div>
+      <div class="art-dist__step">
+        <span class="art-dist__n">2</span>
+        <b>Полная версия на сайте</b>
+        <p>Разбор с источниками, цифрами и практическими выводами — здесь, в разделе «Статьи».</p>
+      </div>
+      <div class="art-dist__step">
+        <span class="art-dist__n">3</span>
+        <b>Перелинковка</b>
+        <p>Из канала — ссылка на статью, со статьи — на канал, чтобы не пропустить новые разборы.</p>
+      </div>
+    </div>
+    <a class="btn btn--ghost" style="margin-top:24px;" target="_blank" rel="noopener" href="https://t.me/papa_kult_shelest">Читать канал в Telegram</a>
   </div>
 </section>
 
@@ -78,17 +109,34 @@
 (function(){
   var chips = document.querySelectorAll('.art-chip');
   var cards = document.querySelectorAll('.art-card');
+  var searchInput = document.getElementById('artSearch');
+  var emptyMsg = document.getElementById('artEmpty');
+  var activeTag = 'all';
+
+  function applyFilters(){
+    var q = (searchInput.value || '').trim().toLowerCase();
+    var visibleCount = 0;
+    cards.forEach(function(card){
+      var tags = (card.getAttribute('data-tags') || '').split(' ');
+      var matchesTag = (activeTag === 'all' || tags.indexOf(activeTag) !== -1);
+      var text = (card.querySelector('.art-card__title').textContent + ' ' + card.querySelector('.art-card__desc').textContent).toLowerCase();
+      var matchesSearch = !q || text.indexOf(q) !== -1;
+      var visible = matchesTag && matchesSearch;
+      card.style.display = visible ? '' : 'none';
+      if (visible) visibleCount++;
+    });
+    emptyMsg.style.display = visibleCount === 0 ? '' : 'none';
+  }
+
   chips.forEach(function(chip){
     chip.addEventListener('click', function(){
       chips.forEach(function(c){ c.classList.remove('is-active'); });
       chip.classList.add('is-active');
-      var tag = chip.getAttribute('data-tag');
-      cards.forEach(function(card){
-        var tags = (card.getAttribute('data-tags') || '').split(' ');
-        card.style.display = (tag === 'all' || tags.indexOf(tag) !== -1) ? '' : 'none';
-      });
+      activeTag = chip.getAttribute('data-tag');
+      applyFilters();
     });
   });
+  searchInput.addEventListener('input', applyFilters);
 })();
 </script>
 
