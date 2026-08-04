@@ -232,7 +232,7 @@ section[id]{ scroll-margin-top:96px; }
 .sec-bg{ position:relative; overflow:hidden; isolation:isolate; }
 .sec-bg::before{
   content:""; position:absolute; inset:0; z-index:-2;
-  background-size:cover; background-position:center 30%;
+  background-image:var(--bgimg); background-size:cover; background-position:center 30%;
   filter:var(--ph-back); opacity:.55;
 }
 .sec-bg::after{
@@ -242,6 +242,12 @@ section[id]{ scroll-margin-top:96px; }
 }
 .sec-bg--formats::before{ background-image:url(../img/team-9-640.jpg); }
 .sec-bg--how::before{ background-image:url(../img/team-5-640.jpg); }
+/* компактный вариант для второстепенных секций (шаги/faq) — фон тише */
+.sec-bg--soft::before{ opacity:.32; }
+.sec-bg--soft::after{
+  background:
+    linear-gradient(180deg, var(--bg) 0%, rgba(11,11,12,.7) 12%, rgba(11,11,12,.9) 55%, var(--bg) 100%);
+}
 /* ═══ фон секций по теме конец ═══ */
 
 /* ═══ hero cinematic начало ═══ */
