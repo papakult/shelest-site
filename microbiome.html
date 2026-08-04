@@ -614,5 +614,50 @@ document.getElementById('langBtn').addEventListener('click', ()=>{
   }
 })();
 </script>
+
+<!-- ================= ТЕМЫ ================= -->
+<div class="theme">
+  <button class="theme__btn" id="themeBtn" aria-label="Оформление" type="button">Aa</button>
+  <div class="theme__panel" id="themePanel">
+    <div class="theme__row">
+      <button class="theme__dot" data-theme="gold" style="--dot:#c9a24a" aria-label="Золото"></button>
+      <button class="theme__dot" data-theme="copper" style="--dot:#c47a45" aria-label="Медь"></button>
+      <button class="theme__dot" data-theme="steel" style="--dot:#9fb2c8" aria-label="Сталь"></button>
+      <button class="theme__dot" data-theme="emerald" style="--dot:#4da57a" aria-label="Изумруд"></button>
+      <button class="theme__dot" data-theme="wine" style="--dot:#c25858" aria-label="Вино"></button>
+    </div>
+    <div class="theme__row theme__row--type">
+      <button class="theme__type" data-font="serif" style="font-family:'Fraunces',serif">Аа</button>
+      <button class="theme__type" data-font="sans" style="font-family:'Inter',sans-serif">Аа</button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var btn = document.getElementById('themeBtn');
+  var panel = document.getElementById('themePanel');
+  if(!btn) return;
+  function apply(){
+    var t = localStorage.getItem('sh-theme') || 'gold';
+    var f = localStorage.getItem('sh-font') || 'serif';
+    document.documentElement.setAttribute('data-theme', t);
+    document.documentElement.setAttribute('data-font', f);
+    document.querySelectorAll('.theme__dot').forEach(function(d){ d.classList.toggle('is-active', d.dataset.theme === t); });
+    document.querySelectorAll('.theme__type').forEach(function(d){ d.classList.toggle('is-active', d.dataset.font === f); });
+  }
+  btn.addEventListener('click', function(){ panel.classList.toggle('is-open'); });
+  document.querySelectorAll('.theme__dot').forEach(function(d){
+    d.addEventListener('click', function(){ localStorage.setItem('sh-theme', d.dataset.theme); apply(); });
+  });
+  document.querySelectorAll('.theme__type').forEach(function(d){
+    d.addEventListener('click', function(){ localStorage.setItem('sh-font', d.dataset.font); apply(); });
+  });
+  document.addEventListener('click', function(e){
+    if(!e.target.closest('.theme')) panel.classList.remove('is-open');
+  });
+  apply();
+})();
+</script>
 </body>
 </html>
