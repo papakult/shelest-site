@@ -8,6 +8,15 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/core.css">
+<link rel="canonical" href="https://shelestfit.com/dietology.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Питание и диетология — Андрей Шелест">
+<meta property="og:description" content="Разбор питания и построение рациона под цель — снижение веса, набор массы, поддержание формы — с учётом анализов и образа жизни.">
+<meta property="og:url" content="https://shelestfit.com/dietology.html">
+<meta property="og:locale" content="ru_RU">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Питание и диетология — Андрей Шелест">
+<meta name="twitter:description" content="Разбор питания и построение рациона под цель — снижение веса, набор массы, поддержание формы — с учётом анализов и образа жизни.">
 </head>
 <body>
 <header class="hdr" id="hdr">
@@ -31,6 +40,7 @@
     </nav>
     <a href="index.html#contact" class="hdr__cta" data-i18n="nav.cta">Записаться</a>
     <button class="hdr__cta" id="langBtn" style="margin-left:10px; border-color:var(--line-2); color:var(--ink-dim);" type="button">EN</button>
+    <button class="hdr__burger" id="burgerBtn" aria-label="Меню" type="button"><span></span><span></span><span></span></button>
   </div>
 </header>
 
@@ -600,6 +610,33 @@ document.getElementById('langBtn').addEventListener('click', ()=>{
     if (dict[key] !== undefined) el.innerHTML = dict[key];
   });
 });
+</script>
+<script>
+(function(){
+  var btn = document.getElementById('burgerBtn');
+  var nav = document.querySelector('.hdr__nav');
+  if(!btn || !nav) return;
+  btn.addEventListener('click', function(){
+    var open = nav.classList.toggle('is-open');
+    btn.classList.toggle('is-open', open);
+  });
+  nav.querySelectorAll(':scope > a').forEach(function(a){
+    a.addEventListener('click', function(){
+      nav.classList.remove('is-open');
+      btn.classList.remove('is-open');
+    });
+  });
+  var drop = nav.querySelector('.hdr__drop');
+  if(drop){
+    var dropLink = drop.querySelector(':scope > a');
+    dropLink.addEventListener('click', function(e){
+      if(window.innerWidth <= 860){
+        e.preventDefault();
+        drop.classList.toggle('is-open');
+      }
+    });
+  }
+})();
 </script>
 </body>
 </html>
