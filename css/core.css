@@ -108,7 +108,7 @@ h1,h2,h3,h4{ font-family:var(--ff-display); font-weight:600; letter-spacing:-.01
 .ptier__price small{ font-family:var(--ff-text); font-size:.9rem; color:var(--ink-mute); font-weight:400; }
 .ptier__list{ display:flex; flex-direction:column; gap:10px; flex:1; }
 .ptier__list li{ display:flex; gap:10px; font-size:.92rem; color:var(--ink-dim); align-items:flex-start; }
-.ptier__list li::before{ content:"—"; color:var(--gold); flex-shrink:0; }
+.ptier__list li::before{ content:"·"; color:var(--gold); flex-shrink:0; }
 
 /* ---- services (разовые работы) ---- */
 .svc{ display:grid; grid-template-columns:repeat(3,1fr); gap:var(--gap); margin-top:40px; }
@@ -421,3 +421,25 @@ html[data-font="sans"] h1, html[data-font="sans"] h2, html[data-font="sans"] h3,
   .hdr__panel--prog a b{ font-weight:600; }
 }
 /* ═══ конец мобильного фикса ═══ */
+
+/* ═══ регалии начало ═══ */
+.regalia{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:36px; }
+.regalia__item{ background:var(--bg-2); border:1px solid var(--line); border-radius:var(--radius-sm); padding:22px; }
+.regalia__item b{ display:block; font-family:var(--ff-display); font-size:1.05rem; color:var(--gold-2); margin-bottom:6px; }
+.regalia__item span{ font-size:.86rem; color:var(--ink-dim); line-height:1.5; }
+@media (max-width:900px){ .regalia{ grid-template-columns:1fr 1fr; } }
+@media (max-width:560px){ .regalia{ grid-template-columns:1fr; } }
+/* ═══ регалии конец ═══ */
+
+/* ═══ юридические страницы начало ═══ */
+.legal h2{ font-family:var(--ff-display); font-size:1.2rem; margin:30px 0 10px; color:var(--gold-2); }
+.legal p{ color:var(--ink-dim); font-size:.96rem; line-height:1.7; margin-bottom:14px; }
+.legal__upd{ color:var(--ink-mute); font-size:.84rem; }
+.legal__note{ margin-top:32px; padding:16px 20px; border:1px solid var(--line); border-radius:var(--radius-sm); font-size:.86rem; color:var(--ink-mute); }
+/* ═══ юридические страницы конец ═══ */
+
+/* ═══ юр-ссылки в подвале ═══ */
+.ftr__legal{ display:block; width:100%; margin-top:8px; }
+.ftr__legal a{ color:var(--ink-mute); }
+.ftr__legal a:hover{ color:var(--gold-2); }
+/* ═══ конец ═══ */
