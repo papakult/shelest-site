@@ -11,9 +11,9 @@
   --line-2:        rgba(255,255,255,.16);
   --ink:           #f2efe9;
   --ink-dim:       rgba(242,239,233,.68);
-  --ink-mute:      rgba(242,239,233,.42);
+  --ink-mute:      rgba(242,239,233,.56);
   --gold:          #c9a24a;
-  --gold-2:        #e6c675;
+  --gold-2:        #d9b45f;
   --accent:        var(--gold);
 
   --ff-display:    'Fraunces', 'Georgia', serif;
@@ -92,7 +92,7 @@ h1,h2,h3,h4{ font-family:var(--ff-display); font-weight:600; letter-spacing:-.01
 
 /* ---- кнопки ---- */
 .btn{ display:inline-flex; align-items:center; gap:10px; padding:14px 28px; border-radius:100px; font-size:.94rem; font-weight:600; }
-.btn--gold{ background:linear-gradient(135deg,var(--gold-2),var(--gold)); color:#100c02; }
+.btn--gold{ background:linear-gradient(135deg,var(--gold-2),var(--gold)); color:#0a0a0b; font-weight:700; }
 .btn--gold:hover{ filter:brightness(1.08); }
 .btn--ghost{ border:1px solid var(--line-2); color:var(--ink); }
 .btn--ghost:hover{ border-color:var(--gold); color:var(--gold-2); }
