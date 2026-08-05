@@ -57,6 +57,7 @@ img{ filter:var(--ph) !important; transition:filter .5s var(--ease); }
 .bento__media img, .kase img, .post img, figure img{ filter:var(--ph) !important; }
 a:hover img, .rail__c:hover img, .gal:hover img, .bento__media:hover img,
 .js-live:hover img{ filter:var(--ph-live) !important; }
+.ph-color, .ph-color img{ filter:none !important; }
 
 .container{ max-width:var(--container); margin:0 auto; padding:0 24px; }
 section{ padding:clamp(64px,9vw,120px) 0; position:relative; }
