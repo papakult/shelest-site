@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ShelestFit</title>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0b0b0c; --bg-2:#131315; --bg-3:#1b1b1e;
+    --line:rgba(255,255,255,.09); --line-2:rgba(255,255,255,.16);
+    --ink:#f2efe9; --ink-dim:rgba(242,239,233,.68); --ink-mute:rgba(242,239,233,.5);
+    --gold:#c9a24a; --gold-2:#d9b45f; --gold-3:#f0d68a;
+    --radius:20px; --radius-sm:14px;
+    --ff-d:'Fraunces',Georgia,serif; --ff-t:'Inter',-apple-system,sans-serif;
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);font-family:var(--ff-t);}
+  body{
+    min-height:100vh;display:flex;flex-direction:column;padding:26px 20px 24px;
+    background:
+      radial-gradient(900px 460px at 50% -12%, rgba(201,162,74,.13), transparent 60%),
+      radial-gradient(600px 400px at 100% 110%, rgba(201,162,74,.05), transparent 55%),
+      var(--bg);
+  }
+
+  .crest{display:flex;align-items:center;gap:10px;margin-bottom:18px;}
+  .crest__ring{
+    width:38px;height:38px;border-radius:50%;
+    border:1px solid var(--gold);display:flex;align-items:center;justify-content:center;
+    font-family:var(--ff-d);font-size:.95rem;color:var(--gold-2);
+    box-shadow:0 0 22px rgba(201,162,74,.25), inset 0 0 12px rgba(201,162,74,.12);
+  }
+  .crest__t{font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-2);font-weight:600;}
+  .crest__s{font-size:.62rem;color:var(--ink-mute);letter-spacing:.04em;margin-top:2px;}
+
+  h1{font-family:var(--ff-d);font-weight:600;font-size:1.55rem;line-height:1.14;margin:0 0 8px;letter-spacing:-.012em;}
+  h1 em{font-style:italic;color:var(--gold-3);}
+  p.lead{color:var(--ink-dim);font-size:.92rem;line-height:1.55;margin:0 0 22px;min-height:1.4em;}
+
+  .progress{display:flex;gap:7px;margin-bottom:24px;}
+  .progress i{flex:1;height:3px;border-radius:3px;background:var(--line-2);overflow:hidden;position:relative;}
+  .progress i::after{
+    content:'';position:absolute;inset:0;transform:scaleX(0);transform-origin:left;
+    background:linear-gradient(90deg,var(--gold),var(--gold-3));transition:transform .5s cubic-bezier(.22,1,.36,1);
+  }
+  .progress i.done::after{transform:scaleX(1);}
+
+  .screen{display:none;}
+  .screen.active{display:block;animation:rise .38s cubic-bezier(.22,1,.36,1) both;}
+  @keyframes rise{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:none;}}
+
+  .card{
+    background:linear-gradient(170deg,var(--bg-2),var(--bg-3) 130%);
+    border:1px solid var(--line);border-radius:var(--radius);padding:18px;
+    box-shadow:0 24px 60px rgba(0,0,0,.4);
+  }
+  .opt{
+    display:flex;align-items:center;gap:12px;width:100%;text-align:left;
+    background:var(--bg-3);border:1px solid var(--line);color:var(--ink);
+    border-radius:var(--radius-sm);padding:15px 16px;margin-bottom:10px;
+    font-size:.94rem;line-height:1.35;font-family:var(--ff-t);cursor:pointer;
+    transition:border-color .2s, background .2s, transform .14s;
+  }
+  .opt:last-child{margin-bottom:0;}
+  .opt:active{transform:scale(.98);}
+  .opt .dot{
+    width:9px;height:9px;border-radius:50%;border:1.5px solid var(--ink-mute);flex-shrink:0;
+    transition:.2s;
+  }
+  .opt.selected{border-color:var(--gold);background:rgba(201,162,74,.12);color:var(--gold-3);font-weight:600;}
+  .opt.selected .dot{background:var(--gold-2);border-color:var(--gold-2);box-shadow:0 0 10px rgba(217,180,95,.6);}
+
+  .done-card{text-align:center;padding:40px 22px 34px;}
+  .done-card .mark{
+    width:64px;height:64px;margin:0 auto 18px;border-radius:50%;
+    border:1px solid var(--gold);display:flex;align-items:center;justify-content:center;
+    color:var(--gold-3);font-size:1.7rem;
+    box-shadow:0 0 34px rgba(201,162,74,.35), inset 0 0 16px rgba(201,162,74,.14);
+    animation:pulse 1.8s ease-out infinite;
+  }
+  @keyframes pulse{
+    0%{box-shadow:0 0 0 0 rgba(201,162,74,.35), inset 0 0 16px rgba(201,162,74,.14);}
+    70%{box-shadow:0 0 0 22px rgba(201,162,74,0), inset 0 0 16px rgba(201,162,74,.14);}
+    100%{box-shadow:0 0 0 0 rgba(201,162,74,0), inset 0 0 16px rgba(201,162,74,.14);}
+  }
+  .done-card h2{font-family:var(--ff-d);font-style:italic;font-size:1.35rem;margin:0 0 10px;color:var(--gold-3);}
+  .done-card p{color:var(--ink-dim);font-size:.92rem;line-height:1.55;margin:0;}
+
+  .sig{margin-top:auto;padding-top:24px;text-align:center;color:var(--ink-mute);font-size:.7rem;line-height:1.6;}
+  .sig b{color:var(--ink-dim);font-weight:600;letter-spacing:.02em;}
+  .sig .medal{color:var(--gold-2);}
+</style>
+</head>
+<body>
+
+  <div class="crest">
+    <div class="crest__ring">Ш</div>
+    <div>
+      <div class="crest__t">ShelestFit</div>
+      <div class="crest__s">персональный онлайн-тренинг</div>
+    </div>
+  </div>
+
+  <h1 id="title">Три коротких вопроса</h1>
+  <p class="lead" id="lead">Чтобы понять твою ситуацию и не гонять по кругу. Меньше минуты.</p>
+
+  <div class="progress"><i id="p0"></i><i id="p1"></i><i id="p2"></i></div>
+
+  <div class="screen active" id="question"><div class="card" id="options"></div></div>
+
+  <div class="screen" id="finish">
+    <div class="card done-card">
+      <div class="mark">✓</div>
+      <h2 id="doneTitle">Готово</h2>
+      <p id="doneText">Ответы ушли в бот, он продолжит разговор там.</p>
+    </div>
+  </div>
+
+  <div class="sig">
+    <b>Андрей Шелест</b><br>
+    <span class="medal">чемпион мира по пауэрлифтингу</span> · врач<br>
+    20 лет в спортивной медицине
+  </div>
+
+<script>
+(function(){
+  var tg = window.Telegram && window.Telegram.WebApp;
+  if (tg){
+    tg.ready(); tg.expand();
+    if (tg.setHeaderColor) tg.setHeaderColor('#0b0b0c');
+    if (tg.setBackgroundColor) tg.setBackgroundColor('#0b0b0c');
+  }
+
+  var firstName = (tg && tg.initDataUnsafe && tg.initDataUnsafe.user && tg.initDataUnsafe.user.first_name) || '';
+
+  var STEPS = [
+    { key:'goal',
+      title: firstName ? (firstName + ', что ближе всего к твоей задаче?') : 'Что ближе всего к твоей задаче?',
+      lead:'Выбери один вариант.',
+      options:[
+        ['goal_weight','Снизить вес и привести форму'],
+        ['goal_mass','Набрать массу и силу'],
+        ['goal_injury','Тренироваться после травмы или с ограничением'],
+        ['goal_compete','Подготовиться к соревнованиям'],
+        ['goal_other','Другое']
+      ]},
+    { key:'urgency', title:'Насколько срочно ты настроен?', lead:'Честно, правильных ответов нет.',
+      options:[
+        ['urgency_now','Хочу начать в ближайшие дни'],
+        ['urgency_soon','Присматриваюсь, изучаю'],
+        ['urgency_curious','Просто интересно']
+      ]},
+    { key:'budget', title:'Онлайн-ведение это платная работа', lead:'Какой формат тебе ближе?',
+      options:[
+        ['budget_full','Готов к полному ведению, это приоритет'],
+        ['budget_small','Хочу начать с чего-то небольшого'],
+        ['budget_free','Пока только бесплатная информация']
+      ]}
+  ];
+
+  var FINALS = {
+    hot:  { t:'Отличный настрой', p:'По ответам тебе подходит индивидуальное ведение. Возвращайся в чат: Андрей свяжется с тобой сегодня же.' },
+    warm: { t:'Хороший старт',    p:'В чате уже ждут форматы, с которых можно начать без переплаты. Посмотри и выбери свой.' },
+    cold: { t:'Без давления',     p:'В чате тебя ждут полезные материалы. Читай в своём темпе, я рядом.' }
+  };
+
+  var answers = {}, idx = 0;
+  var elT = document.getElementById('title'),
+      elL = document.getElementById('lead'),
+      elO = document.getElementById('options');
+
+  function render(i){
+    var s = STEPS[i];
+    elT.textContent = s.title;
+    elL.textContent = s.lead;
+    elO.innerHTML = '';
+    s.options.forEach(function(pair){
+      var b = document.createElement('button');
+      b.className = 'opt'; b.type = 'button';
+      b.innerHTML = '<span class="dot"></span><span>' + pair[1] + '</span>';
+      b.addEventListener('click', function(){ choose(b, s.key, pair[0], i); });
+      elO.appendChild(b);
+    });
+  }
+
+  function choose(btn, key, val, i){
+    if (answers[key]) return;
+    answers[key] = val;
+    btn.classList.add('selected');
+    document.getElementById('p'+i).classList.add('done');
+    if (tg && tg.HapticFeedback) tg.HapticFeedback.impactOccurred('light');
+    setTimeout(function(){
+      if (i+1 < STEPS.length){ idx = i+1; render(idx); }
+      else finish();
+    }, 260);
+  }
+
+  function branchOf(a){
+    if (a.urgency==='urgency_now' && a.budget==='budget_full') return 'hot';
+    if (a.urgency==='urgency_curious' && a.budget==='budget_free') return 'cold';
+    return 'warm';
+  }
+
+  function finish(){
+    var br = branchOf(answers);
+    document.getElementById('doneTitle').textContent = FINALS[br].t;
+    document.getElementById('doneText').textContent = FINALS[br].p;
+    document.getElementById('question').classList.remove('active');
+    document.getElementById('finish').classList.add('active');
+    elT.textContent = firstName ? ('Спасибо, ' + firstName) : 'Спасибо';
+    elL.textContent = '';
+    if (tg && tg.HapticFeedback) tg.HapticFeedback.notificationOccurred('success');
+    if (tg){
+      tg.sendData(JSON.stringify(answers));
+      setTimeout(function(){ tg.close(); }, 1400);
+    }
+  }
+
+  render(0);
+})();
+</script>
+</body>
+</html>
