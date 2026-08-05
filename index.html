@@ -863,10 +863,6 @@
         <img src="img/team-79-440.jpg" srcset="img/team-79-300.jpg 300w, img/team-79-440.jpg 440w, img/team-79-640.jpg 640w" sizes="260px" alt="Спортивная жизнь" loading="lazy">
         <div class="rail__cap"><b>Спортивная жизнь</b><span>Соревнования и тренировки</span></div>
       </div>
-      <div class="rail__c ph-color" data-cat="life">
-        <img src="img/andrey-hoodie-merc-440.jpg" srcset="img/andrey-hoodie-merc-300.jpg 300w, img/andrey-hoodie-merc-440.jpg 440w, img/andrey-hoodie-merc-640.jpg 640w" sizes="260px" alt="Вне зала" loading="lazy">
-        <div class="rail__cap"><b>Вне зала</b><span>Образ жизни</span></div>
-      </div>
 
   </div>
 </section>
@@ -1748,7 +1744,7 @@ document.querySelectorAll('.faq__q').forEach(function(btn){
 
   function collect(){
     items = [];
-    document.querySelectorAll('.rail__c img, .ba img').forEach(function(im){
+    document.querySelectorAll('.rail__c img, .ba img, .bac img').forEach(function(im){
       var full = im.currentSrc || im.src;
       // самое большое изображение из srcset, если есть
       if(im.srcset){
@@ -1761,6 +1757,9 @@ document.querySelectorAll('.faq__q').forEach(function(btn){
       if(capNode){
         var b = capNode.querySelector('b'), s = capNode.querySelector('span');
         cap = [b && b.textContent.trim(), s && s.textContent.trim()].filter(Boolean).join(' · ');
+      } else {
+        var h4 = im.parentElement.querySelector('h4'), p = im.parentElement.querySelector('p');
+        cap = [h4 && h4.textContent.trim(), p && p.textContent.trim()].filter(Boolean).join(' · ');
       }
       items.push({src: full, cap: cap, el: im});
     });
@@ -1782,7 +1781,7 @@ document.querySelectorAll('.faq__q').forEach(function(btn){
   }
 
   document.addEventListener('click', function(e){
-    var im = e.target.closest('.rail__c img, .ba img');
+    var im = e.target.closest('.rail__c img, .ba img, .bac img');
     if(im){
       collect();
       var i = items.findIndex(function(it){ return it.el === im; });
