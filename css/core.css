@@ -600,3 +600,8 @@ html[data-font="sans"] h1, html[data-font="sans"] h2, html[data-font="sans"] h3,
   .rv{ opacity:1; transform:none; }
   .pg-top{ transition:none; }
 }
+
+/* fix: buttons inside article body keep readable text */
+.art-body a.btn{ text-decoration:none; }
+.art-body a.btn--gold{ color:#0a0a0b; }
+.art-body a.btn--ghost{ color:var(--ink); }
