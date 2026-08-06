@@ -11,46 +11,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://shelestfit.com/onlayn-vedenie.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://shelestfit.com/programma-trenirovok.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://shelestfit.com/pitanie.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://shelestfit.com/posle-travmy.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://shelestfit.com/podgotovka-k-sorevnovaniyam.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://shelestfit.com/trenirovki-doma.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://shelestfit.com/muzhchiny-40plus.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://shelestfit.com/zhenskiy-trening.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
     <loc>https://shelestfit.com/sport-nutrition.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -64,6 +24,16 @@
     <loc>https://shelestfit.com/microbiome.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://shelestfit.com/articles/onlayn-trener-tekhnika.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://shelestfit.com/articles/trenirovki-posle-40.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://shelestfit.com/articles/kreatin-fakty.html</loc>
