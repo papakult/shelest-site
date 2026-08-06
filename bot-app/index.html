@@ -122,7 +122,7 @@
 
   <div class="sig">
     <b>Андрей Шелест</b><br>
-    <span class="medal">чемпион мира по пауэрлифтингу</span> · врач<br>
+    <span class="medal">чемпион мира</span> · врач<br>
     20 лет в спортивной медицине
   </div>
 
@@ -215,8 +215,20 @@
     elL.textContent = '';
     if (tg && tg.HapticFeedback) tg.HapticFeedback.notificationOccurred('success');
     if (tg){
-      tg.sendData(JSON.stringify(answers));
-      setTimeout(function(){ tg.close(); }, 1400);
+      if (tg.initData){
+        // запуск через инлайн-кнопку или кнопку меню: шлём ответы напрямую на сервер
+        fetch('https://shelestfit-bot.trenershelest.workers.dev/webapp-submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ initData: tg.initData, answers: answers })
+        }).catch(function(){}).then(function(){
+          setTimeout(function(){ tg.close(); }, 1200);
+        });
+      } else {
+        // запуск через reply-кнопку: классический канал web_app_data
+        try { tg.sendData(JSON.stringify(answers)); } catch(e){}
+        setTimeout(function(){ tg.close(); }, 1400);
+      }
     }
   }
 
