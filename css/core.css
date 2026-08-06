@@ -558,3 +558,45 @@ html[data-font="sans"] h1, html[data-font="sans"] h2, html[data-font="sans"] h3,
   .cform__row--submit{ flex-direction:column; align-items:flex-start; }
 }
 /* ═══ контакты: email + мини-форма конец ═══ */
+
+/* ============================================================
+   Премиум-слой: прогресс чтения, reveal, выделение, скроллбар
+   ============================================================ */
+::selection{ background:rgba(201,162,74,.85); color:#0b0b0c; }
+::-moz-selection{ background:rgba(201,162,74,.85); color:#0b0b0c; }
+
+:focus-visible{ outline:2px solid var(--gold); outline-offset:3px; border-radius:4px; }
+
+@media (min-width:900px){
+  ::-webkit-scrollbar{ width:11px; }
+  ::-webkit-scrollbar-track{ background:var(--bg); }
+  ::-webkit-scrollbar-thumb{ background:#2a2a2e; border-radius:8px; border:2px solid var(--bg); }
+  ::-webkit-scrollbar-thumb:hover{ background:var(--gold); }
+}
+
+.pg-progress{
+  position:fixed; top:0; left:0; right:0; height:2px; z-index:1200;
+  background:linear-gradient(90deg, var(--gold), var(--gold-2), #f0d68a);
+  transform-origin:0 50%; transform:scaleX(0); pointer-events:none;
+}
+
+.pg-top{
+  position:fixed; right:24px; bottom:96px; z-index:1100;
+  width:46px; height:46px; border-radius:50%;
+  background:rgba(19,19,21,.88); color:var(--gold-2);
+  border:1px solid rgba(201,162,74,.45); font-size:19px; line-height:1;
+  backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px);
+  opacity:0; visibility:hidden; transform:translateY(10px);
+  transition:opacity .35s var(--ease), transform .35s var(--ease), visibility .35s;
+}
+.pg-top.is-on{ opacity:1; visibility:visible; transform:translateY(0); }
+.pg-top:hover{ background:var(--gold); color:#0b0b0c; border-color:var(--gold); }
+
+.rv{ opacity:0; transform:translateY(22px); }
+.rv-in{ opacity:1; transform:translateY(0);
+  transition:opacity .7s var(--ease), transform .7s var(--ease); }
+
+@media (prefers-reduced-motion: reduce){
+  .rv{ opacity:1; transform:none; }
+  .pg-top{ transition:none; }
+}
