@@ -90,6 +90,13 @@ articles.sort(key=lambda a: a['date'], reverse=True)
 # ---------- страница одной статьи ----------
 def render_article(a):
     url = f'{SITE}/articles/{a["slug"]}.html'
+    cover_rel = f'img/covers/{a["slug"]}.jpg'
+    has_cover = os.path.exists(os.path.join(ROOT, cover_rel))
+    cover = f'{SITE}/{cover_rel}' if has_cover else f'{SITE}/img/og-cover.jpg'
+    cover_block = (f'<img src="../{cover_rel}" width="1200" height="630" loading="eager" '
+                   f'alt="{esc(a["title"])}" '
+                   f'style="width:100%; height:auto; border-radius:var(--radius-sm); '
+                   f'margin-top:26px; border:1px solid var(--line);">') if has_cover else ''
     ext_block = ''
     if a['external']:
         ext_block = (f'<p style="margin-top:28px; padding:16px 20px; border:1px solid var(--line); '
@@ -110,6 +117,7 @@ def render_article(a):
         f'"datePublished":"{a["date"]}",'
         '"author":{"@type":"Person","name":"Андрей Шелест","url":"https://shelestfit.com/"},'
         '"publisher":{"@type":"Person","name":"Андрей Шелест"},'
+        f'"image":"{cover}",'
         f'"mainEntityOfPage":"{url}"'
         '}'
     )
@@ -128,7 +136,11 @@ def render_article(a):
 <meta property="og:description" content="{esc(a["desc"])}">
 <meta property="og:url" content="{url}">
 <meta property="og:locale" content="ru_RU">
+<meta property="og:image" content="{cover}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="{cover}">
 <script type="application/ld+json">{jsonld}</script>
 </head>
 <body>
@@ -141,6 +153,7 @@ def render_article(a):
     <h1 class="h-sec" style="font-size:clamp(1.9rem,4vw,3rem); margin-top:18px;">{esc(a["title"])}</h1>
     <p style="color:var(--ink-mute); font-size:.86rem; margin-top:10px;">{ru_date(a["date"])} · {AUTHOR}</p>
     {tags_block}
+    {cover_block}
   </div>
 </section>
 <section style="padding-top:0;">
