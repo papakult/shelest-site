@@ -110,6 +110,8 @@ def render_article(a):
                          f'border-radius:100px; padding:3px 12px;">{esc(t)}</span>' for t in a['tags'])
         tags_block = f'<div style="display:flex; gap:8px; flex-wrap:wrap; margin-top:16px;">{chips}</div>'
 
+    faq_ld = build_faq(a['body'])
+
     jsonld = (
         '{"@context":"https://schema.org","@type":"Article",'
         f'"headline":{md_json(a["title"])},'
@@ -142,6 +144,7 @@ def render_article(a):
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="{cover}">
 <script type="application/ld+json">{jsonld}</script>
+{faq_ld}
 </head>
 <body>
 {HEADER_SUB}
@@ -173,6 +176,30 @@ def render_article(a):
 def md_json(s):
     import json
     return json.dumps(s or '', ensure_ascii=False)
+
+QUESTION_RE = re.compile(
+    r'^(правда ли|можно ли|нужна ли|нужно ли|сколько|как |что |чем |почему|зачем|кому|когда|'
+    r'опасн|вреди|станет ли|будет ли|стоит ли|а что|какой|какая|какие|где )', re.I)
+
+def build_faq(body_html):
+    """Собирает FAQPage из H2-вопросов и первого абзаца под каждым."""
+    pairs = re.findall(r'<h2[^>]*>(.*?)</h2>\s*<p>(.*?)</p>', body_html, re.S)
+    qa = []
+    for q, ans in pairs:
+        q = re.sub(r'<[^>]+>', '', q).strip()
+        ans = re.sub(r'<[^>]+>', '', ans).strip()
+        if not q or not ans or not QUESTION_RE.match(q):
+            continue
+        if len(ans) < 40:
+            continue
+        qa.append((q, ans[:600]))
+    if not qa:
+        return ''
+    items = ','.join(
+        '{"@type":"Question","name":%s,"acceptedAnswer":{"@type":"Answer","text":%s}}'
+        % (md_json(q), md_json(a)) for q, a in qa)
+    return '<script type="application/ld+json">{"@context":"https://schema.org",' \
+           '"@type":"FAQPage","mainEntity":[' + items + ']}</script>'
 
 os.makedirs(OUTDIR, exist_ok=True)
 for a in articles:
