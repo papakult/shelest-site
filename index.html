@@ -1717,12 +1717,31 @@ document.getElementById('langBtn').addEventListener('click', ()=>{
 (function(){
   var form = document.getElementById('contactForm');
   if (!form) return;
+  function showSentOverlay(ru){
+    var m = document.createElement('div');
+    m.style.cssText = 'position:fixed;inset:0;z-index:2000;display:flex;align-items:center;justify-content:center;background:rgba(8,8,9,.85);backdrop-filter:blur(6px);padding:20px;';
+    m.innerHTML = '<div style="background:#131315;border:1px solid rgba(201,162,74,.5);border-radius:18px;padding:34px 26px;max-width:400px;width:100%;text-align:center;box-shadow:0 24px 60px rgba(0,0,0,.5);">'
+      + '<div style="width:62px;height:62px;margin:0 auto 16px;border-radius:50%;border:1px solid #c9a24a;display:flex;align-items:center;justify-content:center;color:#f0d68a;font-size:1.7rem;box-shadow:0 0 30px rgba(201,162,74,.35);">&#10003;</div>'
+      + '<p style="font-size:1.2rem;font-weight:700;color:#f2efe9;margin:0 0 10px;">' + (ru ? 'Заявка отправлена' : 'Request sent') + '</p>'
+      + '<p style="color:rgba(242,239,233,.7);font-size:.92rem;line-height:1.55;margin:0 0 20px;">' + (ru
+        ? 'Сейчас откроется Telegram с готовым сообщением — нажмите там «Отправить», чтобы заявка точно дошла. Если чат не открылся, напишите боту напрямую: @ShelestFitBot.'
+        : 'Telegram will open with your message ready — hit Send there so it reaches us. If the chat did not open, message @ShelestFitBot directly.') + '</p>'
+      + '<button type="button" style="background:linear-gradient(135deg,#d9b45f,#c9a24a);color:#0a0a0b;border:none;border-radius:100px;padding:13px 30px;font-size:.95rem;font-weight:700;cursor:pointer;">' + (ru ? 'Понятно' : 'Got it') + '</button>'
+      + '</div>';
+    m.querySelector('button').onclick = function(){ m.remove(); };
+    m.addEventListener('click', function(e){ if (e.target === m) m.remove(); });
+    document.body.appendChild(m);
+  }
   form.addEventListener('submit', function(e){
     e.preventDefault();
+    if (form.dataset.busy === '1') return;
     var name = document.getElementById('cf-name').value.trim();
     var tg = document.getElementById('cf-tg').value.trim();
     var goal = document.getElementById('cf-goal').value.trim();
     if (!name || !tg || !goal) return;
+    form.dataset.busy = '1';
+    var btn = form.querySelector('button[type="submit"]');
+    if (btn){ btn.disabled = true; btn.style.opacity = '.75'; btn.textContent = LANG === 'ru' ? 'Заявка отправлена ✓' : 'Sent ✓'; }
     var lines = [
       'Заявка с сайта shelestfit.com',
       'Имя: ' + name,
@@ -1730,12 +1749,13 @@ document.getElementById('langBtn').addEventListener('click', ()=>{
       'Цель: ' + goal
     ];
     var text = encodeURIComponent(lines.join('\n'));
+    showSentOverlay(LANG === 'ru');
     window.open('https://t.me/ShelestFitBot?text=' + text, '_blank', 'noopener');
     form.classList.add('is-sent');
     var note = form.querySelector('.cform__note');
     if (note) note.textContent = LANG === 'ru'
-      ? 'Открыл Telegram с готовым текстом, нажмите «Отправить» в чате с ботом.'
-      : 'Telegram opened with your message ready, just hit Send in the chat.';
+      ? 'Заявка отправлена. В Telegram нажмите «Отправить» в чате с ботом.'
+      : 'Request sent. In Telegram, hit Send in the bot chat.';
   });
 })();
 </script>
