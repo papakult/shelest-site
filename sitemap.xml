@@ -31,6 +31,16 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://shelestfit.com/articles/silovye-trenirovki-acsm-2026.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://shelestfit.com/articles/skolko-podhodov-v-nedelyu.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://shelestfit.com/articles/sportpit-markirovka.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
