@@ -246,8 +246,8 @@ section[id]{ scroll-margin-top:96px; }
   background:
     linear-gradient(180deg, var(--bg) 0%, rgba(11,11,12,.42) 16%, rgba(11,11,12,.74) 60%, var(--bg) 100%);
 }
-.sec-bg--formats::before{ background-image:url(../img/team-9-640.jpg); }
-.sec-bg--how::before{ background-image:url(../img/team-5-640.jpg); }
+.sec-bg--formats::before{ background-image:url(../img/team-9-640.webp); }
+.sec-bg--how::before{ background-image:url(../img/team-5-640.webp); }
 /* компактный вариант для второстепенных секций (шаги/faq) — фон тише, но всё ещё заметен */
 .sec-bg--soft::before{ opacity:.62; filter:var(--ph-soft); }
 .sec-bg--soft::after{
