@@ -157,7 +157,7 @@ def render_tariffs(e, c):
         <a class="btn {btn}" href="{esc(tg_for(e['h1'], k))}" target="_blank" rel="noopener">Обсудить в Telegram</a>
       </div>''')
     note = c.get('tariffNote', '')
-    note_html = f'<p class="lead" style="font-size:.95rem; margin-top:14px;">{esc(note)}</p>' if note else ''
+    note_html = f'<p class="lead" style="font-size:.95rem; margin-top:14px;">{note}</p>' if note else ''
     return f'''<section id="pricing">
   <div class="container">
     <p class="eyebrow">Формат и цена</p>
