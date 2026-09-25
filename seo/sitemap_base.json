@@ -1,0 +1,160 @@
+{
+ "_about": "Базовые (не SEO-реестр) URL сайта для sitemap.xml. Новые обычные страницы/статьи добавлять сюда; SEO-посадочные добавляются из registry.json автоматически.",
+ "urls": [
+  {
+   "loc": "https://shelestfit.com/",
+   "changefreq": "weekly",
+   "priority": "1.0"
+  },
+  {
+   "loc": "https://shelestfit.com/articles.html",
+   "changefreq": "weekly",
+   "priority": "0.8"
+  },
+  {
+   "loc": "https://shelestfit.com/press.html",
+   "changefreq": "monthly",
+   "priority": "0.8"
+  },
+  {
+   "loc": "https://shelestfit.com/sport-nutrition.html",
+   "changefreq": "weekly",
+   "priority": "0.8"
+  },
+  {
+   "loc": "https://shelestfit.com/dietology.html",
+   "changefreq": "weekly",
+   "priority": "0.8"
+  },
+  {
+   "loc": "https://shelestfit.com/microbiome.html",
+   "changefreq": "weekly",
+   "priority": "0.8"
+  },
+  {
+   "loc": "https://shelestfit.com/articles/silovye-trenirovki-acsm-2026.html",
+   "changefreq": "weekly",
+   "priority": "0.7"
+  },
+  {
+   "loc": "https://shelestfit.com/articles/skolko-podhodov-v-nedelyu.html",
+   "changefreq": "weekly",
+   "priority": "0.7"
+  },
+  {
+   "loc": "https://shelestfit.com/articles/sportpit-markirovka.html",
+   "changefreq": "weekly",
+   "priority": "0.7"
+  },
+  {
+   "loc": "https://shelestfit.com/articles/onlayn-trener-tekhnika.html",
+   "changefreq": "weekly",
+   "priority": "0.7"
+  },
+  {
+   "loc": "https://shelestfit.com/articles/trenirovki-posle-40.html",
+   "changefreq": "weekly",
+   "priority": "0.7"
+  },
+  {
+   "loc": "https://shelestfit.com/articles/kreatin-fakty.html",
+   "changefreq": "weekly",
+   "priority": "0.7"
+  },
+  {
+   "loc": "https://shelestfit.com/onlayn-vedenie.html",
+   "changefreq": "weekly",
+   "priority": "0.8"
+  },
+  {
+   "loc": "https://shelestfit.com/programma-trenirovok.html",
+   "changefreq": "weekly",
+   "priority": "0.8"
+  },
+  {
+   "loc": "https://shelestfit.com/pitanie.html",
+   "changefreq": "weekly",
+   "priority": "0.8"
+  },
+  {
+   "loc": "https://shelestfit.com/posle-travmy.html",
+   "changefreq": "weekly",
+   "priority": "0.8"
+  },
+  {
+   "loc": "https://shelestfit.com/podgotovka-k-sorevnovaniyam.html",
+   "changefreq": "weekly",
+   "priority": "0.8"
+  },
+  {
+   "loc": "https://shelestfit.com/trenirovki-doma.html",
+   "changefreq": "weekly",
+   "priority": "0.8"
+  },
+  {
+   "loc": "https://shelestfit.com/muzhchiny-40plus.html",
+   "changefreq": "weekly",
+   "priority": "0.8"
+  },
+  {
+   "loc": "https://shelestfit.com/zhenskiy-trening.html",
+   "changefreq": "weekly",
+   "priority": "0.8"
+  },
+  {
+   "loc": "https://shelestfit.com/articles/plato-v-silovyh.html",
+   "changefreq": "weekly",
+   "priority": "0.7"
+  },
+  {
+   "loc": "https://shelestfit.com/articles/rekompoziciya-tela.html",
+   "changefreq": "weekly",
+   "priority": "0.7"
+  },
+  {
+   "loc": "https://shelestfit.com/articles/son-i-vosstanovlenie.html",
+   "changefreq": "weekly",
+   "priority": "0.7"
+  },
+  {
+   "loc": "https://shelestfit.com/articles/bcaa-otdelno-ot-belka.html",
+   "changefreq": "weekly",
+   "priority": "0.7"
+  },
+  {
+   "loc": "https://shelestfit.com/articles/mikrobiom-chelovek.html",
+   "changefreq": "weekly",
+   "priority": "0.7"
+  },
+  {
+   "loc": "https://shelestfit.com/articles/mikrobiom-i-immunitet.html",
+   "changefreq": "weekly",
+   "priority": "0.7"
+  },
+  {
+   "loc": "https://shelestfit.com/articles/trenirovki-i-menstrualny-cikl.html",
+   "changefreq": "weekly",
+   "priority": "0.7"
+  },
+  {
+   "loc": "https://shelestfit.com/articles/tyaga-k-sladkomu.html",
+   "changefreq": "weekly",
+   "priority": "0.7"
+  },
+  {
+   "loc": "https://shelestfit.com/results.html",
+   "changefreq": "monthly",
+   "priority": "0.8"
+  },
+  {
+   "loc": "https://shelestfit.com/articles/kak-kormit-mikrobov.html",
+   "changefreq": "weekly",
+   "priority": "0.7"
+  },
+  {
+   "loc": "https://shelestfit.com/articles/os-kishechnik-mozg.html",
+   "changefreq": "weekly",
+   "priority": "0.7"
+  }
+ ]
+}
