@@ -106,7 +106,7 @@ section[id]{ scroll-margin-top:96px; }
 .btn--ghost:hover{ border-color:var(--gold); color:var(--gold-2); transform:translateY(-2px); }
 
 /* ---- pricing ---- */
-.pricing__grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:var(--gap); margin-top:40px; }
+.pricing__grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:var(--gap); margin-top:40px; }
 .ptier__promo{ font-size:.78rem; color:var(--gold-2); background:rgba(201,162,74,.1); border:1px solid rgba(201,162,74,.35); border-radius:8px; padding:6px 10px; margin-top:-4px; }
 .svc__c--entry{ border-color:var(--gold); position:relative; }
 .svc__c--entry .svc__badge{ position:absolute; top:-11px; left:18px; background:var(--gold); color:#100c02; font-size:.68rem; font-weight:700; padding:3px 10px; border-radius:100px; letter-spacing:.04em; text-transform:uppercase; }
