@@ -90,7 +90,7 @@ LABEL = {'program_monthly': 'Программа тренировок', 'full': '
          'labs': 'Консультация с учётом предоставленных анализов', 'consult': 'Разовая консультация'}
 
 def price_str(p):
-    s = f'{p["rub"]:,}'.replace(',', ' ') + ' ₽'
+    s = f'{p["rub"]:,}'.replace(',', ' ') + ' ₽'
     return s
 
 def tg(text):
@@ -393,8 +393,8 @@ def validate(pages):
             if a not in ARTICLES: errs.append(f'{e["id"]}: статьи {a} нет')
         kw = e['primaryKeyword'].split()[0][:5].lower()
         body = text_of(h)
-        for m in re.findall(r'(\d[\d\s ]*)\s?₽', body):
-            v = re.sub(r'[\s ]+', ' ', m).strip()
+        for m in re.findall(r'(\d[\d\s ]*)\s?₽', body):
+            v = re.sub(r'[\s ]+', ' ', m).strip()
             if v not in ALLOWED_RUB: errs.append(f'{e["id"]}: недопустимая цена «{v} ₽»')
         content_text = text_of(json.dumps(c, ensure_ascii=False))
         for b in BAD_PHRASES:
