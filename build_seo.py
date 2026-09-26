@@ -18,6 +18,7 @@ from collections import Counter, defaultdict
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 SITE = 'https://shelestfit.com'
+FONTS = 'https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap'
 CHECK_ONLY = '--check' in sys.argv
 
 def rd(p): return open(os.path.join(ROOT, p), encoding='utf-8').read()
@@ -261,7 +262,7 @@ def render(e):
     <div class="steps" style="margin-top:28px;">{steps}</div>
   </div>
 </section>''')
-    ben = ''.join(f'<div class="svc__c"><h4>{esc(b["t"])}</h4><p>{esc(b["d"])}</p></div>' for b in c['benefits']['items'])
+    ben = ''.join(f'<div class="svc__c"><h3 style="font-size:1.05rem; margin-bottom:8px;">{esc(b["t"])}</h3><p>{esc(b["d"])}</p></div>' for b in c['benefits']['items'])
     blocks.append(f'''<section>
   <div class="container">
     {sec_title(c['benefits']['h2'])}
@@ -303,7 +304,10 @@ def render(e):
 <title>{esc(title)}</title>
 <meta name="description" content="{esc(c['description'])}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="image" href="/img/{c.get('bg', 'team-6')}-640.webp" fetchpriority="high">
+<link rel="preload" as="style" href="{FONTS}" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="{FONTS}"></noscript>
 <link rel="stylesheet" href="/css/core.css">
 <link rel="icon" type="image/svg+xml" href="/img/favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32.png">
