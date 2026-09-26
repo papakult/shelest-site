@@ -111,7 +111,7 @@
    "F01",
    "A09",
    "G03"
-  ],
+  , "R01"],
   "articles": [
    "onlayn-trener-tekhnika"
   ]
@@ -695,7 +695,7 @@
    "A04",
    "pitanie",
    "results"
-  ],
+  , "R20"],
   "articles": [
    "tyaga-k-sladkomu"
   ]
@@ -1033,7 +1033,7 @@
    "F07",
    "F08",
    "F09"
-  ],
+  , "R11"],
   "articles": [
    "plato-v-silovyh"
   ]
