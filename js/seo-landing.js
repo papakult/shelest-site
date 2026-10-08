@@ -38,3 +38,24 @@
     document.querySelectorAll('[data-i18n]').forEach(function(el){ var k = el.getAttribute('data-i18n'); if (d[k] !== undefined) el.innerHTML = d[k]; });
   });
 })();
+
+/* Переход к переписке, без утверждения об отправке заявки. */
+(function(){
+  document.addEventListener('click', function(event){
+    var link = event.target.closest && event.target.closest('a[href]');
+    if (!link) return;
+    var url;
+    try { url = new URL(link.href); } catch(e) { return; }
+    if (url.hostname !== 't.me') return;
+    var section = link.closest('section');
+    var placement = section && section.classList.contains('seg-hero') ? 'hero' :
+      section && section.id === 'pricing' ? 'pricing' :
+      section && section.classList.contains('seg-cta') ? 'final' : 'other';
+    var name = placement === 'hero' ? 'hero_bot_click' :
+      placement === 'pricing' ? 'pricing_bot_click' :
+      placement === 'final' ? 'final_bot_click' : 'telegram_click';
+    var params = {page_path: location.pathname, placement: placement, destination: url.pathname};
+    try { if (typeof ym === 'function') ym(111303972, 'reachGoal', name, params); } catch(e) {}
+    try { if (typeof gtag === 'function') gtag('event', name, params); } catch(e) {}
+  });
+})();

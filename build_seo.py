@@ -215,6 +215,13 @@ def render(e):
     url = SITE + url_of(e)
     title = f'{c["title"]} · Андрей Шелест'
     main = PRODUCTS[c['tariffs'][0]]
+    cta_label = esc(c.get('ctaLabel', 'Написать в Telegram'))
+    hero_offer = ''
+    contact_hint = ''
+    if c.get('contactHint'):
+        period = ' в месяц' if main['monthly'] else ''
+        hero_offer = f'\n    <p style="margin-top:14px;color:var(--gold-2);font-weight:600;">{esc(LABEL[main["key"]])}: {price_str(main)}{period}</p>'
+        contact_hint = f'\n    <p style="margin-top:16px;font-size:.9rem;color:var(--ink-mute);max-width:55ch;">{esc(c["contactHint"])}</p>'
     faq_ld = {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
         {"@type": "Question", "name": q['q'], "acceptedAnswer": {"@type": "Answer", "text": re.sub(r'<[^>]+>', '', q['a'])}} for q in c['faq']]}
     svc_ld = {"@context": "https://schema.org", "@type": "Service", "serviceType": LABEL[main['key']], "name": e['h1'],
@@ -291,7 +298,7 @@ def render(e):
   <div class="container" style="text-align:center;">
     <h2 class="h-sec" style="font-size:clamp(1.7rem,3vw,2.4rem);">{esc(c['ctaTitle'])}</h2>
     <p class="lead" style="margin:14px auto 28px;">{esc(c['ctaText'])}</p>
-    <a class="btn btn--gold" href="{esc(tg_for(e['h1'], main['key']))}" target="_blank" rel="noopener" style="font-size:1.02rem;">Написать в Telegram</a>
+    <a class="btn btn--gold" href="{esc(tg_for(e['h1'], main['key']))}" target="_blank" rel="noopener" style="font-size:1.02rem;">{cta_label}</a>{contact_hint}
   </div>
 </section>''')
     blocks.append(related_cards(e, c))
@@ -339,11 +346,11 @@ def render(e):
   <div class="container">
     <p class="eyebrow">{esc(c['eyebrow'])}</p>
     <h1 class="h-sec" style="font-size:clamp(2rem,4.4vw,3.4rem); max-width:22ch;">{esc(e['h1'])}</h1>
-    <p class="lead" style="font-size:1.1rem; margin-top:18px;">{esc(c['lead'])}</p>
+    <p class="lead" style="font-size:1.1rem; margin-top:18px;">{esc(c['lead'])}</p>{hero_offer}
     <div style="display:flex; gap:14px; margin-top:30px; flex-wrap:wrap;">
-      <a class="btn btn--gold" href="{esc(tg_for(e['h1'], main['key']))}" target="_blank" rel="noopener">Написать в Telegram</a>
+      <a class="btn btn--gold" href="{esc(tg_for(e['h1'], main['key']))}" target="_blank" rel="noopener">{cta_label}</a>
       <a class="btn btn--ghost" href="#pricing">Формат и цена</a>
-    </div>
+    </div>{contact_hint}
   </div>
 </section>
 
