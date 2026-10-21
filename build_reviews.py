@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 """Заполняет #revGrid карточками из reviews.json. Пропускает записи со статусом PENDING_RESEND."""
 import json, re
+from pathlib import Path
+ROOT = Path(__file__).resolve().parent
 
-with open('/root/shelest/reviews.json', encoding='utf-8') as f:
+with open(ROOT / 'reviews.json', encoding='utf-8') as f:
     reviews = json.load(f)
 
 cards = []
@@ -11,7 +13,7 @@ i = 0
 for r in reviews:
     if r['t'].startswith('PENDING_RESEND'):
         continue
-    i += 1
+    i = int(r['id'].split('-')[-1])
     res_html = f'<span class="rev__res">{r["res"]}</span>' if r.get('res') else ''
     cards.append(f'''      <div class="rev__c">
         <div class="rev__q">"</div>
@@ -32,13 +34,13 @@ for r in reviews:
 
 block = '\n'.join(cards)
 
-html = open('/root/shelest/index.html', encoding='utf-8').read()
+html = open(ROOT / 'index.html', encoding='utf-8').read()
 html = re.sub(
     r'(<div class="rev__grid" id="revGrid">).*?(</div>\s*</div>\s*</section>)',
     lambda m: m.group(1) + '\n' + block + '\n    ' + m.group(2),
     html, flags=re.S
 )
-open('/root/shelest/index.html', 'w', encoding='utf-8').write(html)
+open(ROOT / 'index.html', 'w', encoding='utf-8').write(html)
 
 print(f'Вставлено отзывов: {i} (пропущено ожидающих пересылки: {len(reviews)-i})')
 print('EN-ключи для i18n:')
