@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """Генерирует sport-nutrition.html, dietology.html, microbiome.html
 из общего шаблона (шапка/футер как на index.html) + двуязычный контент по теме."""
+raise SystemExit('Historical builder retired: edit index.html and run build_seo.py; medical intake has been removed.')
+
 import re, json
 
 HEAD_FOOT = open('/root/shelest/index.html', encoding='utf-8').read()
@@ -178,7 +180,7 @@ PAGES = {
             ]),
         ],
         cta_title='Похожая ситуация?', en_cta_title='Sounds familiar?',
-        cta_text='Разберём анализы и подберём питание с учётом состояния микробиоты.',
+        cta_text='Обсудим цель тренировок и формат работы. Медицинские исследования не присылайте.',
         en_cta_text='We\'ll review your bloodwork and build a diet around your gut health.',
         cta_price='10 000 ₽', usd='105',
         cta_label='Консультация по анализам', en_cta_label='Bloodwork consultation',

@@ -70,7 +70,7 @@ PRODUCT_MAP = {
     'vip': 'VIP-формат',
     'program_once': 'Индивидуальная программа тренировок',
     'nutrition': 'Разбор питания',
-    'labs': 'Консультация с учётом анализов',
+    'labs': 'Разбор целей и плана тренировок',
     'consult': 'Разовая консультация',
 }
 # Актуальная продуктовая логика из ТЗ: сверяем, что вёрстка главной ей соответствует.
@@ -88,7 +88,7 @@ for key, site_name in PRODUCT_MAP.items():
 # Подписи, чтобы не путать ежемесячную «Программу» и разовую «Индивидуальную программу»
 LABEL = {'program_monthly': 'Программа тренировок', 'full': 'Полное сопровождение', 'vip': 'VIP-сопровождение',
          'program_once': 'Индивидуальная программа', 'nutrition': 'Разбор питания',
-         'labs': 'Консультация с учётом предоставленных анализов', 'consult': 'Разовая консультация'}
+         'labs': 'Разбор целей и плана тренировок', 'consult': 'Разовая консультация'}
 
 def price_str(p):
     s = f'{p["rub"]:,}'.replace(',', ' ') + ' ₽'
@@ -376,6 +376,13 @@ def text_of(h):
     h = re.sub(r'<[^>]+>', ' ', h)
     return html.unescape(re.sub(r'\s+', ' ', h))
 
+# The same privacy boundary must stay consistent across relevant pages.
+SHARED_PRIVACY_SENTENCES = {
+    'Медицинские вопросы, лечение и допуск к нагрузкам обсуждайте с врачом.',
+    'Через сайт и почту я не запрашиваю анализы, диагнозы и медицинские документы.',
+    'Если нужна реабилитация или программа по медицинским показаниям, обратитесь к профильному специалисту.',
+}
+
 def validate(pages):
     errs, warns = [], []
     ids = {e['id'] for e in PUB}
@@ -422,7 +429,7 @@ def validate(pages):
                 c['task']['p'] + c['why']['p'] + (c.get('answer') or {}).get('p', []) + [c['lead']] +
                 [q['a'] for q in c['faq']] + [b['d'] for b in c['benefits']['items']])):
             s = re.sub(r'<[^>]+>', '', s).strip()
-            if len(s) > 50: sent_pages[s].add(e['id'])
+            if len(s) > 50 and s not in SHARED_PRIVACY_SENTENCES: sent_pages[s].add(e['id'])
     for k, n in seen_t.items():
         if n > 1: errs.append(f'дубль title: {k}')
     for k, n in seen_d.items():

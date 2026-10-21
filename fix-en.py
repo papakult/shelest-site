@@ -32,8 +32,8 @@ EXACT = [
     # Подвал
     ("World Champion, medical degree, competing athlete. Online coaching across Russia.",
      "World Champion, degree in human ecology, competing athlete. Online coaching across Russia."),
-    ("World Champion, coach with a medical background. Online coaching for training, nutrition and bloodwork.",
-     "World Champion, coach with a science background. Online coaching for training, nutrition and bloodwork."),
+    ("World Champion, coach with a medical background. Online coaching for training and nutrition.",
+     "World Champion, coach with a science background. Online coaching for training and nutrition."),
 
     # Полоска статистики и блок регалий
     ("Higher medical education", "Degree in human ecology"),

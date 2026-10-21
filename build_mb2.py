@@ -393,7 +393,7 @@ PAGE = f'''<!doctype html>
   <div class="container">
     <div class="kase__body" style="background:var(--bg-2); border:1px solid var(--line); border-radius:var(--radius); padding:40px;">
       <h2 class="h-sec" style="font-size:clamp(1.5rem,2.6vw,2rem);" data-i18n="mb.cta_title">{attr('mb.cta_title','Похожая ситуация?','Sounds familiar?')}</h2>
-      <p class="lead" style="margin-bottom:24px;" data-i18n="mb.cta_text">{attr("mb.cta_text",'Разберём анализы и подберём питание с учётом состояния микробиоты.',"We'll review your bloodwork and build a diet around your gut health.")}</p>
+      <p class="lead" style="margin-bottom:24px;" data-i18n="mb.cta_text">{attr("mb.cta_text",'Обсудим цель тренировок и формат работы. Медицинские исследования не присылайте.',"We'll review your bloodwork and build a diet around your gut health.")}</p>
       <div style="display:flex; align-items:center; gap:20px; flex-wrap:wrap;">
         <a href="index.html#contact" class="btn btn--gold"><span data-i18n="mb.cta_label">{attr('mb.cta_label','Консультация по анализам','Bloodwork consultation')}</span> — 10 000 ₽</a>
         <a href="index.html#pricing" class="btn btn--ghost" data-i18n="nav.pricing">Смотреть тарифы</a>

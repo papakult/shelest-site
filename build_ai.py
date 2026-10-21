@@ -2,6 +2,8 @@
 # -*- coding: utf-8 -*-
 """Встраивает ИИ-консультанта (чат, не калькулятор-форма) и блок
 «Пресса / Куорум Медиа» в index.html."""
+raise SystemExit('Historical builder retired: edit index.html and run build_seo.py; medical intake has been removed.')
+
 import re
 
 html = open('/root/shelest/index.html', encoding='utf-8').read()
