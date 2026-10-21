@@ -115,18 +115,14 @@ for f in sorted(glob.glob(os.path.join(ROOT, 'seo/content/*.json'))):
         CONTENT[k] = v
 PUB = [e for e in REG if e['status'] == 'published' and e['index']]
 BA = {x['img']: x for x in json.load(open(os.path.join(ROOT, 'ba.json'), encoding='utf-8'))['items']}
-CASES = {  # только реальные фото и подписи из ba.json
-    'weightloss': ['ba-b65', 'ba-g116', 'ba-g117'],
-    'general': ['ba-b65', 'ba-g116', 'ba-g21'],
-    'competition': ['ba-g28', 'ba-g116', 'ba-b65'],
-    'women': ['ba-g21', 'ba-g23', 'ba-b66'],
-}
+CASES = {}  # Public client cases are disabled pending review of publication permissions.
+
 # Существующие страницы сайта, на которые можно ссылаться из related
 EXTRA_LINKS = {
     'pitanie': ('/pitanie.html', 'Питание', 'Разбор рациона под цель и график'),
     'posle-travmy': ('/posle-travmy.html', 'Тренировки после травм', 'Нагрузка с учётом ограничений'),
     'podgotovka': ('/podgotovka-k-sorevnovaniyam.html', 'Подготовка к соревнованиям', 'Пауэрлифтинг, классик-физик, бикини'),
-    'results': ('/results.html', 'Результаты клиентов', 'Фото до и после с согласиями'),
+    'results': ('/results.html', 'Личный опыт тренера', 'Личные фотографии Андрея Шелеста'),
 }
 ARTICLES = {os.path.basename(p)[:-5]: p for p in glob.glob(os.path.join(ROOT, 'articles/*.html'))}
 def article_title(slug):
@@ -169,23 +165,9 @@ def render_tariffs(e, c):
 </section>'''
 
 def render_cases(kind):
-    if not kind or kind == 'none': return ''
-    cards = []
-    for img in CASES[kind]:
-        x = BA[img]
-        cards.append(f'''<a class="art-card" href="/results.html" style="padding:0; overflow:hidden;">
-        <img src="/img/{img}-500.webp" srcset="/img/{img}-360.webp 360w, /img/{img}-500.webp 500w" sizes="(max-width:860px) 90vw, 30vw" alt="{esc(x['t'])}" loading="lazy" style="width:100%; aspect-ratio:3/4; object-fit:cover;">
-        <div style="padding:16px 20px 20px;"><b class="art-card__title" style="font-size:1.05rem;">{esc(x['t'])}</b><p class="art-card__desc" style="margin-top:6px;">{esc(x['d'])}</p></div>
-      </a>''')
-    return f'''<section id="case">
-  <div class="container">
-    <p class="eyebrow">Реальные клиенты</p>
-    {sec_title('Результаты')}
-    <p class="lead" style="font-size:1rem;">Фото клиентов публикуются с их письменного согласия. Результат у каждого свой и зависит от исходных данных и регулярности.</p>
-    <div class="art-grid">{''.join(cards)}</div>
-    <p style="margin-top:20px;"><a class="btn btn--ghost" href="/results.html">Все результаты</a></p>
-  </div>
-</section>'''
+    # The published site does not distribute client photos or testimonials.
+    return ''
+
 
 def related_cards(e, c):
     out = []
@@ -378,6 +360,9 @@ def text_of(h):
 
 # The same privacy boundary must stay consistent across relevant pages.
 SHARED_PRIVACY_SENTENCES = {
+    'Личные фото и видео клиентов в текущий формат работы не входят.' ,
+    'По почте можно обсудить тренировочную цель и состав программы.' ,
+
     'Медицинские вопросы, лечение и допуск к нагрузкам обсуждайте с врачом.',
     'Через сайт и почту я не запрашиваю анализы, диагнозы и медицинские документы.',
     'Если нужна реабилитация или программа по медицинским показаниям, обратитесь к профильному специалисту.',

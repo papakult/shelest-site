@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """Вставляет реальное фото Олега в блок 'Главный случай' и строит секцию
 'До и после' с остальными диптихами из ba.json."""
+raise SystemExit('Public client gallery and reviews are retired; edit the personal story in index.html and run build_seo.py.')
+
 import json, re
 
 ba = json.load(open('/root/shelest/ba.json', encoding='utf-8'))
@@ -9,7 +11,7 @@ html = open('/root/shelest/index.html', encoding='utf-8').read()
 # 1) кейс Олега — заменяем плейсхолдер на реальное фото
 html = re.sub(
     r'<div class="ba vgn" style="background:var\(--bg-3\);.*?</div>\s*(?=<div class="kase__body">)',
-    '<div class="ba vgn"><img src="img/case-oleg-700.jpg" srcset="img/case-oleg-480.jpg 480w, img/case-oleg-700.jpg 700w, img/case-oleg-1100.jpg 1100w" sizes="(max-width:860px) 100vw, 42vw" alt="Олег — до и после" loading="lazy"></div>\n      ',
+    '<div class="ba vgn"><img src="img/andrey-portrait-lobby-800.webp" srcset="img/andrey-portrait-lobby-800.webp 480w, img/andrey-portrait-lobby-800.webp 700w, img/andrey-portrait-lobby-800.webp 1100w" sizes="(max-width:860px) 100vw, 42vw" alt="Олег — до и после" loading="lazy"></div>\n      ',
     html, flags=re.S
 )
 

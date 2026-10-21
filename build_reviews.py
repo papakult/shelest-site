@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 """Заполняет #revGrid карточками из reviews.json. Пропускает записи со статусом PENDING_RESEND."""
+raise SystemExit('Public client gallery and reviews are retired; edit the personal story in index.html and run build_seo.py.')
+
 import json, re
 from pathlib import Path
 ROOT = Path(__file__).resolve().parent
