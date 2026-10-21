@@ -18,7 +18,7 @@ from collections import Counter, defaultdict
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 SITE = 'https://shelestfit.com'
-FONTS = 'https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap'
+FONTS = '/css/local-fonts.css'
 CHECK_ONLY = '--check' in sys.argv
 
 def rd(p): return open(os.path.join(ROOT, p), encoding='utf-8').read()
@@ -97,7 +97,7 @@ def price_str(p):
 def tg(text):
     # кириллица остаётся читаемой (браузер кодирует сам), экранируем только служебные символы URL
     enc = ''.join(urllib.parse.quote(ch, safe='') if ch in ' %&#+?"<>\'' else ch for ch in text)
-    return 'https://t.me/ShelestF?text=' + enc
+    return 'mailto:andreygym@yandex.ru'
 
 def tg_for(page_h1, key):
     p = PRODUCTS[key]
@@ -155,7 +155,7 @@ def render_tariffs(e, c):
         <div class="ptier__sub">{esc(sub)}</div>
         <div class="ptier__price" data-price="{p['rub']}|{p['usd']}"><span class="pv">{price_str(p)}</span>{per}</div>
         <ul class="ptier__list">{lis}</ul>
-        <a class="btn {btn}" href="{esc(tg_for(e['h1'], k))}" target="_blank" rel="noopener">Обсудить в Telegram</a>
+        <a class="btn {btn}" href="{esc(tg_for(e['h1'], k))}" target="_blank" rel="noopener">Обсудить по почте</a>
       </div>''')
     note = c.get('tariffNote', '')
     note_html = f'<p class="lead" style="font-size:.95rem; margin-top:14px;">{note}</p>' if note else ''
@@ -215,7 +215,7 @@ def render(e):
     url = SITE + url_of(e)
     title = f'{c["title"]} · Андрей Шелест'
     main = PRODUCTS[c['tariffs'][0]]
-    cta_label = esc(c.get('ctaLabel', 'Написать в Telegram'))
+    cta_label = esc(c.get('ctaLabel', 'Написать на почту'))
     hero_offer = ''
     contact_hint = ''
     if c.get('contactHint'):
@@ -310,8 +310,8 @@ def render(e):
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{esc(title)}</title>
 <meta name="description" content="{esc(c['description'])}">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+
 <link rel="preload" as="image" href="/img/{c.get('bg', 'team-6')}-640.webp" fetchpriority="high">
 <link rel="preload" as="style" href="{FONTS}" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="{FONTS}"></noscript>

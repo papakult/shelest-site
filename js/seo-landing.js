@@ -27,7 +27,7 @@
   var EN = {'nav.about':'About','nav.pricing':'Pricing','nav.services':'Services','nav.reviews':'Reviews','nav.contact':'Contact','nav.cta':'Book a call',
     'nav.articles':'Articles','nav.enc':'Encyclopedias','nav.enc.sn':'Sport nutrition','nav.enc.sn.d':'AIS ABCD supplement ratings',
     'nav.enc.di':'Dietology','nav.enc.di.d':'5 evidence-based diets compared','nav.enc.mb':'Gut microbiome','nav.enc.mb.d':'History, sport, testing, myths',
-    'ftr.bio':'World Champion, degree in human ecology, competing athlete. Online coaching across Russia.','ftr.pay':'Payment arranged via Telegram',
+    'ftr.bio':'World Champion, degree in human ecology, competing athlete. Online coaching across Russia.','ftr.pay':'Payment arranged by email',
     'ftr.link1':'Sport nutrition','ftr.link2':'Dietology','ftr.link3':'Gut microbiome'};
   var RU = {}; document.querySelectorAll('[data-i18n]').forEach(function(el){ RU[el.getAttribute('data-i18n')] = el.innerHTML; });
   var lang = 'ru', lb = document.getElementById('langBtn');
