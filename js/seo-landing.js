@@ -1,7 +1,7 @@
 /* Общий JS SEO-посадочных (build_seo.py): FAQ, шапка, бургер, RU/EN для шапки и футера, сохранённая тема. */
 (function(){
   try{
-    var t = localStorage.getItem('sh-theme') || 'gold', f = localStorage.getItem('sh-font') || 'serif';
+    var t = document.documentElement.getAttribute('data-theme') || 'gold', f = document.documentElement.getAttribute('data-font') || 'serif';
     document.documentElement.setAttribute('data-theme', t);
     document.documentElement.setAttribute('data-font', f);
   }catch(e){}
@@ -27,7 +27,7 @@
   var EN = {'nav.about':'About','nav.pricing':'Pricing','nav.services':'Services','nav.reviews':'Reviews','nav.contact':'Contact','nav.cta':'Book a call',
     'nav.articles':'Articles','nav.enc':'Encyclopedias','nav.enc.sn':'Sport nutrition','nav.enc.sn.d':'AIS ABCD supplement ratings',
     'nav.enc.di':'Dietology','nav.enc.di.d':'5 evidence-based diets compared','nav.enc.mb':'Gut microbiome','nav.enc.mb.d':'History, sport, testing, myths',
-    'ftr.bio':'World Champion, degree in human ecology, competing athlete. Online coaching across Russia.','ftr.pay':'Payment arranged by email',
+    'ftr.bio':'A demonstration of a coach website from a development portfolio.','ftr.pay':'Demo project. Services are not provided.',
     'ftr.link1':'Sport nutrition','ftr.link2':'Dietology','ftr.link3':'Gut microbiome'};
   var RU = {}; document.querySelectorAll('[data-i18n]').forEach(function(el){ RU[el.getAttribute('data-i18n')] = el.innerHTML; });
   var lang = 'ru', lb = document.getElementById('langBtn');
@@ -36,26 +36,5 @@
     lb.textContent = lang === 'ru' ? 'EN' : 'RU';
     var d = lang === 'ru' ? RU : EN;
     document.querySelectorAll('[data-i18n]').forEach(function(el){ var k = el.getAttribute('data-i18n'); if (d[k] !== undefined) el.innerHTML = d[k]; });
-  });
-})();
-
-/* Переход к переписке, без утверждения об отправке заявки. */
-(function(){
-  document.addEventListener('click', function(event){
-    var link = event.target.closest && event.target.closest('a[href]');
-    if (!link) return;
-    var url;
-    try { url = new URL(link.href); } catch(e) { return; }
-    if (url.hostname !== 't.me') return;
-    var section = link.closest('section');
-    var placement = section && section.classList.contains('seg-hero') ? 'hero' :
-      section && section.id === 'pricing' ? 'pricing' :
-      section && section.classList.contains('seg-cta') ? 'final' : 'other';
-    var name = placement === 'hero' ? 'hero_bot_click' :
-      placement === 'pricing' ? 'pricing_bot_click' :
-      placement === 'final' ? 'final_bot_click' : 'telegram_click';
-    var params = {page_path: location.pathname, placement: placement, destination: url.pathname};
-    try { if (typeof ym === 'function') ym(111303972, 'reachGoal', name, params); } catch(e) {}
-    try { if (typeof gtag === 'function') gtag('event', name, params); } catch(e) {}
   });
 })();

@@ -15,6 +15,7 @@
 """
 import json, re, sys, os, glob, html, urllib.parse
 from collections import Counter, defaultdict
+from demo_mode import demo_html
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 SITE = 'https://shelestfit.com'
@@ -97,7 +98,7 @@ def price_str(p):
 def tg(text):
     # кириллица остаётся читаемой (браузер кодирует сам), экранируем только служебные символы URL
     enc = ''.join(urllib.parse.quote(ch, safe='') if ch in ' %&#+?"<>\'' else ch for ch in text)
-    return 'mailto:andreygym@yandex.ru'
+    return '/privacy-policy.html'
 
 def tg_for(page_h1, key):
     p = PRODUCTS[key]
@@ -447,7 +448,7 @@ def build_sitemap():
 if __name__ == '__main__':
     only = [a for a in sys.argv[1:] if not a.startswith('--')]
     todo = [e for e in PUB if e['id'] in CONTENT and (not only or e['id'] in only)]
-    pages = [(e, render(e)) for e in todo]
+    pages = [(e, demo_html(render(e))) for e in todo]
     errs, warns = validate(pages)
     if only:  # частичная проверка: игнорируем отсутствие контента у чужих страниц
         errs = [x for x in errs if 'нет контента' not in x]

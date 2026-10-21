@@ -2,8 +2,10 @@
 <html lang="ru">
 <head>
 <meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; media-src 'self' blob:; connect-src 'none'; frame-src 'none'; object-src 'none'; form-action 'none'; base-uri 'self'; upgrade-insecure-requests">
+<meta name="referrer" content="no-referrer">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Питание и диетология · Андрей Шелест</title>
+<title>Демоверсия | Питание и диетология · Андрей Шелест</title>
 <meta name="description" content="Разбор питания под тренировочную цель: снижение веса, набор массы или поддержание формы. Анализы и медицинские документы не запрашиваются.">
 
 
@@ -27,10 +29,9 @@
 <meta name="twitter:description" content="Разбор питания под тренировочную цель: снижение веса, набор массы или поддержание формы. Анализы и медицинские документы не запрашиваются.">
 <!-- seo:breadcrumbs -->
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://shelestfit.com/"}, {"@type": "ListItem", "position": 2, "name": "Диетология", "item": "https://shelestfit.com/dietology.html"}]}</script>
-<!-- analytics begin -->
-<script defer src="/js/analytics-consent-v1.js?v=20261021-paused" data-counter="111303972" data-policy="/privacy-policy.html"></script>
-<!-- analytics end -->
+<!-- analytics begin --><!-- analytics end -->
 <link rel="stylesheet" href="/css/local-fonts.css">
+<link rel="stylesheet" href="/css/demo-mode.css">
 </head>
 <body>
 <header class="hdr" id="hdr">
@@ -55,10 +56,9 @@
       </div>
       
       <a href="articles.html" data-i18n="nav.articles">Статьи</a>
-      <a href="index.html#contact" data-i18n="nav.reviews">Отзывы</a>
-      <a href="index.html#contact" data-i18n="nav.contact">Контакты</a>
+      <a href="/privacy-policy.html">О демоверсии</a>
     </nav>
-    <a href="index.html#contact" class="hdr__cta" data-i18n="nav.cta">Записаться</a>
+    <a class="hdr__cta" href="/privacy-policy.html">О демоверсии</a>
     <button class="hdr__cta" id="langBtn" style="margin-left:10px; border-color:var(--line-2); color:var(--ink-dim);" type="button">EN</button>
     <button class="hdr__burger" id="burgerBtn" aria-label="Меню" type="button"><span></span><span></span><span></span></button>
   </div>
@@ -78,7 +78,7 @@
     <div class="svc" style="margin-top:28px;">
           <div class="svc__c">
             <h4 data-i18n="dietology.s1.i1.t">Шаг 1. Цель тренировок</h4>
-            <p data-i18n="dietology.s1.i1.p">Для первого обращения напишите имя и цель тренировок. Адрес отправителя нужен для ответа. Анализы, диагнозы, сведения о травмах и медицинские документы не присылайте.</p>
+            <p>В демоверсии прием заявок отключен.</p>
           </div>
           <div class="svc__c">
             <h4 data-i18n="dietology.s1.i2.t">Шаг 2. Выбираем формат</h4>
@@ -150,7 +150,7 @@
           </div>
           <div class="svc__c">
             <h4 data-i18n="dietology.s4.i2.t">Нужно ли сдавать анализы заранее?</h4>
-            <p data-i18n="dietology.s4.i2.p">Медицинские вопросы и допуск к нагрузкам обсуждайте с врачом. Реабилитация и занятия по медицинским показаниям в эту услугу не входят. Медицинские документы не присылайте.</p>
+            <p>В демоверсии прием заявок отключен.</p>
           </div>
           <div class="svc__c">
             <h4 data-i18n="dietology.s4.i3.t">Сколько длится сопровождение?</h4>
@@ -158,7 +158,7 @@
           </div>
           <div class="svc__c">
             <h4 data-i18n="dietology.s4.i4.t">Что если есть аллергии или непереносимости?</h4>
-            <p data-i18n="dietology.s4.i4.p">При аллергии или непереносимости питание обсуждайте с врачом. Сведения о диагнозах и другие медицинские данные мне не присылайте.</p>
+            <p>В демоверсии прием заявок отключен.</p>
           </div>
     </div>
   </div>
@@ -436,7 +436,7 @@
       <h2 class="h-sec" style="font-size:clamp(1.5rem,2.6vw,2rem);" data-i18n="dietology.cta_title">Разбор вашего рациона</h2>
       <p class="lead" style="margin-bottom:24px;" data-i18n="dietology.cta_text">Смотрю, что вы едите сейчас, и выстраиваю питание под цель, без резких ограничений и срывов.</p>
       <div style="display:flex; align-items:center; gap:20px; flex-wrap:wrap;">
-        <a href="index.html#contact" class="btn btn--gold"><span data-i18n="dietology.cta_label">Разбор питания</span> 10 000 ₽</a>
+        <a class="btn btn--gold" href="/privacy-policy.html">О демоверсии</a>
         <a href="index.html#pricing" class="btn btn--ghost" data-i18n="nav.pricing">Смотреть тарифы</a>
       </div>
     </div>
@@ -448,9 +448,7 @@
     <div class="ftr__row">
       <div>
         <div class="hdr__logo">Андрей Шелест</div>
-        <p style="color:var(--ink-mute); font-size:.86rem; max-width:40ch; margin-top:10px;" data-i18n="ftr.bio">
-          Чемпион мира, тренер с биологическим образованием. Онлайн-ведение по тренировкам и питанию.
-        </p>
+        <p>Демонстрационный сайт тренера из портфолио разработки.</p>
         <div style="display:flex; gap:18px; margin-top:16px; flex-wrap:wrap;">
           <a href="sport-nutrition.html" style="font-size:.82rem; color:var(--ink-dim);" data-i18n="ftr.link1">Спортивное питание</a>
           <a href="dietology.html" style="font-size:.82rem; color:var(--ink-dim);" data-i18n="ftr.link2">Диетология</a>
@@ -458,14 +456,13 @@
         </div>
       </div>
       <div class="ftr__social">
-        <a href="https://t.me/papa_kult_shelest" target="_blank" rel="noopener" aria-label="Telegram-канал">TG</a>
-        <a href="mailto:andreygym@yandex.ru" target="_blank" rel="noopener" aria-label="Написать на почту">Почта</a>
+        <a href="/privacy-policy.html">О демоверсии</a>
       </div>
     </div>
     <div class="ftr__bottom">
       <span>&copy; <span id="yr"></span> Андрей Шелест</span>
-      <span data-i18n="ftr.pay">Оплата по договоренности по почте</span>
-      <span class="ftr__legal"><a href="privacy-policy.html">Политика конфиденциальности</a> · <a href="soglasie.html">Согласие на обработку данных</a></span>
+      <span>Демонстрационный проект, услуги не оказываются</span>
+      <span class="ftr__legal"><a href="/privacy-policy.html">О демоверсии</a></span>
       <a class="dev-credit" href="https://007-a.ru/?utm_source=shelestfit.com&amp;utm_medium=footer&amp;utm_campaign=signature" target="_blank" rel="noopener" aria-label="Разработка сайта — 007—A"><span>Digital by <span class="dev-credit__name">007—A</span></span><span class="dev-credit__arrow" aria-hidden="true">↗</span></a>
     </div>
   </div>
@@ -789,8 +786,8 @@ document.getElementById('langBtn').addEventListener('click', ()=>{
   var panel = document.getElementById('themePanel');
   if(!btn) return;
   function apply(){
-    var t = localStorage.getItem('sh-theme') || 'gold';
-    var f = localStorage.getItem('sh-font') || 'serif';
+    var t = document.documentElement.getAttribute('data-theme') || 'gold';
+    var f = document.documentElement.getAttribute('data-font') || 'serif';
     document.documentElement.setAttribute('data-theme', t);
     document.documentElement.setAttribute('data-font', f);
     document.querySelectorAll('.theme__dot').forEach(function(d){ d.classList.toggle('is-active', d.dataset.theme === t); });
@@ -798,10 +795,10 @@ document.getElementById('langBtn').addEventListener('click', ()=>{
   }
   btn.addEventListener('click', function(){ panel.classList.toggle('is-open'); });
   document.querySelectorAll('.theme__dot').forEach(function(d){
-    d.addEventListener('click', function(){ localStorage.setItem('sh-theme', d.dataset.theme); apply(); });
+    d.addEventListener('click', function(){ document.documentElement.setAttribute('data-theme', d.dataset.theme); apply(); });
   });
   document.querySelectorAll('.theme__type').forEach(function(d){
-    d.addEventListener('click', function(){ localStorage.setItem('sh-font', d.dataset.font); apply(); });
+    d.addEventListener('click', function(){ document.documentElement.setAttribute('data-font', d.dataset.font); apply(); });
   });
   document.addEventListener('click', function(e){
     if(!e.target.closest('.theme')) panel.classList.remove('is-open');
@@ -810,5 +807,6 @@ document.getElementById('langBtn').addEventListener('click', ()=>{
 })();
 </script>
 <script src="js/premium.js" defer></script>
+<a class="demo-mode-note" href="/privacy-policy.html">Демонстрационный проект · Прием заявок отключен</a>
 </body>
 </html>
